@@ -131,16 +131,6 @@ footer a{color:var(--muted)}
 @media (max-width:640px){.krow{grid-template-columns:1fr}.kform{padding:18px}}
 @media (max-width:900px){.feats{grid-template-columns:1fr}.feat,.feat:nth-child(n+4){grid-column:auto}}
 @media (max-width:760px){.toast{right:auto;left:20px;bottom:110px;font-size:20px}.eyebrow{font-size:15px}.pitch{grid-template-columns:1fr}.road li{grid-template-columns:1fr;gap:2px}.hero{min-height:88vh;min-height:88svh}.wipe{left:20px;right:auto;align-items:flex-start;text-align:left;bottom:14px}.hero-in{padding-bottom:96px}}
-/* Handy und Tablet hochkant: oben das Wasserbild zum Wischen (Kajak frei, nichts davor), darunter Titel und Text */
-@media (max-width:760px),(max-width:1100px) and (orientation:portrait){
-  .hero{--scene:min(80vw,440px);display:block;min-height:0;background:var(--navy)}
-  .clean,#oil,#fx,.shade{top:0;bottom:auto;height:var(--scene)}
-  .shade{background:linear-gradient(0deg,rgba(15,28,43,1) 0%,rgba(15,28,43,0) 24%),linear-gradient(180deg,rgba(7,9,12,.6) 0%,rgba(7,9,12,0) 26%)}
-  .hero-in{padding-top:calc(var(--scene) + 14px);padding-bottom:40px}
-  .wipe{top:calc(var(--scene) - 64px);bottom:auto;left:auto;right:max(16px,env(safe-area-inset-right,0px));align-items:flex-end;text-align:right}
-  .wipe b{font-size:24px}
-  .toast{top:calc(var(--scene) * .38);bottom:auto;left:16px;right:16px;margin:0 auto;width:fit-content;font-size:19px}
-}
 </style>
 </head>
 <body>
@@ -480,11 +470,9 @@ footer a{color:var(--muted)}
   }
   /* Bildausschnitt: am PC wie gehabt. Auf schmalen Hochkant-Bildschirmen etwas größer und nach oben/rechts verschoben,
      damit das Kajak unter dem Titel liegt und das Paddel nicht hinter den Buchstaben steckt. */
-  var MQ=window.matchMedia?window.matchMedia('(max-width:760px),(max-width:1100px) and (orientation:portrait)'):null;
   function heroFit(w,h){
     var s=Math.max(w/img.width,h/img.height), iw=img.width*s, ih=img.height*s, ox, oy;
-    if(MQ&&MQ.matches){ ox=w*.5-(KP[0]+KP[2]/2)*iw; oy=h*.52-(KP[1]+KP[3]/2)*ih; ox=Math.min(0,Math.max(w-iw,ox)); oy=Math.min(0,Math.max(h-ih,oy)); }
-    else { ox=(w-iw)*0.62; oy=(h-ih)/2; }
+    ox=(w-iw)*0.62; oy=(h-ih)/2;
     return {iw:iw,ih:ih,ox:ox,oy:oy};
   }
   function drawOil(w,h){
