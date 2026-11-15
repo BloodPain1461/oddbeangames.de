@@ -29,6 +29,13 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://oddbeangames.de/en/contact/"/>
   </url>
   <url>
+    <loc>https://oddbeangames.de/presse/</loc>
+    <lastmod>2026-11-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://oddbeangames.de/presse/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://oddbeangames.de/en/press/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://oddbeangames.de/en/press/"/>
+  </url>
+  <url>
     <loc>https://oddbeangames.de/en/</loc>
     <lastmod>2026-11-15</lastmod>
     <xhtml:link rel="alternate" hreflang="de" href="https://oddbeangames.de/"/>
@@ -55,5 +62,12 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://oddbeangames.de/kontakt/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://oddbeangames.de/en/contact/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://oddbeangames.de/en/contact/"/>
+  </url>
+  <url>
+    <loc>https://oddbeangames.de/en/press/</loc>
+    <lastmod>2026-11-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://oddbeangames.de/presse/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://oddbeangames.de/en/press/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://oddbeangames.de/en/press/"/>
   </url>
 </urlset>
