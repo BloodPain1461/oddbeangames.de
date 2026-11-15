@@ -178,7 +178,7 @@ footer .social svg{width:18px;height:18px}
 <div class="toast" hidden="" id="toast"></div>
 <div class="hero-in"><div class="wrap">
 <span class="eyebrow" data-i="eyebrow">Demo at Steam Next Fest · Feb 22 – Mar 1, 2027</span>
-<h1 id="titel" style="margin:0"><img alt="Clean the Bay" class="logo" height="420" src="/img/logo.webp" width="900"/></h1>
+<div id="titel" style="margin:0"><img alt="Clean the Bay" class="logo" height="420" src="/img/logo.webp" width="900"/></div>
 <p class="tag" data-i="tag">A bay full of oil. One kayak. One sponge. You have to start somewhere.</p>
 <div class="cta">
 <a class="btn btn-main js-steam" href="https://store.steampowered.com/" rel="noopener">
@@ -289,22 +289,10 @@ footer .social svg{width:18px;height:18px}
 <span>© 2026 Odd Bean Games</span>
 </div></footer>
 </main>
-<div class="legal" hidden="" id="impressum"><div class="wrap">
-<a class="back" href="/en/">← Back to the start page</a>
-<h1>Legal notice</h1>
-<p class="cap">This is a translation for your convenience. The German version (Impressum) is legally binding.</p>
-<h2>Information according to § 5 DDG (German Digital Services Act)</h2>
-<p>Kevin Luchmann<br/>Odd Bean Games<br/>Geitherstrasse 14<br/>67435 Neustadt an der Weinstraße<br/>Germany</p>
-<h2>Contact</h2>
-<p>Email: <a href="mailto:kontakt@oddbeangames.de">kontakt@oddbeangames.de</a><br/>Press: <a href="mailto:presse@oddbeangames.de">presse@oddbeangames.de</a><br/>Contact form: <a href="/en/contact/">oddbeangames.de/en/contact</a></p>
-<h2>Responsible for the content according to § 18 (2) MStV (German Interstate Media Treaty)</h2>
-<p>Kevin Luchmann, Geitherstrasse 14, 67435 Neustadt an der Weinstraße, Germany</p>
-<h2>Consumer dispute resolution</h2>
-<p>We are neither willing nor obliged to take part in dispute resolution proceedings before a consumer arbitration board.</p>
-</div></div>
+
 <div class="legal" hidden="" id="kontakt"><div class="wrap">
 <a class="back" data-i="k-back" href="#">← Back to the start page</a>
-<h1 data-i="k-h">Contact</h1>
+<p class="legal-h" data-i="k-h">Contact</p>
 <p data-i="k-intro">Questions about the game, a bug, an idea or a creator request? Write to us. We usually reply within a few days.</p>
 <form class="kform" id="kform" novalidate="">
 <div class="krow">
@@ -393,10 +381,8 @@ footer .social svg{width:18px;height:18px}
     if(ROUTES&&PAGE===''&&ROUTES[location.hash.replace('#','')]){ location.replace(ROUTES[location.hash.replace('#','')]); return; }
     var legal=(h==='impressum'||h==='datenschutz'||h==='kontakt');
     var back=route.was&&!legal; route.was=legal;
-    document.getElementById('seite').hidden=legal;
-    document.getElementById('impressum').hidden=h!=='impressum';
-    document.getElementById('datenschutz').hidden=h!=='datenschutz';
-    document.getElementById('kontakt').hidden=h!=='kontakt';
+    function show(id,on){ var e=document.getElementById(id); if(e) e.hidden=!on; }
+    show('seite',!legal); show('impressum',h==='impressum'); show('datenschutz',h==='datenschutz'); show('kontakt',h==='kontakt');
     if(h==='kontakt'&&typeof kOpen==='function')kOpen();
     if(legal)window.scrollTo(0,0);
     if(back&&window.__oilReset) setTimeout(window.__oilReset,0);

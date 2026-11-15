@@ -178,7 +178,7 @@ footer .social svg{width:18px;height:18px}
 <div class="toast" hidden="" id="toast"></div>
 <div class="hero-in"><div class="wrap">
 <span class="eyebrow" data-i="eyebrow">Demo beim Steam Next Fest · 22. Feb. – 1. März 2027</span>
-<h1 id="titel" style="margin:0"><img alt="Clean the Bay" class="logo" height="420" src="/img/logo.webp" width="900"/></h1>
+<div id="titel" style="margin:0"><img alt="Clean the Bay" class="logo" height="420" src="/img/logo.webp" width="900"/></div>
 <p class="tag" data-i="tag">Eine Bucht voller Öl. Ein Kajak. Ein Schwamm. Irgendwo muss man ja anfangen.</p>
 <div class="cta">
 <a class="btn btn-main js-steam" href="https://store.steampowered.com/" rel="noopener">
@@ -289,21 +289,10 @@ footer .social svg{width:18px;height:18px}
 <span>© 2026 Odd Bean Games</span>
 </div></footer>
 </main>
-<div class="legal" hidden="" id="impressum"><div class="wrap">
-<a class="back" href="/">← Zurück zur Startseite</a>
-<h1>Impressum</h1>
-<h2>Angaben gemäß § 5 DDG</h2>
-<p>Kevin Luchmann<br/>Odd Bean Games<br/>Geitherstrasse 14<br/>67435 Neustadt an der Weinstraße<br/>Deutschland</p>
-<h2>Kontakt</h2>
-<p>E-Mail: <a href="mailto:kontakt@oddbeangames.de">kontakt@oddbeangames.de</a><br/>Presse: <a href="mailto:presse@oddbeangames.de">presse@oddbeangames.de</a><br/>Kontaktformular: <a href="/kontakt/">oddbeangames.de/kontakt</a></p>
-<h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
-<p>Kevin Luchmann, Geitherstrasse 14, 67435 Neustadt an der Weinstraße</p>
-<h2>Verbraucherstreitbeilegung</h2>
-<p>Wir sind nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
-</div></div>
+
 <div class="legal" hidden="" id="kontakt"><div class="wrap">
 <a class="back" data-i="k-back" href="/">← Zurück zur Startseite</a>
-<h1 data-i="k-h">Kontakt</h1>
+<p class="legal-h" data-i="k-h">Kontakt</p>
 <p data-i="k-intro">Fragen zum Spiel, ein Fehler, eine Idee oder eine Anfrage als Creator? Schreib uns. Wir antworten meistens innerhalb von ein paar Tagen.</p>
 <form class="kform" id="kform" novalidate="">
 <div class="krow">
@@ -391,10 +380,8 @@ footer .social svg{width:18px;height:18px}
     if(ROUTES&&PAGE===''&&ROUTES[location.hash.replace('#','')]){ location.replace(ROUTES[location.hash.replace('#','')]); return; }
     var legal=(h==='impressum'||h==='datenschutz'||h==='kontakt');
     var back=route.was&&!legal; route.was=legal;
-    document.getElementById('seite').hidden=legal;
-    document.getElementById('impressum').hidden=h!=='impressum';
-    document.getElementById('datenschutz').hidden=h!=='datenschutz';
-    document.getElementById('kontakt').hidden=h!=='kontakt';
+    function show(id,on){ var e=document.getElementById(id); if(e) e.hidden=!on; }
+    show('seite',!legal); show('impressum',h==='impressum'); show('datenschutz',h==='datenschutz'); show('kontakt',h==='kontakt');
     if(h==='kontakt'&&typeof kOpen==='function')kOpen();
     if(legal)window.scrollTo(0,0);
     if(back&&window.__oilReset) setTimeout(window.__oilReset,0);
