@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="de">
+<html lang="de" data-page="" data-routes='{"impressum": "/impressum/", "datenschutz": "/datenschutz/", "kontakt": "/kontakt/"}'>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<link rel="icon" href="img/favicon.png">
+<link rel="icon" href="/img/favicon.png">
 <title>Clean the Bay – gemütliches Putzspiel: befrei eine verölte Bucht | PC, Steam</title>
 <meta name="description" content="Clean the Bay ist ein gemütliches Putz- und Aufbauspiel für PC: Befrei eine verölte Bucht mit Kajak und Schwamm, allein oder im Koop bis 4. Kostenlose Demo beim Steam Next Fest im Februar 2027.">
 <meta property="og:title" content="Clean the Bay">
@@ -24,10 +24,10 @@
 
 <style>
 /* Layout: Hero zum Wegwischen oben, darunter einspaltige Abschnitte mit Karten, Fakten, FAQ, Fuß mit Impressum. Bewusst nur dunkel (Öl und Nacht). */
-@font-face{font-family:"Barlow Condensed";font-weight:600;font-display:swap;src:url("fonts/barlow-condensed-latin-600-normal.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
-@font-face{font-family:"Barlow Condensed";font-weight:600;font-display:swap;src:url("fonts/barlow-condensed-latin-ext-600-normal.woff2") format("woff2");unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
-@font-face{font-family:"Barlow Condensed";font-weight:800;font-display:swap;src:url("fonts/barlow-condensed-latin-800-normal.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
-@font-face{font-family:"Barlow Condensed";font-weight:800;font-display:swap;src:url("fonts/barlow-condensed-latin-ext-800-normal.woff2") format("woff2");unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Barlow Condensed";font-weight:600;font-display:swap;src:url("/fonts/barlow-condensed-latin-600-normal.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Barlow Condensed";font-weight:600;font-display:swap;src:url("/fonts/barlow-condensed-latin-ext-600-normal.woff2") format("woff2");unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Barlow Condensed";font-weight:800;font-display:swap;src:url("/fonts/barlow-condensed-latin-800-normal.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Barlow Condensed";font-weight:800;font-display:swap;src:url("/fonts/barlow-condensed-latin-ext-800-normal.woff2") format("woff2");unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
 :root{
   --oil:#07090c; --navy:#0f1c2b; --navy2:#16283c; --line:#28405a;
   --cream:#f4efe6; --muted:#b4c0cc; --orange:#ff6b1a; --orange-d:#c94c0c; --sea:#2e8bd6; --sea-l:#7cc4f2;
@@ -159,234 +159,221 @@ footer .social svg{width:18px;height:18px}
 </style>
 </head>
 <body>
-
 <main id="seite">
-  <header class="top"><div class="wrap">
-    <img class="studio" src="img/oddbean.webp" alt="Odd Bean Games" width="260" height="65">
-    <div class="lang" role="group" aria-label="Sprache / Language">
-      <a id="l-de" href="./" hreflang="de" lang="de" aria-current="page">DE</a>
-      <a id="l-en" href="en/" hreflang="en" lang="en">EN</a>
-    </div>
-  </div></header>
-  <a class="langhint" id="langhint" href="en/" hreflang="en" lang="en" hidden>English version →</a>
-
-  <section class="hero" aria-labelledby="titel">
-    <div class="clean" aria-hidden="true">
-      <canvas id="water"></canvas>
-      <canvas id="fishc"></canvas>
-    </div>
-    <canvas id="oil" aria-label="Ölteppich zum Wegwischen" role="img"></canvas>
-    <canvas id="fx" aria-hidden="true"></canvas>
-    <div class="shade" aria-hidden="true"></div>
-    <div class="toast" id="toast" hidden></div>
-    <div class="hero-in"><div class="wrap">
-      <span class="eyebrow" data-i="eyebrow">Demo beim Steam Next Fest · 22. Feb. – 1. März 2027</span>
-      <h1 id="titel" style="margin:0"><img class="logo" src="img/logo.webp" alt="Clean the Bay" width="900" height="420"></h1>
-      <p class="tag" data-i="tag">Eine Bucht voller Öl. Ein Kajak. Ein Schwamm. Irgendwo muss man ja anfangen.</p>
-      <div class="cta">
-        <a class="btn btn-main js-steam" href="https://store.steampowered.com/" rel="noopener">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6c-2.5 4.5-9.5 9-9.5 9z"/></svg>
-          <span data-i="wish">Auf die Steam-Wunschliste</span>
-        </a>
-        <a class="btn btn-ghost" href="#worum" data-i="more">Worum geht's?</a>
-      </div>
-      <div class="chips">
-        <span class="chip" data-i="c1">PC über Steam</span>
-        <span class="chip" data-i="c2">Allein oder Koop bis 4</span>
-        <span class="chip" data-i="c3">12 Sprachen</span>
-        <span class="chip" data-i="c4">Steam Deck geplant</span>
-      </div>
-    </div></div>
-    <div class="wipe" aria-live="polite">
-      <b><span id="pct">0</span> % <span data-i="clean">sauber</span></b>
-      <span data-i="hint">Wisch mal übers Öl.</span>
-    </div>
-  </section>
-
-  <section class="block" id="worum"><div class="wrap pitch">
-    <div>
-      <h2 data-i="h-pitch">Komm nach Hause. Die Bucht braucht dich.</h2>
-      <p data-i="pitch">Ein Ölmagnat hat deine Heimat schwarz zurückgelassen. Oma Greta hat die alte Küstenwache wieder aufgeschlossen, das ganze Dorf hat zusammengelegt, und du bekommst ein Kajak und einen Schwamm. Putz die Bucht Feld für Feld sauber, bau deine kleine Rettungsaktion zu einer echten Küstenwache aus und finde heraus, wer dir ständig Flaschenpost schickt.</p>
-    </div>
-    <figure style="margin:0">
-      <img src="img/share.jpg" alt="Ein Kajak mit Schwamm zieht eine saubere blaue Spur durch die schwarze Ölbucht" width="1232" height="706" loading="lazy">
-      <figcaption class="cap" data-i="cap">Spielbilder und Trailer folgen im Dezember.</figcaption>
-    </figure>
-  </div></section>
-
-  <section class="block" style="padding-top:0"><div class="wrap">
-    <h2 data-i="h-feat">So spielt es sich</h2>
-    <div class="feats">
-      <article class="feat">
-        <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#0b2239" stroke="#f4efe6" stroke-width="2.5"/><rect x="16" y="24" width="32" height="18" rx="5" fill="#ffd23f" stroke="#b8870b" stroke-width="2"/><path d="M10 48 q8 -5 16 0 t16 0 t16 0" fill="none" stroke="#7cc4f2" stroke-width="3" stroke-linecap="round"/></svg>
-        <h3 data-i="f1h">Putzen in deinem Tempo</h3>
-        <p data-i="f1">Wischen, schöpfen, skimmen. Jedes saubere Feld bringt Geld, jedes neue Werkzeug eine breitere Bahn. Vom Schwamm bis zum Küstenwachboot.</p>
-      </article>
-      <article class="feat">
-        <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#0b2239" stroke="#f4efe6" stroke-width="2.5"/><path d="M14 34 C22 22 38 22 46 34 C38 46 22 46 14 34Z" fill="#ffd166"/><path d="M46 34 L56 26 L53 34 L56 42Z" fill="#ffd166"/><circle cx="21" cy="32" r="2.2" fill="#0b2239"/></svg>
-        <h3 data-i="f2h">Die Natur kommt zurück</h3>
-        <p data-i="f2">Einen Tag nach dem Putzen sind die Fische da. Fotografiere 36 Arten für dein Lexikon, vom Hering bis zum Orca.</p>
-      </article>
-      <article class="feat">
-        <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#0b2239" stroke="#f4efe6" stroke-width="2.5"/><rect x="22" y="18" width="20" height="28" rx="4" fill="#c8a13a" stroke="#f4efe6" stroke-width="2"/><path d="M22 26 h20 M22 38 h20" stroke="#0b2239" stroke-width="2.5"/><path d="M44 16 l-4 8 h5 l-4 8" fill="none" stroke="#ff6b1a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <h3 data-i="f3h">Fässer, Stürme und ein Hafen voller Leben</h3>
-        <p data-i="f3">Bring volle Fässer heim, bevor sie auslaufen, und übersteh Stürme. Unterwegs lernst du Oma Greta, Käpt'n Hinnerk und die anderen Leute der Bucht kennen.</p>
-      </article>
-      <article class="feat">
-        <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#0b2239" stroke="#f4efe6" stroke-width="2.5"/><path d="M27 14 h10 v6 l4 6 v20 a3 3 0 0 1 -3 3 h-12 a3 3 0 0 1 -3 -3 v-20 l4 -6z" fill="none" stroke="#7cc4f2" stroke-width="2.5"/><rect x="27" y="30" width="10" height="12" rx="1" fill="#f4efe6"/><text x="32" y="40" text-anchor="middle" font-family="Georgia,serif" font-size="9" fill="#0b2239">L.</text></svg>
-        <h3 data-i="f4h">Wer schreibt die Flaschenpost?</h3>
-        <p data-i="f4">Briefe von „L.“ treiben an. Sammle sie in deinem Logbuch, finde die fünf Lecks und die Beweise gegen den Ölmagnaten.</p>
-      </article>
-      <article class="feat">
-        <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#0b2239" stroke="#f4efe6" stroke-width="2.5"/><path d="M12 36 h16 l-3 6 h-10z M36 36 h16 l-3 6 h-10z" fill="#ff6b1a"/><path d="M14 24 h12 l-2 6 h-8z M38 24 h12 l-2 6 h-8z" fill="#f4efe6"/></svg>
-        <h3 data-i="f5h">Zusammen putzen</h3>
-        <p data-i="f5">Allein oder mit bis zu drei Freunden im Online-Koop. Jeder fährt sein eigenes Boot, der Host entscheidet, ob ihr Geld und Ausrüstung teilt.</p>
-      </article>
-    </div>
-  </div></section>
-
-  <section class="block band"><div class="wrap">
-    <h2 data-i="h-facts">Auf einen Blick</h2>
-    <dl class="facts">
-      <div class="fact"><dt data-i="k1">Genre</dt><dd data-i="v1">Gemütliche Putz- und Aufbau-Simulation</dd></div>
-      <div class="fact"><dt data-i="k2">Plattform</dt><dd data-i="v2">PC (Windows) über Steam, Steam Deck geplant</dd></div>
-      <div class="fact"><dt data-i="k3">Spieler</dt><dd data-i="v3">1 bis 4, Online-Koop</dd></div>
-      <div class="fact"><dt data-i="k4">Spielzeit</dt><dd data-i="v4">Rund 25 bis 30 Stunden bis zum Finale</dd></div>
-      <div class="fact"><dt data-i="k5">Sprachen</dt><dd data-i="v5">Deutsch, Englisch, Französisch, Spanisch, Italienisch, Polnisch, Portugiesisch (BR), Russisch, Türkisch, Japanisch, Koreanisch, Chinesisch</dd></div>
-      <div class="fact"><dt data-i="k6">Veröffentlichung</dt><dd data-i="v6">Vollversion, kein Early Access. Datum folgt.</dd></div>
-      <div class="fact"><dt data-i="k7">Demo</dt><dd data-i="v7">Steam Next Fest, 22. Februar bis 1. März 2027</dd></div>
-      <div class="fact"><dt data-i="k8">Studio</dt><dd data-i="v8">Odd Bean Games, Deutschland</dd></div>
-    </dl>
-  </div></section>
-
-  <section class="block"><div class="wrap">
-    <h2 data-i="h-road">Wie es weitergeht</h2>
-    <ol class="road">
-      <li class="now"><span class="when" data-i="r1w">Dezember 2026</span><span data-i="r1">Steam-Seite mit Spielbildern und Trailer. Ab dann kannst du das Spiel auf die Wunschliste setzen.</span></li>
-      <li><span class="when" data-i="r2w">Februar 2027</span><span data-i="r2">Kostenlose Demo beim Steam Next Fest vom 22. Februar bis 1. März.</span></li>
-      <li><span class="when" data-i="r3w">Danach</span><span data-i="r3">Das fertige Spiel. Wer es auf der Wunschliste hat, bekommt von Steam eine Nachricht, sobald es erscheint.</span></li>
-    </ol>
-  </div></section>
-
-  <section class="block" style="padding-top:0"><div class="wrap">
-    <h2 data-i="h-faq">Fragen</h2>
-    <div class="faq">
-      <details><summary data-i="q1">Gibt es eine Demo?</summary><p data-i="a1">Ja. Beim Steam Next Fest vom 22. Februar bis 1. März 2027 kannst du den Anfang kostenlos spielen.</p></details>
-      <details><summary data-i="q2">Kann ich allein spielen?</summary><p data-i="a2">Ja, das ganze Spiel. Koop mit bis zu drei Freunden ist eine Möglichkeit, keine Pflicht.</p></details>
-      <details><summary data-i="q3">Läuft es auf dem Steam Deck?</summary><p data-i="a3">Das ist das Ziel. Das Spiel wird komplett mit Controller spielbar, wir lassen es von Valve prüfen.</p></details>
-      <details><summary data-i="q4">Kommt es auf Konsolen?</summary><p data-i="a4">Zuerst erscheint es für PC über Steam. Mehr dazu, wenn es so weit ist.</p></details>
-      <details><summary data-i="q5">Wer macht das Spiel?</summary><p data-i="a5">Odd Bean Games, ein kleines Studio aus Deutschland.</p></details>
-    </div>
-  </div></section>
-
-  <section class="block band"><div class="wrap final">
-    <h2 data-i="h-final">Setz es auf deine Wunschliste</h2>
-    <p data-i="final">Für ein kleines Studio zählt jede Wunschliste. Steam zeigt das Spiel dann mehr Leuten, und du bekommst eine Nachricht, sobald die Demo und das Spiel da sind.</p>
-    <a class="btn btn-main js-steam" href="https://store.steampowered.com/" rel="noopener"><span data-i="wish2">Jetzt auf die Wunschliste</span></a>
-    <p style="font-size:14px"><span data-i="press">Presse und Creator:</span> <a href="mailto:presse@oddbeangames.de" id="mail">presse@oddbeangames.de</a> · <a href="#kontakt" data-i="kl2">Kontaktformular</a></p>
-    <div class="follow"><span data-i="follow">Folg uns</span><div class="social"><a href="https://www.tiktok.com/@clean.the.bay.odd" rel="noopener" target="_blank" aria-label="TikTok: @clean.the.bay.odd" title="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M15.2 2.5c.4 2.5 1.9 4 4.6 4.3v3.2c-1.6 0-3.1-.5-4.5-1.4v6.6c0 3.5-2.7 6.3-6.2 6.3S3 18.7 3 15.3c0-3.5 3-6.2 6.6-5.8v3.3c-1.7-.4-3.3.8-3.3 2.4 0 1.4 1.2 2.6 2.6 2.6 1.6 0 2.7-1.2 2.7-2.9V2.5h3.6z"/></svg></a><a href="https://www.instagram.com/oddbeangames/" rel="noopener" target="_blank" aria-label="Instagram: @oddbeangames" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2.2"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2.2"/><circle cx="17.4" cy="6.6" r="1.4" fill="currentColor"/></svg></a><a href="https://x.com/oddbeangames" rel="noopener" target="_blank" aria-label="X: @oddbeangames" title="X"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 3h5.6l12.4 18h-5.6z"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M20.2 3.6l-6.9 7.9M10.6 13.5l-6.9 7.9"/></svg></a></div></div>
-  </div></section>
-
-  <footer><div class="wrap">
-    <img class="studio" src="img/oddbean.webp" alt="Odd Bean Games" width="260" height="65" loading="lazy">
-    <nav aria-label="Rechtliches und Links">
-      <a class="js-steam" href="https://store.steampowered.com/" rel="noopener">Steam</a>
-      <a href="#kontakt" data-i="kl">Kontakt</a>
-      <a href="#impressum">Impressum</a>
-      <a href="#datenschutz" data-i="dsl">Datenschutz</a>
-    </nav>
-    <div class="social"><a href="https://www.tiktok.com/@clean.the.bay.odd" rel="noopener" target="_blank" aria-label="TikTok: @clean.the.bay.odd" title="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M15.2 2.5c.4 2.5 1.9 4 4.6 4.3v3.2c-1.6 0-3.1-.5-4.5-1.4v6.6c0 3.5-2.7 6.3-6.2 6.3S3 18.7 3 15.3c0-3.5 3-6.2 6.6-5.8v3.3c-1.7-.4-3.3.8-3.3 2.4 0 1.4 1.2 2.6 2.6 2.6 1.6 0 2.7-1.2 2.7-2.9V2.5h3.6z"/></svg></a><a href="https://www.instagram.com/oddbeangames/" rel="noopener" target="_blank" aria-label="Instagram: @oddbeangames" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2.2"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2.2"/><circle cx="17.4" cy="6.6" r="1.4" fill="currentColor"/></svg></a><a href="https://x.com/oddbeangames" rel="noopener" target="_blank" aria-label="X: @oddbeangames" title="X"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 3h5.6l12.4 18h-5.6z"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M20.2 3.6l-6.9 7.9M10.6 13.5l-6.9 7.9"/></svg></a></div>
-    <span>© 2026 Odd Bean Games</span>
-  </div></footer>
+<header class="top"><div class="wrap">
+<img alt="Odd Bean Games" class="studio" height="65" src="/img/oddbean.webp" width="260"/>
+<div aria-label="Sprache / Language" class="lang" role="group">
+<a aria-current="page" href="/" hreflang="de" id="l-de" lang="de">DE</a>
+<a href="/en/" hreflang="en" id="l-en" lang="en">EN</a>
+</div>
+</div></header>
+<a class="langhint" hidden="" href="/en/" hreflang="en" id="langhint" lang="en">English version →</a>
+<section aria-labelledby="titel" class="hero">
+<div aria-hidden="true" class="clean">
+<canvas id="water"></canvas>
+<canvas id="fishc"></canvas>
+</div>
+<canvas aria-label="Ölteppich zum Wegwischen" id="oil" role="img"></canvas>
+<canvas aria-hidden="true" id="fx"></canvas>
+<div aria-hidden="true" class="shade"></div>
+<div class="toast" hidden="" id="toast"></div>
+<div class="hero-in"><div class="wrap">
+<span class="eyebrow" data-i="eyebrow">Demo beim Steam Next Fest · 22. Feb. – 1. März 2027</span>
+<h1 id="titel" style="margin:0"><img alt="Clean the Bay" class="logo" height="420" src="/img/logo.webp" width="900"/></h1>
+<p class="tag" data-i="tag">Eine Bucht voller Öl. Ein Kajak. Ein Schwamm. Irgendwo muss man ja anfangen.</p>
+<div class="cta">
+<a class="btn btn-main js-steam" href="https://store.steampowered.com/" rel="noopener">
+<svg aria-hidden="true" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6" viewbox="0 0 24 24" width="24"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6c-2.5 4.5-9.5 9-9.5 9z"></path></svg>
+<span data-i="wish">Auf die Steam-Wunschliste</span>
+</a>
+<a class="btn btn-ghost" data-i="more" href="#worum">Worum geht's?</a>
+</div>
+<div class="chips">
+<span class="chip" data-i="c1">PC über Steam</span>
+<span class="chip" data-i="c2">Allein oder Koop bis 4</span>
+<span class="chip" data-i="c3">12 Sprachen</span>
+<span class="chip" data-i="c4">Steam Deck geplant</span>
+</div>
+</div></div>
+<div aria-live="polite" class="wipe">
+<b><span id="pct">0</span> % <span data-i="clean">sauber</span></b>
+<span data-i="hint">Wisch mal übers Öl.</span>
+</div>
+</section>
+<section class="block" id="worum"><div class="wrap pitch">
+<div>
+<h2 data-i="h-pitch">Komm nach Hause. Die Bucht braucht dich.</h2>
+<p data-i="pitch">Ein Ölmagnat hat deine Heimat schwarz zurückgelassen. Oma Greta hat die alte Küstenwache wieder aufgeschlossen, das ganze Dorf hat zusammengelegt, und du bekommst ein Kajak und einen Schwamm. Putz die Bucht Feld für Feld sauber, bau deine kleine Rettungsaktion zu einer echten Küstenwache aus und finde heraus, wer dir ständig Flaschenpost schickt.</p>
+</div>
+<figure style="margin:0">
+<img alt="Ein Kajak mit Schwamm zieht eine saubere blaue Spur durch die schwarze Ölbucht" height="706" loading="lazy" src="/img/share.jpg" width="1232"/>
+<figcaption class="cap" data-i="cap">Spielbilder und Trailer folgen im Dezember.</figcaption>
+</figure>
+</div></section>
+<section class="block" style="padding-top:0"><div class="wrap">
+<h2 data-i="h-feat">So spielt es sich</h2>
+<div class="feats">
+<article class="feat">
+<svg aria-hidden="true" viewbox="0 0 64 64"><circle cx="32" cy="32" fill="#0b2239" r="30" stroke="#f4efe6" stroke-width="2.5"></circle><rect fill="#ffd23f" height="18" rx="5" stroke="#b8870b" stroke-width="2" width="32" x="16" y="24"></rect><path d="M10 48 q8 -5 16 0 t16 0 t16 0" fill="none" stroke="#7cc4f2" stroke-linecap="round" stroke-width="3"></path></svg>
+<h3 data-i="f1h">Putzen in deinem Tempo</h3>
+<p data-i="f1">Wischen, schöpfen, skimmen. Jedes saubere Feld bringt Geld, jedes neue Werkzeug eine breitere Bahn. Vom Schwamm bis zum Küstenwachboot.</p>
+</article>
+<article class="feat">
+<svg aria-hidden="true" viewbox="0 0 64 64"><circle cx="32" cy="32" fill="#0b2239" r="30" stroke="#f4efe6" stroke-width="2.5"></circle><path d="M14 34 C22 22 38 22 46 34 C38 46 22 46 14 34Z" fill="#ffd166"></path><path d="M46 34 L56 26 L53 34 L56 42Z" fill="#ffd166"></path><circle cx="21" cy="32" fill="#0b2239" r="2.2"></circle></svg>
+<h3 data-i="f2h">Die Natur kommt zurück</h3>
+<p data-i="f2">Einen Tag nach dem Putzen sind die Fische da. Fotografiere 36 Arten für dein Lexikon, vom Hering bis zum Orca.</p>
+</article>
+<article class="feat">
+<svg aria-hidden="true" viewbox="0 0 64 64"><circle cx="32" cy="32" fill="#0b2239" r="30" stroke="#f4efe6" stroke-width="2.5"></circle><rect fill="#c8a13a" height="28" rx="4" stroke="#f4efe6" stroke-width="2" width="20" x="22" y="18"></rect><path d="M22 26 h20 M22 38 h20" stroke="#0b2239" stroke-width="2.5"></path><path d="M44 16 l-4 8 h5 l-4 8" fill="none" stroke="#ff6b1a" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
+<h3 data-i="f3h">Fässer, Stürme und ein Hafen voller Leben</h3>
+<p data-i="f3">Bring volle Fässer heim, bevor sie auslaufen, und übersteh Stürme. Unterwegs lernst du Oma Greta, Käpt'n Hinnerk und die anderen Leute der Bucht kennen.</p>
+</article>
+<article class="feat">
+<svg aria-hidden="true" viewbox="0 0 64 64"><circle cx="32" cy="32" fill="#0b2239" r="30" stroke="#f4efe6" stroke-width="2.5"></circle><path d="M27 14 h10 v6 l4 6 v20 a3 3 0 0 1 -3 3 h-12 a3 3 0 0 1 -3 -3 v-20 l4 -6z" fill="none" stroke="#7cc4f2" stroke-width="2.5"></path><rect fill="#f4efe6" height="12" rx="1" width="10" x="27" y="30"></rect><text fill="#0b2239" font-family="Georgia,serif" font-size="9" text-anchor="middle" x="32" y="40">L.</text></svg>
+<h3 data-i="f4h">Wer schreibt die Flaschenpost?</h3>
+<p data-i="f4">Briefe von „L.“ treiben an. Sammle sie in deinem Logbuch, finde die fünf Lecks und die Beweise gegen den Ölmagnaten.</p>
+</article>
+<article class="feat">
+<svg aria-hidden="true" viewbox="0 0 64 64"><circle cx="32" cy="32" fill="#0b2239" r="30" stroke="#f4efe6" stroke-width="2.5"></circle><path d="M12 36 h16 l-3 6 h-10z M36 36 h16 l-3 6 h-10z" fill="#ff6b1a"></path><path d="M14 24 h12 l-2 6 h-8z M38 24 h12 l-2 6 h-8z" fill="#f4efe6"></path></svg>
+<h3 data-i="f5h">Zusammen putzen</h3>
+<p data-i="f5">Allein oder mit bis zu drei Freunden im Online-Koop. Jeder fährt sein eigenes Boot, der Host entscheidet, ob ihr Geld und Ausrüstung teilt.</p>
+</article>
+</div>
+</div></section>
+<section class="block band"><div class="wrap">
+<h2 data-i="h-facts">Auf einen Blick</h2>
+<dl class="facts">
+<div class="fact"><dt data-i="k1">Genre</dt><dd data-i="v1">Gemütliche Putz- und Aufbau-Simulation</dd></div>
+<div class="fact"><dt data-i="k2">Plattform</dt><dd data-i="v2">PC (Windows) über Steam, Steam Deck geplant</dd></div>
+<div class="fact"><dt data-i="k3">Spieler</dt><dd data-i="v3">1 bis 4, Online-Koop</dd></div>
+<div class="fact"><dt data-i="k4">Spielzeit</dt><dd data-i="v4">Rund 25 bis 30 Stunden bis zum Finale</dd></div>
+<div class="fact"><dt data-i="k5">Sprachen</dt><dd data-i="v5">Deutsch, Englisch, Französisch, Spanisch, Italienisch, Polnisch, Portugiesisch (BR), Russisch, Türkisch, Japanisch, Koreanisch, Chinesisch</dd></div>
+<div class="fact"><dt data-i="k6">Veröffentlichung</dt><dd data-i="v6">Vollversion, kein Early Access. Datum folgt.</dd></div>
+<div class="fact"><dt data-i="k7">Demo</dt><dd data-i="v7">Steam Next Fest, 22. Februar bis 1. März 2027</dd></div>
+<div class="fact"><dt data-i="k8">Studio</dt><dd data-i="v8">Odd Bean Games, Deutschland</dd></div>
+</dl>
+</div></section>
+<section class="block"><div class="wrap">
+<h2 data-i="h-road">Wie es weitergeht</h2>
+<ol class="road">
+<li class="now"><span class="when" data-i="r1w">Dezember 2026</span><span data-i="r1">Steam-Seite mit Spielbildern und Trailer. Ab dann kannst du das Spiel auf die Wunschliste setzen.</span></li>
+<li><span class="when" data-i="r2w">Februar 2027</span><span data-i="r2">Kostenlose Demo beim Steam Next Fest vom 22. Februar bis 1. März.</span></li>
+<li><span class="when" data-i="r3w">Danach</span><span data-i="r3">Das fertige Spiel. Wer es auf der Wunschliste hat, bekommt von Steam eine Nachricht, sobald es erscheint.</span></li>
+</ol>
+</div></section>
+<section class="block" style="padding-top:0"><div class="wrap">
+<h2 data-i="h-faq">Fragen</h2>
+<div class="faq">
+<details><summary data-i="q1">Gibt es eine Demo?</summary><p data-i="a1">Ja. Beim Steam Next Fest vom 22. Februar bis 1. März 2027 kannst du den Anfang kostenlos spielen.</p></details>
+<details><summary data-i="q2">Kann ich allein spielen?</summary><p data-i="a2">Ja, das ganze Spiel. Koop mit bis zu drei Freunden ist eine Möglichkeit, keine Pflicht.</p></details>
+<details><summary data-i="q3">Läuft es auf dem Steam Deck?</summary><p data-i="a3">Das ist das Ziel. Das Spiel wird komplett mit Controller spielbar, wir lassen es von Valve prüfen.</p></details>
+<details><summary data-i="q4">Kommt es auf Konsolen?</summary><p data-i="a4">Zuerst erscheint es für PC über Steam. Mehr dazu, wenn es so weit ist.</p></details>
+<details><summary data-i="q5">Wer macht das Spiel?</summary><p data-i="a5">Odd Bean Games, ein kleines Studio aus Deutschland.</p></details>
+</div>
+</div></section>
+<section class="block band"><div class="wrap final">
+<h2 data-i="h-final">Setz es auf deine Wunschliste</h2>
+<p data-i="final">Für ein kleines Studio zählt jede Wunschliste. Steam zeigt das Spiel dann mehr Leuten, und du bekommst eine Nachricht, sobald die Demo und das Spiel da sind.</p>
+<a class="btn btn-main js-steam" href="https://store.steampowered.com/" rel="noopener"><span data-i="wish2">Jetzt auf die Wunschliste</span></a>
+<p style="font-size:14px"><span data-i="press">Presse und Creator:</span> <a href="mailto:presse@oddbeangames.de" id="mail">presse@oddbeangames.de</a> · <a data-i="kl2" href="/kontakt/">Kontaktformular</a></p>
+<div class="follow"><span data-i="follow">Folg uns</span><div class="social"><a aria-label="TikTok: @clean.the.bay.odd" href="https://www.tiktok.com/@clean.the.bay.odd" rel="noopener" target="_blank" title="TikTok"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M15.2 2.5c.4 2.5 1.9 4 4.6 4.3v3.2c-1.6 0-3.1-.5-4.5-1.4v6.6c0 3.5-2.7 6.3-6.2 6.3S3 18.7 3 15.3c0-3.5 3-6.2 6.6-5.8v3.3c-1.7-.4-3.3.8-3.3 2.4 0 1.4 1.2 2.6 2.6 2.6 1.6 0 2.7-1.2 2.7-2.9V2.5h3.6z" fill="currentColor"></path></svg></a><a aria-label="Instagram: @oddbeangames" href="https://www.instagram.com/oddbeangames/" rel="noopener" target="_blank" title="Instagram"><svg aria-hidden="true" viewbox="0 0 24 24"><rect fill="none" height="18" rx="5" stroke="currentColor" stroke-width="2.2" width="18" x="3" y="3"></rect><circle cx="12" cy="12" fill="none" r="4.2" stroke="currentColor" stroke-width="2.2"></circle><circle cx="17.4" cy="6.6" fill="currentColor" r="1.4"></circle></svg></a><a aria-label="X: @oddbeangames" href="https://x.com/oddbeangames" rel="noopener" target="_blank" title="X"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M3 3h5.6l12.4 18h-5.6z" fill="currentColor"></path><path d="M20.2 3.6l-6.9 7.9M10.6 13.5l-6.9 7.9" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path></svg></a></div></div>
+</div></section>
+<footer><div class="wrap">
+<img alt="Odd Bean Games" class="studio" height="65" loading="lazy" src="/img/oddbean.webp" width="260"/>
+<nav aria-label="Rechtliches und Links">
+<a class="js-steam" href="https://store.steampowered.com/" rel="noopener">Steam</a>
+<a data-i="kl" href="/kontakt/">Kontakt</a>
+<a data-i="iml" href="/impressum/">Impressum</a>
+<a data-i="dsl" href="/datenschutz/">Datenschutz</a>
+</nav>
+<div class="social"><a aria-label="TikTok: @clean.the.bay.odd" href="https://www.tiktok.com/@clean.the.bay.odd" rel="noopener" target="_blank" title="TikTok"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M15.2 2.5c.4 2.5 1.9 4 4.6 4.3v3.2c-1.6 0-3.1-.5-4.5-1.4v6.6c0 3.5-2.7 6.3-6.2 6.3S3 18.7 3 15.3c0-3.5 3-6.2 6.6-5.8v3.3c-1.7-.4-3.3.8-3.3 2.4 0 1.4 1.2 2.6 2.6 2.6 1.6 0 2.7-1.2 2.7-2.9V2.5h3.6z" fill="currentColor"></path></svg></a><a aria-label="Instagram: @oddbeangames" href="https://www.instagram.com/oddbeangames/" rel="noopener" target="_blank" title="Instagram"><svg aria-hidden="true" viewbox="0 0 24 24"><rect fill="none" height="18" rx="5" stroke="currentColor" stroke-width="2.2" width="18" x="3" y="3"></rect><circle cx="12" cy="12" fill="none" r="4.2" stroke="currentColor" stroke-width="2.2"></circle><circle cx="17.4" cy="6.6" fill="currentColor" r="1.4"></circle></svg></a><a aria-label="X: @oddbeangames" href="https://x.com/oddbeangames" rel="noopener" target="_blank" title="X"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M3 3h5.6l12.4 18h-5.6z" fill="currentColor"></path><path d="M20.2 3.6l-6.9 7.9M10.6 13.5l-6.9 7.9" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path></svg></a></div>
+<span>© 2026 Odd Bean Games</span>
+</div></footer>
 </main>
-
-<div id="impressum" class="legal" hidden><div class="wrap">
-  <a class="back" href="#">← Zurück zur Startseite</a>
-  <h1>Impressum</h1>
-  <h2>Angaben gemäß § 5 DDG</h2>
-  <p>Kevin Luchmann<br>Odd Bean Games<br>Geitherstrasse 14<br>67435 Neustadt an der Weinstraße<br>Deutschland</p>
-  <h2>Kontakt</h2>
-  <p>E-Mail: <a href="mailto:kontakt@oddbeangames.de">kontakt@oddbeangames.de</a><br>Presse: <a href="mailto:presse@oddbeangames.de">presse@oddbeangames.de</a><br>Kontaktformular: <a href="#kontakt">oddbeangames.de/#kontakt</a></p>
-  <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
-  <p>Kevin Luchmann, Geitherstrasse 14, 67435 Neustadt an der Weinstraße</p>
-  <h2>Verbraucherstreitbeilegung</h2>
-  <p>Wir sind nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+<div class="legal" hidden="" id="impressum"><div class="wrap">
+<a class="back" href="/">← Zurück zur Startseite</a>
+<h1>Impressum</h1>
+<h2>Angaben gemäß § 5 DDG</h2>
+<p>Kevin Luchmann<br/>Odd Bean Games<br/>Geitherstrasse 14<br/>67435 Neustadt an der Weinstraße<br/>Deutschland</p>
+<h2>Kontakt</h2>
+<p>E-Mail: <a href="mailto:kontakt@oddbeangames.de">kontakt@oddbeangames.de</a><br/>Presse: <a href="mailto:presse@oddbeangames.de">presse@oddbeangames.de</a><br/>Kontaktformular: <a href="/kontakt/">oddbeangames.de/kontakt</a></p>
+<h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
+<p>Kevin Luchmann, Geitherstrasse 14, 67435 Neustadt an der Weinstraße</p>
+<h2>Verbraucherstreitbeilegung</h2>
+<p>Wir sind nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
 </div></div>
-
-<div id="kontakt" class="legal" hidden><div class="wrap">
-  <a class="back" href="#" data-i="k-back">← Zurück zur Startseite</a>
-  <h1 data-i="k-h">Kontakt</h1>
-  <p data-i="k-intro">Fragen zum Spiel, ein Fehler, eine Idee oder eine Anfrage als Creator? Schreib uns. Wir antworten meistens innerhalb von ein paar Tagen.</p>
-  <form class="kform" id="kform" novalidate>
-    <div class="krow">
-      <div class="kf"><label for="k-name"><span data-i="k-name">Name</span> *</label><input id="k-name" name="fi-sender-fullName" autocomplete="name" maxlength="60" required></div>
-      <div class="kf"><label for="k-mail"><span data-i="k-mail">E-Mail für die Antwort</span> *</label><input id="k-mail" name="fi-sender-email" type="email" autocomplete="email" maxlength="120" required></div>
-    </div>
-    <div class="krow">
-      <div class="kf"><label for="k-tag"><span data-i="k-tag">Gamertag</span> <i data-i="k-opt">(freiwillig)</i></label><input id="k-tag" name="fi-text-gamertag" maxlength="40" autocomplete="off"><small data-i="k-taghint">Steam, Discord oder ein anderer Name, unter dem du spielst.</small></div>
-      <div class="kf"><label for="k-topic"><span data-i="k-topic">Worum geht es?</span> *</label>
-        <select id="k-topic" name="fi-text-thema" required>
-          <option value="" data-i="k-t0">Bitte wählen</option>
-          <option value="Frage zum Spiel" data-i="k-t1">Frage zum Spiel</option>
-          <option value="Fehler im Spiel" data-i="k-t2">Fehler im Spiel</option>
-          <option value="Idee oder Rückmeldung" data-i="k-t3">Idee oder Rückmeldung</option>
-          <option value="Presse oder Creator" data-i="k-t4">Presse oder Creator</option>
-          <option value="Zusammenarbeit" data-i="k-t5">Zusammenarbeit</option>
-          <option value="Etwas anderes" data-i="k-t6">Etwas anderes</option>
-        </select></div>
-    </div>
-    <div class="kf"><label for="k-text"><span data-i="k-text">Deine Nachricht</span> *</label><textarea id="k-text" name="fi-text-nachricht" maxlength="2500" required></textarea>
-      <div class="kcount" id="k-count"><span data-i="k-limit">Höchstens 300 Wörter, höchstens 3 Links.</span><span id="k-num">0 / 300</span></div></div>
-    <div class="ktrap" aria-hidden="true"><label for="k-gotcha">Nicht ausfüllen</label><input id="k-gotcha" name="_gotcha" tabindex="-1" autocomplete="off"></div>
-    <p class="knote"><span data-i="k-privacy">Mit dem Absenden gehen deine Angaben an unseren Formular-Dienst Forminit, der sie an uns weiterleitet. Mehr dazu im</span> <a href="#datenschutz" data-i="k-privlink">Datenschutz</a>.</p>
-    <div class="ksend"><button type="submit" class="btn btn-main" id="k-btn"><span data-i="k-send">Nachricht senden</span></button><span class="knote" id="k-wait" hidden></span></div>
-    <p class="kmsg" id="k-msg" role="status" aria-live="polite" hidden></p>
-  </form>
-  <noscript><p class="knote" style="margin-top:14px">Das Formular braucht JavaScript. Schreib uns sonst an kontakt@oddbeangames.de.</p></noscript>
+<div class="legal" hidden="" id="kontakt"><div class="wrap">
+<a class="back" data-i="k-back" href="/">← Zurück zur Startseite</a>
+<h1 data-i="k-h">Kontakt</h1>
+<p data-i="k-intro">Fragen zum Spiel, ein Fehler, eine Idee oder eine Anfrage als Creator? Schreib uns. Wir antworten meistens innerhalb von ein paar Tagen.</p>
+<form class="kform" id="kform" novalidate="">
+<div class="krow">
+<div class="kf"><label for="k-name"><span data-i="k-name">Name</span> *</label><input autocomplete="name" id="k-name" maxlength="60" name="fi-sender-fullName" required=""/></div>
+<div class="kf"><label for="k-mail"><span data-i="k-mail">E-Mail für die Antwort</span> *</label><input autocomplete="email" id="k-mail" maxlength="120" name="fi-sender-email" required="" type="email"/></div>
+</div>
+<div class="krow">
+<div class="kf"><label for="k-tag"><span data-i="k-tag">Gamertag</span> <i data-i="k-opt">(freiwillig)</i></label><input autocomplete="off" id="k-tag" maxlength="40" name="fi-text-gamertag"/><small data-i="k-taghint">Steam, Discord oder ein anderer Name, unter dem du spielst.</small></div>
+<div class="kf"><label for="k-topic"><span data-i="k-topic">Worum geht es?</span> *</label>
+<select id="k-topic" name="fi-text-thema" required="">
+<option data-i="k-t0" value="">Bitte wählen</option>
+<option data-i="k-t1" value="Frage zum Spiel">Frage zum Spiel</option>
+<option data-i="k-t2" value="Fehler im Spiel">Fehler im Spiel</option>
+<option data-i="k-t3" value="Idee oder Rückmeldung">Idee oder Rückmeldung</option>
+<option data-i="k-t4" value="Presse oder Creator">Presse oder Creator</option>
+<option data-i="k-t5" value="Zusammenarbeit">Zusammenarbeit</option>
+<option data-i="k-t6" value="Etwas anderes">Etwas anderes</option>
+</select></div>
+</div>
+<div class="kf"><label for="k-text"><span data-i="k-text">Deine Nachricht</span> *</label><textarea id="k-text" maxlength="2500" name="fi-text-nachricht" required=""></textarea>
+<div class="kcount" id="k-count"><span data-i="k-limit">Höchstens 300 Wörter, höchstens 3 Links.</span><span id="k-num">0 / 300</span></div></div>
+<div aria-hidden="true" class="ktrap"><label for="k-gotcha">Nicht ausfüllen</label><input autocomplete="off" id="k-gotcha" name="_gotcha" tabindex="-1"/></div>
+<p class="knote"><span data-i="k-privacy">Mit dem Absenden gehen deine Angaben an unseren Formular-Dienst Forminit, der sie an uns weiterleitet. Mehr dazu im</span> <a data-i="k-privlink" href="/datenschutz/">Datenschutz</a>.</p>
+<div class="ksend"><button class="btn btn-main" id="k-btn" type="submit"><span data-i="k-send">Nachricht senden</span></button><span class="knote" hidden="" id="k-wait"></span></div>
+<p aria-live="polite" class="kmsg" hidden="" id="k-msg" role="status"></p>
+</form>
+<noscript><p class="knote" style="margin-top:14px">Das Formular braucht JavaScript. Schreib uns sonst an kontakt@oddbeangames.de.</p></noscript>
 </div></div>
-
-<div id="datenschutz" class="legal" hidden><div class="wrap">
-  <a class="back" href="#">← Zurück zur Startseite</a>
-  <h1>Datenschutz</h1>
-  <p>Stand: 15. November 2026</p>
-  <h2>1. Wer ist verantwortlich?</h2>
-  <p>Kevin Luchmann, Odd Bean Games, Geitherstrasse 14, 67435 Neustadt an der Weinstraße, Deutschland, E-Mail: <a href="mailto:kontakt@oddbeangames.de">kontakt@oddbeangames.de</a></p>
-  <h2>2. Das Wichtigste in Kürze</h2>
-  <p>Diese Seite setzt keine Cookies, nutzt keine Analyse- oder Werbedienste und lädt keine Inhalte von anderen Anbietern. Schriften und Bilder liegen auf unserem eigenen Server. Links zu Steam und zu unseren Profilen bei TikTok, Instagram und X sind einfache Links mit eigenen Symbolen. Von diesen Anbietern wird beim Besuch unserer Seite nichts geladen. Erst wenn du einen Link anklickst, verlässt du unsere Seite, dann gilt die Datenschutzerklärung des jeweiligen Anbieters. Das Kontaktformular sendet erst etwas, wenn du auf „Nachricht senden“ drückst.</p>
-  <h2>3. Hosting und Server-Protokolle</h2>
-  <p>Die Seite liegt bei GitHub Pages, einem Dienst der GitHub, Inc. (USA). Beim Aufruf verarbeitet GitHub technisch diese Daten: deine IP-Adresse, Datum und Uhrzeit, die aufgerufene Seite, die Seite, von der du kommst (Referrer), Browser und Browserversion sowie dein Betriebssystem. Das ist nötig, um die Seite auszuliefern, Fehler zu erkennen und sie vor Angriffen zu schützen (Art. 6 Abs. 1 lit. f DSGVO). Wir selbst bekommen diese Daten nicht und führen sie auch nicht mit anderen Daten zusammen. Für die Übermittlung in die USA beruft sich GitHub in seiner Datenschutzerklärung auf das EU-US Data Privacy Framework. Mehr dazu in der Datenschutzerklärung von GitHub. Die Adressen oddbeangames.de und oddbeangames.com sind bei der STRATO GmbH (Berlin) registriert, oddbeangames.com leitet nur weiter.</p>
-  <h2>4. Verschlüsselte Verbindung</h2>
-  <p>Die Seite läuft nur über eine verschlüsselte Verbindung (https, TLS). Was du an uns schickst, zum Beispiel über das Kontaktformular, kann unterwegs niemand mitlesen. Du erkennst das an „https://“ und am Schloss in der Adresszeile deines Browsers.</p>
-  <h2>5. Kontaktformular und E-Mail</h2>
-  <p>Wenn du das Kontaktformular nutzt, erhalten wir deinen Namen, deine E-Mail-Adresse, das Thema, deine Nachricht und, falls du ihn angibst, deinen Gamertag. Wir nutzen diese Angaben nur, um deine Anfrage zu bearbeiten und dir zu antworten (Art. 6 Abs. 1 lit. b DSGVO, wenn es um einen Vertrag oder eine Anfrage dazu geht, sonst Art. 6 Abs. 1 lit. f DSGVO, unser Interesse, Anfragen zu beantworten).</p>
-  <p>Das Formular läuft über Forminit, einen Dienst der UXPLUS LTD, London, Großbritannien. Wenn du auf „Nachricht senden“ drückst, gehen deine Angaben und technisch deine IP-Adresse an Forminit. Forminit speichert die Nachricht auf Servern von Amazon Web Services in Irland, prüft sie auf Spam und schickt sie uns per E-Mail. Mit Forminit besteht ein Vertrag zur Auftragsverarbeitung. Für Großbritannien hat die EU-Kommission ein angemessenes Datenschutzniveau festgestellt (Angemessenheitsbeschluss).</p>
-  <p>Wenn du uns direkt per E-Mail schreibst, läuft nichts über Forminit. In beiden Fällen löschen wir deine Nachricht, wenn deine Anfrage erledigt ist, spätestens nach 6 Monaten, außer wir müssen sie aus gesetzlichen Gründen länger aufbewahren.</p>
-  <h2>6. Im Spiel: „Fehler melden“ und „Rückmeldung“</h2>
-  <p>Im Spiel kannst du uns Fehler und deine Meinung schicken. Gesendet wird nur, wenn du selbst auf „Senden“ drückst (Art. 6 Abs. 1 lit. a DSGVO). Wir erhalten deinen Text, die Kategorie und technische Spielinfos (Spielversion, Sprache, Gebiet im Spiel, Spielzeit, Betriebssystem, Grafikkarte, Auflösung, Maus oder Controller). Wir erhalten keinen Namen, keine Steam-ID, keine Spielstände und keine Dateien. Wenn du freiwillig eine E-Mail-Adresse angibst, nutzen wir sie nur für eine Antwort.</p>
-  <p>Die Meldung läuft über einen Dienst von Cloudflare, Inc. (USA), der sie weiterleitet, und wird in einem privaten Speicher bei GitHub, Inc. (USA) abgelegt. Beide Anbieter verarbeiten dabei technisch auch deine IP-Adresse, wir speichern sie nicht. Für die Übermittlung in die USA berufen sich beide Anbieter in ihren Datenschutzerklärungen auf das EU-US Data Privacy Framework. Wir löschen die Meldungen spätestens nach 12 Monaten.</p>
-  <h2>7. Steam</h2>
-  <p>Das Spiel wird über Steam von Valve Corporation (USA) verkauft und gestartet. Was Steam dabei verarbeitet, regelt die Datenschutzerklärung von Valve.</p>
-  <h2>8. Wie lange wir Daten speichern</h2>
-  <p>Wo oben keine eigene Frist steht, behalten wir Daten nur so lange, wie wir sie für den jeweiligen Zweck brauchen. Wenn du die Löschung verlangst oder eine Einwilligung widerrufst, löschen wir deine Daten. Ausnahme: Ein Gesetz verpflichtet uns, sie länger aufzubewahren, zum Beispiel wegen steuerlicher Fristen. Dann löschen wir sie, sobald diese Frist vorbei ist.</p>
-  <h2>9. Deine Rechte</h2>
-  <p>Du kannst jederzeit kostenlos von uns verlangen:</p>
-  <ul>
-    <li><b>Auskunft</b>, welche Daten wir über dich haben, woher sie stammen, an wen sie gehen und wofür wir sie nutzen (Art. 15 DSGVO),</li>
-    <li><b>Berichtigung</b> falscher Daten (Art. 16 DSGVO),</li>
-    <li><b>Löschung</b> deiner Daten (Art. 17 DSGVO),</li>
-    <li><b>Einschränkung der Verarbeitung</b>, zum Beispiel solange wir prüfen, ob deine Daten stimmen, oder wenn du sie für Rechtsansprüche noch brauchst, wir aber nicht mehr (Art. 18 DSGVO),</li>
-    <li><b>Herausgabe deiner Daten</b> in einem gängigen, maschinenlesbaren Format, auf Wunsch auch direkt an jemand anderen, soweit das technisch geht (Art. 20 DSGVO).</li>
-  </ul>
-  <p>Eine Einwilligung kannst du jederzeit widerrufen. Das gilt für die Zukunft, was bis dahin passiert ist, bleibt rechtmäßig. Schreib uns für alles davon einfach eine E-Mail an <a href="mailto:kontakt@oddbeangames.de">kontakt@oddbeangames.de</a>.</p>
-  <p>Du kannst dich außerdem bei einer Datenschutz-Aufsichtsbehörde beschweren, vor allem in dem EU-Land, in dem du wohnst oder arbeitest. Für uns zuständig ist: Der Landesbeauftragte für den Datenschutz und die Informationsfreiheit Rheinland-Pfalz, Hintere Bleiche 34, 55116 Mainz, <a href="https://www.datenschutz.rlp.de" rel="noopener">www.datenschutz.rlp.de</a>.</p>
-  <h2>10. Dein Widerspruchsrecht (Art. 21 DSGVO)</h2>
-  <div class="box">
-    <p><b>Wo wir Daten auf Grundlage unseres berechtigten Interesses verarbeiten (Art. 6 Abs. 1 lit. f DSGVO), kannst du dem jederzeit widersprechen, wenn sich das aus deiner besonderen Situation ergibt.</b> Welche Verarbeitungen das sind, steht bei den einzelnen Punkten oben. Nach einem Widerspruch verarbeiten wir deine Daten dafür nicht mehr, außer wir können zwingende schutzwürdige Gründe nachweisen, die deine Interessen überwiegen, oder wir brauchen die Daten, um Rechtsansprüche geltend zu machen, auszuüben oder uns zu verteidigen.</p>
-    <p><b>Werbung:</b> Wir nutzen deine Daten nicht für Werbung. Solltest du trotzdem einmal Werbung von uns bekommen, kannst du dem jederzeit ohne Begründung widersprechen, und wir nutzen deine Daten dafür nicht mehr.</p>
-    <p>Ein formloser Widerspruch per E-Mail an <a href="mailto:kontakt@oddbeangames.de">kontakt@oddbeangames.de</a> genügt.</p>
-  </div>
+<div class="legal" hidden="" id="datenschutz"><div class="wrap">
+<a class="back" href="/">← Zurück zur Startseite</a>
+<h1>Datenschutz</h1>
+<p>Stand: 15. November 2026</p>
+<h2>1. Wer ist verantwortlich?</h2>
+<p>Kevin Luchmann, Odd Bean Games, Geitherstrasse 14, 67435 Neustadt an der Weinstraße, Deutschland, E-Mail: <a href="mailto:kontakt@oddbeangames.de">kontakt@oddbeangames.de</a></p>
+<h2>2. Das Wichtigste in Kürze</h2>
+<p>Diese Seite setzt keine Cookies, nutzt keine Analyse- oder Werbedienste und lädt keine Inhalte von anderen Anbietern. Schriften und Bilder liegen auf unserem eigenen Server. Links zu Steam und zu unseren Profilen bei TikTok, Instagram und X sind einfache Links mit eigenen Symbolen. Von diesen Anbietern wird beim Besuch unserer Seite nichts geladen. Erst wenn du einen Link anklickst, verlässt du unsere Seite, dann gilt die Datenschutzerklärung des jeweiligen Anbieters. Das Kontaktformular sendet erst etwas, wenn du auf „Nachricht senden“ drückst.</p>
+<h2>3. Hosting und Server-Protokolle</h2>
+<p>Die Seite liegt bei GitHub Pages, einem Dienst der GitHub, Inc. (USA). Beim Aufruf verarbeitet GitHub technisch diese Daten: deine IP-Adresse, Datum und Uhrzeit, die aufgerufene Seite, die Seite, von der du kommst (Referrer), Browser und Browserversion sowie dein Betriebssystem. Das ist nötig, um die Seite auszuliefern, Fehler zu erkennen und sie vor Angriffen zu schützen (Art. 6 Abs. 1 lit. f DSGVO). Wir selbst bekommen diese Daten nicht und führen sie auch nicht mit anderen Daten zusammen. Für die Übermittlung in die USA beruft sich GitHub in seiner Datenschutzerklärung auf das EU-US Data Privacy Framework. Mehr dazu in der Datenschutzerklärung von GitHub. Die Adressen oddbeangames.de und oddbeangames.com sind bei der STRATO GmbH (Berlin) registriert, oddbeangames.com leitet nur weiter.</p>
+<h2>4. Verschlüsselte Verbindung</h2>
+<p>Die Seite läuft nur über eine verschlüsselte Verbindung (https, TLS). Was du an uns schickst, zum Beispiel über das Kontaktformular, kann unterwegs niemand mitlesen. Du erkennst das an „https://“ und am Schloss in der Adresszeile deines Browsers.</p>
+<h2>5. Kontaktformular und E-Mail</h2>
+<p>Wenn du das Kontaktformular nutzt, erhalten wir deinen Namen, deine E-Mail-Adresse, das Thema, deine Nachricht und, falls du ihn angibst, deinen Gamertag. Wir nutzen diese Angaben nur, um deine Anfrage zu bearbeiten und dir zu antworten (Art. 6 Abs. 1 lit. b DSGVO, wenn es um einen Vertrag oder eine Anfrage dazu geht, sonst Art. 6 Abs. 1 lit. f DSGVO, unser Interesse, Anfragen zu beantworten).</p>
+<p>Das Formular läuft über Forminit, einen Dienst der UXPLUS LTD, London, Großbritannien. Wenn du auf „Nachricht senden“ drückst, gehen deine Angaben und technisch deine IP-Adresse an Forminit. Forminit speichert die Nachricht auf Servern von Amazon Web Services in Irland, prüft sie auf Spam und schickt sie uns per E-Mail. Mit Forminit besteht ein Vertrag zur Auftragsverarbeitung. Für Großbritannien hat die EU-Kommission ein angemessenes Datenschutzniveau festgestellt (Angemessenheitsbeschluss).</p>
+<p>Wenn du uns direkt per E-Mail schreibst, läuft nichts über Forminit. In beiden Fällen löschen wir deine Nachricht, wenn deine Anfrage erledigt ist, spätestens nach 6 Monaten, außer wir müssen sie aus gesetzlichen Gründen länger aufbewahren.</p>
+<h2>6. Im Spiel: „Fehler melden“ und „Rückmeldung“</h2>
+<p>Im Spiel kannst du uns Fehler und deine Meinung schicken. Gesendet wird nur, wenn du selbst auf „Senden“ drückst (Art. 6 Abs. 1 lit. a DSGVO). Wir erhalten deinen Text, die Kategorie und technische Spielinfos (Spielversion, Sprache, Gebiet im Spiel, Spielzeit, Betriebssystem, Grafikkarte, Auflösung, Maus oder Controller). Wir erhalten keinen Namen, keine Steam-ID, keine Spielstände und keine Dateien. Wenn du freiwillig eine E-Mail-Adresse angibst, nutzen wir sie nur für eine Antwort.</p>
+<p>Die Meldung läuft über einen Dienst von Cloudflare, Inc. (USA), der sie weiterleitet, und wird in einem privaten Speicher bei GitHub, Inc. (USA) abgelegt. Beide Anbieter verarbeiten dabei technisch auch deine IP-Adresse, wir speichern sie nicht. Für die Übermittlung in die USA berufen sich beide Anbieter in ihren Datenschutzerklärungen auf das EU-US Data Privacy Framework. Wir löschen die Meldungen spätestens nach 12 Monaten.</p>
+<h2>7. Steam</h2>
+<p>Das Spiel wird über Steam von Valve Corporation (USA) verkauft und gestartet. Was Steam dabei verarbeitet, regelt die Datenschutzerklärung von Valve.</p>
+<h2>8. Wie lange wir Daten speichern</h2>
+<p>Wo oben keine eigene Frist steht, behalten wir Daten nur so lange, wie wir sie für den jeweiligen Zweck brauchen. Wenn du die Löschung verlangst oder eine Einwilligung widerrufst, löschen wir deine Daten. Ausnahme: Ein Gesetz verpflichtet uns, sie länger aufzubewahren, zum Beispiel wegen steuerlicher Fristen. Dann löschen wir sie, sobald diese Frist vorbei ist.</p>
+<h2>9. Deine Rechte</h2>
+<p>Du kannst jederzeit kostenlos von uns verlangen:</p>
+<ul>
+<li><b>Auskunft</b>, welche Daten wir über dich haben, woher sie stammen, an wen sie gehen und wofür wir sie nutzen (Art. 15 DSGVO),</li>
+<li><b>Berichtigung</b> falscher Daten (Art. 16 DSGVO),</li>
+<li><b>Löschung</b> deiner Daten (Art. 17 DSGVO),</li>
+<li><b>Einschränkung der Verarbeitung</b>, zum Beispiel solange wir prüfen, ob deine Daten stimmen, oder wenn du sie für Rechtsansprüche noch brauchst, wir aber nicht mehr (Art. 18 DSGVO),</li>
+<li><b>Herausgabe deiner Daten</b> in einem gängigen, maschinenlesbaren Format, auf Wunsch auch direkt an jemand anderen, soweit das technisch geht (Art. 20 DSGVO).</li>
+</ul>
+<p>Eine Einwilligung kannst du jederzeit widerrufen. Das gilt für die Zukunft, was bis dahin passiert ist, bleibt rechtmäßig. Schreib uns für alles davon einfach eine E-Mail an <a href="mailto:kontakt@oddbeangames.de">kontakt@oddbeangames.de</a>.</p>
+<p>Du kannst dich außerdem bei einer Datenschutz-Aufsichtsbehörde beschweren, vor allem in dem EU-Land, in dem du wohnst oder arbeitest. Für uns zuständig ist: Der Landesbeauftragte für den Datenschutz und die Informationsfreiheit Rheinland-Pfalz, Hintere Bleiche 34, 55116 Mainz, <a href="https://www.datenschutz.rlp.de" rel="noopener">www.datenschutz.rlp.de</a>.</p>
+<h2>10. Dein Widerspruchsrecht (Art. 21 DSGVO)</h2>
+<div class="box">
+<p><b>Wo wir Daten auf Grundlage unseres berechtigten Interesses verarbeiten (Art. 6 Abs. 1 lit. f DSGVO), kannst du dem jederzeit widersprechen, wenn sich das aus deiner besonderen Situation ergibt.</b> Welche Verarbeitungen das sind, steht bei den einzelnen Punkten oben. Nach einem Widerspruch verarbeiten wir deine Daten dafür nicht mehr, außer wir können zwingende schutzwürdige Gründe nachweisen, die deine Interessen überwiegen, oder wir brauchen die Daten, um Rechtsansprüche geltend zu machen, auszuüben oder uns zu verteidigen.</p>
+<p><b>Werbung:</b> Wir nutzen deine Daten nicht für Werbung. Solltest du trotzdem einmal Werbung von uns bekommen, kannst du dem jederzeit ohne Begründung widersprechen, und wir nutzen deine Daten dafür nicht mehr.</p>
+<p>Ein formloser Widerspruch per E-Mail an <a href="mailto:kontakt@oddbeangames.de">kontakt@oddbeangames.de</a> genügt.</p>
+</div>
 </div></div>
-
 <script>
 (function(){
   /* EINSTELLUNGEN: nach dem Anlegen der Steam-Seite hier die echte Adresse eintragen */
@@ -396,8 +383,13 @@ footer .social svg{width:18px;height:18px}
   if(MAIL){var m=document.getElementById('mail');m.href='mailto:'+MAIL;m.textContent=MAIL;}
 
   /* Seiten: Start, Impressum, Datenschutz */
+  /* Seiten: Auf oddbeangames.de hat jede Seite ihre eigene Adresse (z. B. /impressum/), das steht in data-page.
+     Alte Links mit #impressum werden dorthin weitergeleitet. In der Vorschau ohne eigene Adressen gilt weiter #impressum. */
+  var PAGE=document.documentElement.getAttribute('data-page'), ROUTES=null;
+  try{ ROUTES=JSON.parse(document.documentElement.getAttribute('data-routes')||'null'); }catch(e){}
   function route(){
-    var h=location.hash.replace('#','');
+    var h=PAGE!=null?PAGE:location.hash.replace('#','');
+    if(ROUTES&&PAGE===''&&ROUTES[location.hash.replace('#','')]){ location.replace(ROUTES[location.hash.replace('#','')]); return; }
     var legal=(h==='impressum'||h==='datenschutz'||h==='kontakt');
     var back=route.was&&!legal; route.was=legal;
     document.getElementById('seite').hidden=legal;
@@ -417,7 +409,7 @@ footer .social svg{width:18px;height:18px}
     'h-facts':'At a glance',k1:'Genre',v1:'Cozy cleaning and building sim',k2:'Platform',v2:'PC (Windows) on Steam, Steam Deck planned',k3:'Players',v3:'1 to 4, online co-op',k4:'Playtime',v4:'About 25 to 30 hours to the finale',k5:'Languages',v5:'English, German, French, Spanish, Italian, Polish, Portuguese (BR), Russian, Turkish, Japanese, Korean, Chinese',k6:'Release',v6:'Full release, no Early Access. Date to be announced.',k7:'Demo',v7:'Steam Next Fest, February 22 to March 1, 2027',k8:'Studio',v8:'Odd Bean Games, Germany',
     'h-road':'What’s next',r1w:'December 2026',r1:'Steam page with screenshots and trailer. From then on you can wishlist the game.',r2w:'February 2027',r2:'Free demo at Steam Next Fest, February 22 to March 1.',r3w:'After that',r3:'The finished game. If it’s on your wishlist, Steam lets you know the moment it’s out.',
     'h-faq':'Questions',q1:'Is there a demo?',a1:'Yes. At Steam Next Fest, February 22 to March 1, 2027, you can play the beginning for free.',q2:'Can I play solo?',a2:'Yes, the whole game. Co-op with up to three friends is an option, not a must.',q3:'Does it run on Steam Deck?',a3:'That’s the goal. The game will be fully playable with a controller, and we’ll have Valve review it.',q4:'Is it coming to consoles?',a4:'It launches on PC via Steam first. More when the time comes.',q5:'Who makes the game?',a5:'Odd Bean Games, a small studio from Germany.',
-    'h-final':'Put it on your wishlist',final:'For a small studio, every wishlist counts. Steam shows the game to more people, and you get a message as soon as the demo and the game are out.',wish2:'Wishlist now',press:'Press and creators:',dsl:'Privacy',kl:'Contact',kl2:'Contact form',follow:'Follow us',
+    'h-final':'Put it on your wishlist',final:'For a small studio, every wishlist counts. Steam shows the game to more people, and you get a message as soon as the demo and the game are out.',wish2:'Wishlist now',press:'Press and creators:',dsl:'Privacy',iml:'Legal notice',kl:'Contact',kl2:'Contact form',follow:'Follow us',
     'k-back':'← Back to the start page','k-h':'Contact','k-intro':'Questions about the game, a bug, an idea or a creator request? Write to us. We usually reply within a few days.','k-name':'Name','k-mail':'Email for our reply','k-tag':'Gamertag','k-opt':'(optional)','k-taghint':'Steam, Discord or any other name you play under.','k-topic':'What is it about?','k-t0':'Please choose','k-t1':'Question about the game','k-t2':'Bug in the game','k-t3':'Idea or feedback','k-t4':'Press or creator','k-t5':'Collaboration','k-t6':'Something else','k-text':'Your message','k-limit':'Up to 300 words, up to 3 links.','k-privacy':'When you send this, your details go to our form service Forminit, which forwards them to us. More in the','k-privlink':'privacy policy','k-send':'Send message',
     t1:'First field clean! +100 shells',t2:'The fish are coming back.',t3:'The bay shines. Now the real one?',t4:'Spotless! 100 %'};
   var DE={}; [].forEach.call(document.querySelectorAll('[data-i]'),function(el){DE[el.dataset.i]=el.textContent;});
@@ -481,7 +473,7 @@ footer .social svg{width:18px;height:18px}
   /* Öl wegwischen */
   var cv=document.getElementById('oil'), ctx=cv.getContext('2d'), img=new Image(), ready=false;
   var GX=40, GY=18, grid=new Uint8Array(GX*GY), done=0, shown={};
-  img.src=document.querySelector('meta[name="ctb-hero"]')?document.querySelector('meta[name="ctb-hero"]').content:'img/hero-2400.webp';
+  img.src=document.querySelector('meta[name="ctb-hero"]')?document.querySelector('meta[name="ctb-hero"]').content:'/img/hero-2400.webp';
   /* Größe ändern (z. B. wenn beim Scrollen die Adressleiste am Handy verschwindet): das Gewischte bleibt erhalten.
      Zurückgesetzt wird nur beim Neuladen oder wenn man von einer Unterseite zurückkommt. */
   var painted=false, KP=[0.578125,0.345968,0.141667,0.334677];
@@ -554,7 +546,7 @@ footer .social svg{width:18px;height:18px}
   }
   /* Wasser unter dem Öl, Kajak und Wellen darüber */
   var wc=document.getElementById('water'), wx=wc.getContext('2d'), fc=document.getElementById('fx'), fx=fc.getContext('2d');
-  var KPOS=[0.578125,0.345968,0.141667,0.334677], kimg=new Image(); window.__kimg=kimg; window.__kpos=KPOS; kimg.onload=function(){ if(ready&&!done) size(true); }; kimg.src='img/kajak.webp';
+  var KPOS=[0.578125,0.345968,0.141667,0.334677], kimg=new Image(); window.__kimg=kimg; window.__kpos=KPOS; kimg.onload=function(){ if(ready&&!done) size(true); }; kimg.src='/img/kajak.webp';
   var still=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches, ripples=[], tile=null, pat1=null, pat2=null, vis=true;
   function makeTile(){
     var N=256, c=document.createElement('canvas'); c.width=c.height=N; var g=c.getContext('2d'), im=g.createImageData(N,N), pts=[];

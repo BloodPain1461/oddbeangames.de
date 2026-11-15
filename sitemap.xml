@@ -8,10 +8,52 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://oddbeangames.de/en/"/>
   </url>
   <url>
+    <loc>https://oddbeangames.de/impressum/</loc>
+    <lastmod>2026-11-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://oddbeangames.de/impressum/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://oddbeangames.de/en/legal-notice/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://oddbeangames.de/en/legal-notice/"/>
+  </url>
+  <url>
+    <loc>https://oddbeangames.de/datenschutz/</loc>
+    <lastmod>2026-11-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://oddbeangames.de/datenschutz/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://oddbeangames.de/en/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://oddbeangames.de/en/privacy/"/>
+  </url>
+  <url>
+    <loc>https://oddbeangames.de/kontakt/</loc>
+    <lastmod>2026-11-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://oddbeangames.de/kontakt/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://oddbeangames.de/en/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://oddbeangames.de/en/contact/"/>
+  </url>
+  <url>
     <loc>https://oddbeangames.de/en/</loc>
     <lastmod>2026-11-15</lastmod>
     <xhtml:link rel="alternate" hreflang="de" href="https://oddbeangames.de/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://oddbeangames.de/en/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://oddbeangames.de/en/"/>
+  </url>
+  <url>
+    <loc>https://oddbeangames.de/en/legal-notice/</loc>
+    <lastmod>2026-11-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://oddbeangames.de/impressum/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://oddbeangames.de/en/legal-notice/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://oddbeangames.de/en/legal-notice/"/>
+  </url>
+  <url>
+    <loc>https://oddbeangames.de/en/privacy/</loc>
+    <lastmod>2026-11-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://oddbeangames.de/datenschutz/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://oddbeangames.de/en/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://oddbeangames.de/en/privacy/"/>
+  </url>
+  <url>
+    <loc>https://oddbeangames.de/en/contact/</loc>
+    <lastmod>2026-11-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://oddbeangames.de/kontakt/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://oddbeangames.de/en/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://oddbeangames.de/en/contact/"/>
   </url>
 </urlset>

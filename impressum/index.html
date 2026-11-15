@@ -1,0 +1,770 @@
+<!doctype html>
+<html lang="de" data-page="impressum">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="/img/favicon.png">
+<title>Impressum – Clean the Bay</title>
+<meta name="description" content="Impressum von Odd Bean Games, dem Studio hinter Clean the Bay.">
+<meta property="og:title" content="Clean the Bay">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Clean the Bay">
+<meta property="og:locale" content="de_DE">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@oddbeangames">
+<meta property="og:description" content="Eine Bucht voller Öl. Ein Kajak. Ein Schwamm. Jetzt auf die Steam-Wunschliste.">
+<meta property="og:image" content="https://oddbeangames.de/img/share.jpg">
+<meta property="og:url" content="https://oddbeangames.de/impressum/">
+<link rel="canonical" href="https://oddbeangames.de/impressum/">
+<link rel="alternate" hreflang="de" href="https://oddbeangames.de/impressum/">
+<link rel="alternate" hreflang="en" href="https://oddbeangames.de/en/legal-notice/">
+<link rel="alternate" hreflang="x-default" href="https://oddbeangames.de/en/legal-notice/">
+
+<style>
+/* Layout: Hero zum Wegwischen oben, darunter einspaltige Abschnitte mit Karten, Fakten, FAQ, Fuß mit Impressum. Bewusst nur dunkel (Öl und Nacht). */
+@font-face{font-family:"Barlow Condensed";font-weight:600;font-display:swap;src:url("/fonts/barlow-condensed-latin-600-normal.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Barlow Condensed";font-weight:600;font-display:swap;src:url("/fonts/barlow-condensed-latin-ext-600-normal.woff2") format("woff2");unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Barlow Condensed";font-weight:800;font-display:swap;src:url("/fonts/barlow-condensed-latin-800-normal.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Barlow Condensed";font-weight:800;font-display:swap;src:url("/fonts/barlow-condensed-latin-ext-800-normal.woff2") format("woff2");unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+:root{
+  --oil:#07090c; --navy:#0f1c2b; --navy2:#16283c; --line:#28405a;
+  --cream:#f4efe6; --muted:#b4c0cc; --orange:#ff6b1a; --orange-d:#c94c0c; --sea:#2e8bd6; --sea-l:#7cc4f2;
+  --f-head:"Barlow Condensed","Arial Narrow",Impact,sans-serif;
+  --f-body:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--navy);color:var(--cream);font-family:var(--f-body);font-size:17px;line-height:1.55}
+a{color:var(--sea-l)}
+a:hover{color:var(--cream)}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+h2{font-family:var(--f-head);font-weight:800;font-size:clamp(34px,5vw,52px);line-height:1;letter-spacing:.5px;text-transform:uppercase;margin:0 0 18px;text-wrap:balance}
+h3{font-family:var(--f-head);font-weight:800;font-size:26px;line-height:1.05;letter-spacing:.3px;margin:0 0 8px;text-transform:uppercase}
+p{margin:0}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--f-head);font-weight:800;text-transform:uppercase;letter-spacing:.6px;font-size:22px;text-decoration:none;border-radius:12px;padding:15px 24px;line-height:1}
+.btn-main{background:var(--orange);color:#1b0b02;box-shadow:0 6px 0 var(--orange-d)}
+.btn-main:hover{color:#1b0b02;transform:translateY(-1px);box-shadow:0 7px 0 var(--orange-d)}
+.btn-main:active{transform:translateY(4px);box-shadow:0 2px 0 var(--orange-d)}
+.btn-ghost{color:var(--cream);border:2px solid rgba(244,239,230,.4);padding:13px 20px}
+.btn-ghost:hover{border-color:var(--cream)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--sea-l);outline-offset:3px}
+.top{position:absolute;z-index:5;left:0;right:0;top:0;padding-top:max(14px,env(safe-area-inset-top,0px))}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.studio{height:26px;width:auto;opacity:.9}
+.lang{display:flex;gap:4px;background:rgba(7,9,12,.55);border-radius:999px;padding:4px}
+.lang a{font-size:13px;font-weight:600;color:var(--muted);text-decoration:none;border-radius:999px;padding:5px 10px}
+.lang a:hover{color:var(--cream)}
+.lang a[aria-current=page]{background:var(--cream);color:var(--navy)}
+.langhint{position:absolute;z-index:6;right:max(20px,env(safe-area-inset-right,0px));top:calc(max(14px,env(safe-area-inset-top,0px)) + 46px);font-size:13px;font-weight:600;color:var(--navy);background:var(--sea-l);text-decoration:none;border-radius:999px;padding:5px 12px}
+.langhint:hover{color:var(--navy);background:var(--cream)}
+/* Hero */
+.hero{position:relative;min-height:min(92vh,820px);min-height:min(92svh,820px);display:flex;align-items:flex-end;overflow:hidden;background:var(--oil)}
+.clean{position:absolute;inset:0;background:#1d6fb5}
+#water,#fishc,#fx{position:absolute;inset:0;width:100%;height:100%;display:block}
+#fx,#fishc{pointer-events:none}
+#oil{position:absolute;inset:0;width:100%;height:100%;touch-action:pan-y;cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='34' viewBox='0 0 44 34'%3E%3Crect x='3' y='5' width='38' height='24' rx='6' fill='%23ffd23f' stroke='%23b8870b' stroke-width='3'/%3E%3Ccircle cx='14' cy='14' r='2.5' fill='%23e0a91a'/%3E%3Ccircle cx='27' cy='20' r='3' fill='%23e0a91a'/%3E%3Ccircle cx='32' cy='12' r='2' fill='%23e0a91a'/%3E%3C/svg%3E") 22 17,crosshair}
+.shade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(7,9,12,.88) 0%,rgba(7,9,12,.6) 38%,rgba(7,9,12,0) 70%),linear-gradient(0deg,rgba(15,28,43,1) 0%,rgba(15,28,43,0) 30%)}
+.hero-in{position:relative;z-index:2;width:100%;padding-top:96px;padding-bottom:56px;pointer-events:none}
+.hero-in a,.hero-in button{pointer-events:auto}
+.eyebrow{display:inline-block;font-family:var(--f-head);font-weight:600;font-size:19px;letter-spacing:1px;text-transform:uppercase;background:rgba(255,107,26,.16);border:1px solid rgba(255,107,26,.6);color:#ffb88f;border-radius:999px;padding:4px 14px}
+.logo{display:block;width:min(420px,78vw);height:auto;margin:18px 0 14px}
+.tag{font-size:clamp(19px,2.4vw,24px);max-width:30ch;color:var(--cream);text-wrap:balance}
+.cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:26px;align-items:center}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.chip{font-size:14px;color:var(--cream);background:rgba(15,28,43,.75);border:1px solid var(--line);border-radius:999px;padding:4px 12px}
+.wipe{position:absolute;z-index:3;right:max(20px,env(safe-area-inset-right,0px));bottom:22px;display:flex;flex-direction:column;align-items:flex-end;gap:6px;pointer-events:none;text-align:right}
+.wipe b{font-family:var(--f-head);font-weight:800;font-size:28px;letter-spacing:.5px}
+.wipe>span{font-size:14px;color:var(--muted)}
+.toast{position:absolute;z-index:4;right:max(20px,env(safe-area-inset-right,0px));bottom:92px;background:var(--cream);color:var(--navy);font-family:var(--f-head);font-weight:800;font-size:24px;text-transform:uppercase;padding:10px 18px;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.4);pointer-events:none;text-align:center;max-width:90vw}
+@media (prefers-reduced-motion:no-preference){.toast{animation:pop .35s ease-out}}
+@keyframes pop{from{transform:translateY(10px) scale(.9);opacity:0}to{transform:none;opacity:1}}
+/* Abschnitte */
+section.block{padding:72px 0}
+.pitch{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:40px;align-items:center}
+.pitch p{font-size:19px;color:var(--cream);max-width:62ch}
+.pitch img{width:100%;height:auto;border-radius:14px;border:1px solid var(--line);display:block}
+.cap{font-size:13px;color:var(--muted);margin-top:8px}
+.feats{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:18px}
+.feat{grid-column:span 2}
+.feat:nth-child(n+4){grid-column:span 3}
+.feat{background:var(--navy2);border:1px solid var(--line);border-radius:16px;padding:22px 22px 24px;display:flex;flex-direction:column;gap:6px}
+.feat svg{width:52px;height:52px;margin-bottom:6px}
+.feat p{color:var(--muted);font-size:16px}
+.band{background:var(--oil);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:2px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.fact{background:var(--navy);padding:16px 18px}
+.fact dt{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted)}
+.fact dd{margin:4px 0 0;font-size:17px}
+.road{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.road li{display:grid;grid-template-columns:150px minmax(0,1fr);gap:16px;align-items:baseline;border-left:3px solid var(--line);padding-left:16px}
+.road li.now{border-left-color:var(--orange)}
+.road .when{font-family:var(--f-head);font-weight:800;font-size:22px;text-transform:uppercase;color:var(--sea-l)}
+.road li.now .when{color:var(--orange)}
+.faq{display:grid;gap:10px}
+.faq details{background:var(--navy2);border:1px solid var(--line);border-radius:12px;padding:14px 18px}
+.faq summary{cursor:pointer;font-weight:600;font-size:18px}
+.faq details p{color:var(--muted);margin-top:8px}
+.final{text-align:center;display:flex;flex-direction:column;align-items:center;gap:18px}
+.final p{color:var(--muted);max-width:52ch}
+footer{border-top:1px solid var(--line);padding:34px 0 calc(34px + env(safe-area-inset-bottom,0px));color:var(--muted);font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:16px 28px;align-items:center;justify-content:space-between}
+footer nav{display:flex;flex-wrap:wrap;gap:8px 18px}
+footer a{color:var(--muted)}
+/* Social-Media-Knöpfe: einfache Links mit eigenen Symbolen, nichts wird von den Plattformen geladen */
+.follow{display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:6px}
+.follow>span{font-family:var(--f-head);font-weight:800;font-size:20px;letter-spacing:.6px;text-transform:uppercase;color:var(--cream)}
+.social{display:flex;gap:14px;justify-content:center}
+.social a{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:var(--navy2);border:1px solid var(--line);color:var(--cream);transition:background .15s,color .15s,transform .15s}
+.social a:hover{background:var(--orange);border-color:var(--orange);color:#1b0b02;transform:translateY(-2px)}
+.social svg{width:24px;height:24px}
+footer .social{gap:8px}
+footer .social a{width:38px;height:38px;color:var(--muted)}
+footer .social svg{width:18px;height:18px}
+/* Rechtliches */
+.legal{padding:110px 0 60px}
+.legal .wrap{max-width:820px}
+.legal h1{font-family:var(--f-head);font-weight:800;font-size:48px;text-transform:uppercase;margin:0 0 18px}
+.legal h2{font-size:28px;margin:30px 0 8px}
+.legal p,.legal li{color:var(--cream);font-size:16px;margin:0 0 10px}
+.legal .box{border:1px solid var(--line);border-left:4px solid var(--orange);border-radius:10px;padding:14px 16px 6px;margin:6px 0 12px;background:rgba(255,107,26,.06)}
+.legal .todo{background:rgba(255,107,26,.18);border-radius:4px;padding:0 4px;color:#ffc7a8}
+.back{display:inline-block;margin-bottom:20px}
+/* Kontaktformular */
+.kform{display:grid;gap:18px;margin-top:26px;background:var(--navy2);border:1px solid var(--line);border-radius:16px;padding:24px}
+.krow{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.kf{display:flex;flex-direction:column;gap:6px;min-width:0}
+.kf label{font-weight:600;font-size:15px}
+.kf label i{font-style:normal;font-weight:400;color:var(--muted)}
+.kf input,.kf select,.kf textarea{font:inherit;font-size:16px;color:var(--cream);background:var(--navy);border:1.5px solid var(--line);border-radius:10px;padding:11px 12px;width:100%}
+.kf textarea{min-height:190px;resize:vertical;line-height:1.5}
+.kf input:focus,.kf select:focus,.kf textarea:focus{outline:none;border-color:var(--sea-l);box-shadow:0 0 0 3px rgba(124,196,242,.25)}
+.kf small{font-size:13px;color:var(--muted)}
+.kcount{display:flex;justify-content:space-between;gap:12px;font-size:13px;color:var(--muted)}
+.kcount.over{color:#ffb88f;font-weight:600}
+.ktrap{position:absolute!important;left:-9999px!important;width:1px;height:1px;overflow:hidden}
+.ksend{display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px}
+.ksend button{border:0;cursor:pointer}
+.ksend button[disabled]{opacity:.5;cursor:not-allowed;transform:none}
+.knote{font-size:14px;color:var(--muted);margin:0}
+.kmsg{border-radius:10px;padding:12px 14px;font-size:15px;margin:0}
+.kmsg.ok{background:rgba(46,139,214,.18);border:1px solid var(--sea)}
+.kmsg.err{background:rgba(255,107,26,.14);border:1px solid rgba(255,107,26,.6)}
+@media (max-width:640px){.krow{grid-template-columns:1fr}.kform{padding:18px}}
+@media (max-width:900px){.feats{grid-template-columns:1fr}.feat,.feat:nth-child(n+4){grid-column:auto}}
+@media (max-width:760px){.toast{right:auto;left:20px;bottom:110px;font-size:20px}.eyebrow{font-size:15px}.pitch{grid-template-columns:1fr}.road li{grid-template-columns:1fr;gap:2px}.hero{min-height:88vh;min-height:88svh}.wipe{left:20px;right:auto;align-items:flex-start;text-align:left;bottom:14px}.hero-in{padding-bottom:96px}}
+</style>
+</head>
+<body>
+<main id="seite">
+<header class="top"><div class="wrap">
+<img alt="Odd Bean Games" class="studio" height="65" src="/img/oddbean.webp" width="260"/>
+<div aria-label="Sprache / Language" class="lang" role="group">
+<a aria-current="page" href="/impressum/" hreflang="de" id="l-de" lang="de">DE</a>
+<a href="/en/legal-notice/" hreflang="en" id="l-en" lang="en">EN</a>
+</div>
+</div></header>
+<a class="langhint" hidden="" href="/en/legal-notice/" hreflang="en" id="langhint" lang="en">English version →</a>
+<section aria-labelledby="titel" class="hero">
+<div aria-hidden="true" class="clean">
+<canvas id="water"></canvas>
+<canvas id="fishc"></canvas>
+</div>
+<canvas aria-label="Ölteppich zum Wegwischen" id="oil" role="img"></canvas>
+<canvas aria-hidden="true" id="fx"></canvas>
+<div aria-hidden="true" class="shade"></div>
+<div class="toast" hidden="" id="toast"></div>
+<div class="hero-in"><div class="wrap">
+<span class="eyebrow" data-i="eyebrow">Demo beim Steam Next Fest · 22. Feb. – 1. März 2027</span>
+<h1 id="titel" style="margin:0"><img alt="Clean the Bay" class="logo" height="420" src="/img/logo.webp" width="900"/></h1>
+<p class="tag" data-i="tag">Eine Bucht voller Öl. Ein Kajak. Ein Schwamm. Irgendwo muss man ja anfangen.</p>
+<div class="cta">
+<a class="btn btn-main js-steam" href="https://store.steampowered.com/" rel="noopener">
+<svg aria-hidden="true" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6" viewbox="0 0 24 24" width="24"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6c-2.5 4.5-9.5 9-9.5 9z"></path></svg>
+<span data-i="wish">Auf die Steam-Wunschliste</span>
+</a>
+<a class="btn btn-ghost" data-i="more" href="/#worum">Worum geht's?</a>
+</div>
+<div class="chips">
+<span class="chip" data-i="c1">PC über Steam</span>
+<span class="chip" data-i="c2">Allein oder Koop bis 4</span>
+<span class="chip" data-i="c3">12 Sprachen</span>
+<span class="chip" data-i="c4">Steam Deck geplant</span>
+</div>
+</div></div>
+<div aria-live="polite" class="wipe">
+<b><span id="pct">0</span> % <span data-i="clean">sauber</span></b>
+<span data-i="hint">Wisch mal übers Öl.</span>
+</div>
+</section>
+<section class="block" id="worum"><div class="wrap pitch">
+<div>
+<h2 data-i="h-pitch">Komm nach Hause. Die Bucht braucht dich.</h2>
+<p data-i="pitch">Ein Ölmagnat hat deine Heimat schwarz zurückgelassen. Oma Greta hat die alte Küstenwache wieder aufgeschlossen, das ganze Dorf hat zusammengelegt, und du bekommst ein Kajak und einen Schwamm. Putz die Bucht Feld für Feld sauber, bau deine kleine Rettungsaktion zu einer echten Küstenwache aus und finde heraus, wer dir ständig Flaschenpost schickt.</p>
+</div>
+<figure style="margin:0">
+<img alt="Ein Kajak mit Schwamm zieht eine saubere blaue Spur durch die schwarze Ölbucht" height="706" loading="lazy" src="/img/share.jpg" width="1232"/>
+<figcaption class="cap" data-i="cap">Spielbilder und Trailer folgen im Dezember.</figcaption>
+</figure>
+</div></section>
+<section class="block" style="padding-top:0"><div class="wrap">
+<h2 data-i="h-feat">So spielt es sich</h2>
+<div class="feats">
+<article class="feat">
+<svg aria-hidden="true" viewbox="0 0 64 64"><circle cx="32" cy="32" fill="#0b2239" r="30" stroke="#f4efe6" stroke-width="2.5"></circle><rect fill="#ffd23f" height="18" rx="5" stroke="#b8870b" stroke-width="2" width="32" x="16" y="24"></rect><path d="M10 48 q8 -5 16 0 t16 0 t16 0" fill="none" stroke="#7cc4f2" stroke-linecap="round" stroke-width="3"></path></svg>
+<h3 data-i="f1h">Putzen in deinem Tempo</h3>
+<p data-i="f1">Wischen, schöpfen, skimmen. Jedes saubere Feld bringt Geld, jedes neue Werkzeug eine breitere Bahn. Vom Schwamm bis zum Küstenwachboot.</p>
+</article>
+<article class="feat">
+<svg aria-hidden="true" viewbox="0 0 64 64"><circle cx="32" cy="32" fill="#0b2239" r="30" stroke="#f4efe6" stroke-width="2.5"></circle><path d="M14 34 C22 22 38 22 46 34 C38 46 22 46 14 34Z" fill="#ffd166"></path><path d="M46 34 L56 26 L53 34 L56 42Z" fill="#ffd166"></path><circle cx="21" cy="32" fill="#0b2239" r="2.2"></circle></svg>
+<h3 data-i="f2h">Die Natur kommt zurück</h3>
+<p data-i="f2">Einen Tag nach dem Putzen sind die Fische da. Fotografiere 36 Arten für dein Lexikon, vom Hering bis zum Orca.</p>
+</article>
+<article class="feat">
+<svg aria-hidden="true" viewbox="0 0 64 64"><circle cx="32" cy="32" fill="#0b2239" r="30" stroke="#f4efe6" stroke-width="2.5"></circle><rect fill="#c8a13a" height="28" rx="4" stroke="#f4efe6" stroke-width="2" width="20" x="22" y="18"></rect><path d="M22 26 h20 M22 38 h20" stroke="#0b2239" stroke-width="2.5"></path><path d="M44 16 l-4 8 h5 l-4 8" fill="none" stroke="#ff6b1a" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
+<h3 data-i="f3h">Fässer, Stürme und ein Hafen voller Leben</h3>
+<p data-i="f3">Bring volle Fässer heim, bevor sie auslaufen, und übersteh Stürme. Unterwegs lernst du Oma Greta, Käpt'n Hinnerk und die anderen Leute der Bucht kennen.</p>
+</article>
+<article class="feat">
+<svg aria-hidden="true" viewbox="0 0 64 64"><circle cx="32" cy="32" fill="#0b2239" r="30" stroke="#f4efe6" stroke-width="2.5"></circle><path d="M27 14 h10 v6 l4 6 v20 a3 3 0 0 1 -3 3 h-12 a3 3 0 0 1 -3 -3 v-20 l4 -6z" fill="none" stroke="#7cc4f2" stroke-width="2.5"></path><rect fill="#f4efe6" height="12" rx="1" width="10" x="27" y="30"></rect><text fill="#0b2239" font-family="Georgia,serif" font-size="9" text-anchor="middle" x="32" y="40">L.</text></svg>
+<h3 data-i="f4h">Wer schreibt die Flaschenpost?</h3>
+<p data-i="f4">Briefe von „L.“ treiben an. Sammle sie in deinem Logbuch, finde die fünf Lecks und die Beweise gegen den Ölmagnaten.</p>
+</article>
+<article class="feat">
+<svg aria-hidden="true" viewbox="0 0 64 64"><circle cx="32" cy="32" fill="#0b2239" r="30" stroke="#f4efe6" stroke-width="2.5"></circle><path d="M12 36 h16 l-3 6 h-10z M36 36 h16 l-3 6 h-10z" fill="#ff6b1a"></path><path d="M14 24 h12 l-2 6 h-8z M38 24 h12 l-2 6 h-8z" fill="#f4efe6"></path></svg>
+<h3 data-i="f5h">Zusammen putzen</h3>
+<p data-i="f5">Allein oder mit bis zu drei Freunden im Online-Koop. Jeder fährt sein eigenes Boot, der Host entscheidet, ob ihr Geld und Ausrüstung teilt.</p>
+</article>
+</div>
+</div></section>
+<section class="block band"><div class="wrap">
+<h2 data-i="h-facts">Auf einen Blick</h2>
+<dl class="facts">
+<div class="fact"><dt data-i="k1">Genre</dt><dd data-i="v1">Gemütliche Putz- und Aufbau-Simulation</dd></div>
+<div class="fact"><dt data-i="k2">Plattform</dt><dd data-i="v2">PC (Windows) über Steam, Steam Deck geplant</dd></div>
+<div class="fact"><dt data-i="k3">Spieler</dt><dd data-i="v3">1 bis 4, Online-Koop</dd></div>
+<div class="fact"><dt data-i="k4">Spielzeit</dt><dd data-i="v4">Rund 25 bis 30 Stunden bis zum Finale</dd></div>
+<div class="fact"><dt data-i="k5">Sprachen</dt><dd data-i="v5">Deutsch, Englisch, Französisch, Spanisch, Italienisch, Polnisch, Portugiesisch (BR), Russisch, Türkisch, Japanisch, Koreanisch, Chinesisch</dd></div>
+<div class="fact"><dt data-i="k6">Veröffentlichung</dt><dd data-i="v6">Vollversion, kein Early Access. Datum folgt.</dd></div>
+<div class="fact"><dt data-i="k7">Demo</dt><dd data-i="v7">Steam Next Fest, 22. Februar bis 1. März 2027</dd></div>
+<div class="fact"><dt data-i="k8">Studio</dt><dd data-i="v8">Odd Bean Games, Deutschland</dd></div>
+</dl>
+</div></section>
+<section class="block"><div class="wrap">
+<h2 data-i="h-road">Wie es weitergeht</h2>
+<ol class="road">
+<li class="now"><span class="when" data-i="r1w">Dezember 2026</span><span data-i="r1">Steam-Seite mit Spielbildern und Trailer. Ab dann kannst du das Spiel auf die Wunschliste setzen.</span></li>
+<li><span class="when" data-i="r2w">Februar 2027</span><span data-i="r2">Kostenlose Demo beim Steam Next Fest vom 22. Februar bis 1. März.</span></li>
+<li><span class="when" data-i="r3w">Danach</span><span data-i="r3">Das fertige Spiel. Wer es auf der Wunschliste hat, bekommt von Steam eine Nachricht, sobald es erscheint.</span></li>
+</ol>
+</div></section>
+<section class="block" style="padding-top:0"><div class="wrap">
+<h2 data-i="h-faq">Fragen</h2>
+<div class="faq">
+<details><summary data-i="q1">Gibt es eine Demo?</summary><p data-i="a1">Ja. Beim Steam Next Fest vom 22. Februar bis 1. März 2027 kannst du den Anfang kostenlos spielen.</p></details>
+<details><summary data-i="q2">Kann ich allein spielen?</summary><p data-i="a2">Ja, das ganze Spiel. Koop mit bis zu drei Freunden ist eine Möglichkeit, keine Pflicht.</p></details>
+<details><summary data-i="q3">Läuft es auf dem Steam Deck?</summary><p data-i="a3">Das ist das Ziel. Das Spiel wird komplett mit Controller spielbar, wir lassen es von Valve prüfen.</p></details>
+<details><summary data-i="q4">Kommt es auf Konsolen?</summary><p data-i="a4">Zuerst erscheint es für PC über Steam. Mehr dazu, wenn es so weit ist.</p></details>
+<details><summary data-i="q5">Wer macht das Spiel?</summary><p data-i="a5">Odd Bean Games, ein kleines Studio aus Deutschland.</p></details>
+</div>
+</div></section>
+<section class="block band"><div class="wrap final">
+<h2 data-i="h-final">Setz es auf deine Wunschliste</h2>
+<p data-i="final">Für ein kleines Studio zählt jede Wunschliste. Steam zeigt das Spiel dann mehr Leuten, und du bekommst eine Nachricht, sobald die Demo und das Spiel da sind.</p>
+<a class="btn btn-main js-steam" href="https://store.steampowered.com/" rel="noopener"><span data-i="wish2">Jetzt auf die Wunschliste</span></a>
+<p style="font-size:14px"><span data-i="press">Presse und Creator:</span> <a href="mailto:presse@oddbeangames.de" id="mail">presse@oddbeangames.de</a> · <a data-i="kl2" href="/kontakt/">Kontaktformular</a></p>
+<div class="follow"><span data-i="follow">Folg uns</span><div class="social"><a aria-label="TikTok: @clean.the.bay.odd" href="https://www.tiktok.com/@clean.the.bay.odd" rel="noopener" target="_blank" title="TikTok"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M15.2 2.5c.4 2.5 1.9 4 4.6 4.3v3.2c-1.6 0-3.1-.5-4.5-1.4v6.6c0 3.5-2.7 6.3-6.2 6.3S3 18.7 3 15.3c0-3.5 3-6.2 6.6-5.8v3.3c-1.7-.4-3.3.8-3.3 2.4 0 1.4 1.2 2.6 2.6 2.6 1.6 0 2.7-1.2 2.7-2.9V2.5h3.6z" fill="currentColor"></path></svg></a><a aria-label="Instagram: @oddbeangames" href="https://www.instagram.com/oddbeangames/" rel="noopener" target="_blank" title="Instagram"><svg aria-hidden="true" viewbox="0 0 24 24"><rect fill="none" height="18" rx="5" stroke="currentColor" stroke-width="2.2" width="18" x="3" y="3"></rect><circle cx="12" cy="12" fill="none" r="4.2" stroke="currentColor" stroke-width="2.2"></circle><circle cx="17.4" cy="6.6" fill="currentColor" r="1.4"></circle></svg></a><a aria-label="X: @oddbeangames" href="https://x.com/oddbeangames" rel="noopener" target="_blank" title="X"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M3 3h5.6l12.4 18h-5.6z" fill="currentColor"></path><path d="M20.2 3.6l-6.9 7.9M10.6 13.5l-6.9 7.9" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path></svg></a></div></div>
+</div></section>
+<footer><div class="wrap">
+<img alt="Odd Bean Games" class="studio" height="65" loading="lazy" src="/img/oddbean.webp" width="260"/>
+<nav aria-label="Rechtliches und Links">
+<a class="js-steam" href="https://store.steampowered.com/" rel="noopener">Steam</a>
+<a data-i="kl" href="/kontakt/">Kontakt</a>
+<a data-i="iml" href="/impressum/">Impressum</a>
+<a data-i="dsl" href="/datenschutz/">Datenschutz</a>
+</nav>
+<div class="social"><a aria-label="TikTok: @clean.the.bay.odd" href="https://www.tiktok.com/@clean.the.bay.odd" rel="noopener" target="_blank" title="TikTok"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M15.2 2.5c.4 2.5 1.9 4 4.6 4.3v3.2c-1.6 0-3.1-.5-4.5-1.4v6.6c0 3.5-2.7 6.3-6.2 6.3S3 18.7 3 15.3c0-3.5 3-6.2 6.6-5.8v3.3c-1.7-.4-3.3.8-3.3 2.4 0 1.4 1.2 2.6 2.6 2.6 1.6 0 2.7-1.2 2.7-2.9V2.5h3.6z" fill="currentColor"></path></svg></a><a aria-label="Instagram: @oddbeangames" href="https://www.instagram.com/oddbeangames/" rel="noopener" target="_blank" title="Instagram"><svg aria-hidden="true" viewbox="0 0 24 24"><rect fill="none" height="18" rx="5" stroke="currentColor" stroke-width="2.2" width="18" x="3" y="3"></rect><circle cx="12" cy="12" fill="none" r="4.2" stroke="currentColor" stroke-width="2.2"></circle><circle cx="17.4" cy="6.6" fill="currentColor" r="1.4"></circle></svg></a><a aria-label="X: @oddbeangames" href="https://x.com/oddbeangames" rel="noopener" target="_blank" title="X"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M3 3h5.6l12.4 18h-5.6z" fill="currentColor"></path><path d="M20.2 3.6l-6.9 7.9M10.6 13.5l-6.9 7.9" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path></svg></a></div>
+<span>© 2026 Odd Bean Games</span>
+</div></footer>
+</main>
+<div class="legal" hidden="" id="impressum"><div class="wrap">
+<a class="back" href="/">← Zurück zur Startseite</a>
+<h1>Impressum</h1>
+<h2>Angaben gemäß § 5 DDG</h2>
+<p>Kevin Luchmann<br/>Odd Bean Games<br/>Geitherstrasse 14<br/>67435 Neustadt an der Weinstraße<br/>Deutschland</p>
+<h2>Kontakt</h2>
+<p>E-Mail: <a href="mailto:kontakt@oddbeangames.de">kontakt@oddbeangames.de</a><br/>Presse: <a href="mailto:presse@oddbeangames.de">presse@oddbeangames.de</a><br/>Kontaktformular: <a href="/kontakt/">oddbeangames.de/kontakt</a></p>
+<h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
+<p>Kevin Luchmann, Geitherstrasse 14, 67435 Neustadt an der Weinstraße</p>
+<h2>Verbraucherstreitbeilegung</h2>
+<p>Wir sind nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+</div></div>
+<div class="legal" hidden="" id="kontakt"><div class="wrap">
+<a class="back" data-i="k-back" href="/">← Zurück zur Startseite</a>
+<h1 data-i="k-h">Kontakt</h1>
+<p data-i="k-intro">Fragen zum Spiel, ein Fehler, eine Idee oder eine Anfrage als Creator? Schreib uns. Wir antworten meistens innerhalb von ein paar Tagen.</p>
+<form class="kform" id="kform" novalidate="">
+<div class="krow">
+<div class="kf"><label for="k-name"><span data-i="k-name">Name</span> *</label><input autocomplete="name" id="k-name" maxlength="60" name="fi-sender-fullName" required=""/></div>
+<div class="kf"><label for="k-mail"><span data-i="k-mail">E-Mail für die Antwort</span> *</label><input autocomplete="email" id="k-mail" maxlength="120" name="fi-sender-email" required="" type="email"/></div>
+</div>
+<div class="krow">
+<div class="kf"><label for="k-tag"><span data-i="k-tag">Gamertag</span> <i data-i="k-opt">(freiwillig)</i></label><input autocomplete="off" id="k-tag" maxlength="40" name="fi-text-gamertag"/><small data-i="k-taghint">Steam, Discord oder ein anderer Name, unter dem du spielst.</small></div>
+<div class="kf"><label for="k-topic"><span data-i="k-topic">Worum geht es?</span> *</label>
+<select id="k-topic" name="fi-text-thema" required="">
+<option data-i="k-t0" value="">Bitte wählen</option>
+<option data-i="k-t1" value="Frage zum Spiel">Frage zum Spiel</option>
+<option data-i="k-t2" value="Fehler im Spiel">Fehler im Spiel</option>
+<option data-i="k-t3" value="Idee oder Rückmeldung">Idee oder Rückmeldung</option>
+<option data-i="k-t4" value="Presse oder Creator">Presse oder Creator</option>
+<option data-i="k-t5" value="Zusammenarbeit">Zusammenarbeit</option>
+<option data-i="k-t6" value="Etwas anderes">Etwas anderes</option>
+</select></div>
+</div>
+<div class="kf"><label for="k-text"><span data-i="k-text">Deine Nachricht</span> *</label><textarea id="k-text" maxlength="2500" name="fi-text-nachricht" required=""></textarea>
+<div class="kcount" id="k-count"><span data-i="k-limit">Höchstens 300 Wörter, höchstens 3 Links.</span><span id="k-num">0 / 300</span></div></div>
+<div aria-hidden="true" class="ktrap"><label for="k-gotcha">Nicht ausfüllen</label><input autocomplete="off" id="k-gotcha" name="_gotcha" tabindex="-1"/></div>
+<p class="knote"><span data-i="k-privacy">Mit dem Absenden gehen deine Angaben an unseren Formular-Dienst Forminit, der sie an uns weiterleitet. Mehr dazu im</span> <a data-i="k-privlink" href="/datenschutz/">Datenschutz</a>.</p>
+<div class="ksend"><button class="btn btn-main" id="k-btn" type="submit"><span data-i="k-send">Nachricht senden</span></button><span class="knote" hidden="" id="k-wait"></span></div>
+<p aria-live="polite" class="kmsg" hidden="" id="k-msg" role="status"></p>
+</form>
+<noscript><p class="knote" style="margin-top:14px">Das Formular braucht JavaScript. Schreib uns sonst an kontakt@oddbeangames.de.</p></noscript>
+</div></div>
+<div class="legal" hidden="" id="datenschutz"><div class="wrap">
+<a class="back" href="/">← Zurück zur Startseite</a>
+<h1>Datenschutz</h1>
+<p>Stand: 15. November 2026</p>
+<h2>1. Wer ist verantwortlich?</h2>
+<p>Kevin Luchmann, Odd Bean Games, Geitherstrasse 14, 67435 Neustadt an der Weinstraße, Deutschland, E-Mail: <a href="mailto:kontakt@oddbeangames.de">kontakt@oddbeangames.de</a></p>
+<h2>2. Das Wichtigste in Kürze</h2>
+<p>Diese Seite setzt keine Cookies, nutzt keine Analyse- oder Werbedienste und lädt keine Inhalte von anderen Anbietern. Schriften und Bilder liegen auf unserem eigenen Server. Links zu Steam und zu unseren Profilen bei TikTok, Instagram und X sind einfache Links mit eigenen Symbolen. Von diesen Anbietern wird beim Besuch unserer Seite nichts geladen. Erst wenn du einen Link anklickst, verlässt du unsere Seite, dann gilt die Datenschutzerklärung des jeweiligen Anbieters. Das Kontaktformular sendet erst etwas, wenn du auf „Nachricht senden“ drückst.</p>
+<h2>3. Hosting und Server-Protokolle</h2>
+<p>Die Seite liegt bei GitHub Pages, einem Dienst der GitHub, Inc. (USA). Beim Aufruf verarbeitet GitHub technisch diese Daten: deine IP-Adresse, Datum und Uhrzeit, die aufgerufene Seite, die Seite, von der du kommst (Referrer), Browser und Browserversion sowie dein Betriebssystem. Das ist nötig, um die Seite auszuliefern, Fehler zu erkennen und sie vor Angriffen zu schützen (Art. 6 Abs. 1 lit. f DSGVO). Wir selbst bekommen diese Daten nicht und führen sie auch nicht mit anderen Daten zusammen. Für die Übermittlung in die USA beruft sich GitHub in seiner Datenschutzerklärung auf das EU-US Data Privacy Framework. Mehr dazu in der Datenschutzerklärung von GitHub. Die Adressen oddbeangames.de und oddbeangames.com sind bei der STRATO GmbH (Berlin) registriert, oddbeangames.com leitet nur weiter.</p>
+<h2>4. Verschlüsselte Verbindung</h2>
+<p>Die Seite läuft nur über eine verschlüsselte Verbindung (https, TLS). Was du an uns schickst, zum Beispiel über das Kontaktformular, kann unterwegs niemand mitlesen. Du erkennst das an „https://“ und am Schloss in der Adresszeile deines Browsers.</p>
+<h2>5. Kontaktformular und E-Mail</h2>
+<p>Wenn du das Kontaktformular nutzt, erhalten wir deinen Namen, deine E-Mail-Adresse, das Thema, deine Nachricht und, falls du ihn angibst, deinen Gamertag. Wir nutzen diese Angaben nur, um deine Anfrage zu bearbeiten und dir zu antworten (Art. 6 Abs. 1 lit. b DSGVO, wenn es um einen Vertrag oder eine Anfrage dazu geht, sonst Art. 6 Abs. 1 lit. f DSGVO, unser Interesse, Anfragen zu beantworten).</p>
+<p>Das Formular läuft über Forminit, einen Dienst der UXPLUS LTD, London, Großbritannien. Wenn du auf „Nachricht senden“ drückst, gehen deine Angaben und technisch deine IP-Adresse an Forminit. Forminit speichert die Nachricht auf Servern von Amazon Web Services in Irland, prüft sie auf Spam und schickt sie uns per E-Mail. Mit Forminit besteht ein Vertrag zur Auftragsverarbeitung. Für Großbritannien hat die EU-Kommission ein angemessenes Datenschutzniveau festgestellt (Angemessenheitsbeschluss).</p>
+<p>Wenn du uns direkt per E-Mail schreibst, läuft nichts über Forminit. In beiden Fällen löschen wir deine Nachricht, wenn deine Anfrage erledigt ist, spätestens nach 6 Monaten, außer wir müssen sie aus gesetzlichen Gründen länger aufbewahren.</p>
+<h2>6. Im Spiel: „Fehler melden“ und „Rückmeldung“</h2>
+<p>Im Spiel kannst du uns Fehler und deine Meinung schicken. Gesendet wird nur, wenn du selbst auf „Senden“ drückst (Art. 6 Abs. 1 lit. a DSGVO). Wir erhalten deinen Text, die Kategorie und technische Spielinfos (Spielversion, Sprache, Gebiet im Spiel, Spielzeit, Betriebssystem, Grafikkarte, Auflösung, Maus oder Controller). Wir erhalten keinen Namen, keine Steam-ID, keine Spielstände und keine Dateien. Wenn du freiwillig eine E-Mail-Adresse angibst, nutzen wir sie nur für eine Antwort.</p>
+<p>Die Meldung läuft über einen Dienst von Cloudflare, Inc. (USA), der sie weiterleitet, und wird in einem privaten Speicher bei GitHub, Inc. (USA) abgelegt. Beide Anbieter verarbeiten dabei technisch auch deine IP-Adresse, wir speichern sie nicht. Für die Übermittlung in die USA berufen sich beide Anbieter in ihren Datenschutzerklärungen auf das EU-US Data Privacy Framework. Wir löschen die Meldungen spätestens nach 12 Monaten.</p>
+<h2>7. Steam</h2>
+<p>Das Spiel wird über Steam von Valve Corporation (USA) verkauft und gestartet. Was Steam dabei verarbeitet, regelt die Datenschutzerklärung von Valve.</p>
+<h2>8. Wie lange wir Daten speichern</h2>
+<p>Wo oben keine eigene Frist steht, behalten wir Daten nur so lange, wie wir sie für den jeweiligen Zweck brauchen. Wenn du die Löschung verlangst oder eine Einwilligung widerrufst, löschen wir deine Daten. Ausnahme: Ein Gesetz verpflichtet uns, sie länger aufzubewahren, zum Beispiel wegen steuerlicher Fristen. Dann löschen wir sie, sobald diese Frist vorbei ist.</p>
+<h2>9. Deine Rechte</h2>
+<p>Du kannst jederzeit kostenlos von uns verlangen:</p>
+<ul>
+<li><b>Auskunft</b>, welche Daten wir über dich haben, woher sie stammen, an wen sie gehen und wofür wir sie nutzen (Art. 15 DSGVO),</li>
+<li><b>Berichtigung</b> falscher Daten (Art. 16 DSGVO),</li>
+<li><b>Löschung</b> deiner Daten (Art. 17 DSGVO),</li>
+<li><b>Einschränkung der Verarbeitung</b>, zum Beispiel solange wir prüfen, ob deine Daten stimmen, oder wenn du sie für Rechtsansprüche noch brauchst, wir aber nicht mehr (Art. 18 DSGVO),</li>
+<li><b>Herausgabe deiner Daten</b> in einem gängigen, maschinenlesbaren Format, auf Wunsch auch direkt an jemand anderen, soweit das technisch geht (Art. 20 DSGVO).</li>
+</ul>
+<p>Eine Einwilligung kannst du jederzeit widerrufen. Das gilt für die Zukunft, was bis dahin passiert ist, bleibt rechtmäßig. Schreib uns für alles davon einfach eine E-Mail an <a href="mailto:kontakt@oddbeangames.de">kontakt@oddbeangames.de</a>.</p>
+<p>Du kannst dich außerdem bei einer Datenschutz-Aufsichtsbehörde beschweren, vor allem in dem EU-Land, in dem du wohnst oder arbeitest. Für uns zuständig ist: Der Landesbeauftragte für den Datenschutz und die Informationsfreiheit Rheinland-Pfalz, Hintere Bleiche 34, 55116 Mainz, <a href="https://www.datenschutz.rlp.de" rel="noopener">www.datenschutz.rlp.de</a>.</p>
+<h2>10. Dein Widerspruchsrecht (Art. 21 DSGVO)</h2>
+<div class="box">
+<p><b>Wo wir Daten auf Grundlage unseres berechtigten Interesses verarbeiten (Art. 6 Abs. 1 lit. f DSGVO), kannst du dem jederzeit widersprechen, wenn sich das aus deiner besonderen Situation ergibt.</b> Welche Verarbeitungen das sind, steht bei den einzelnen Punkten oben. Nach einem Widerspruch verarbeiten wir deine Daten dafür nicht mehr, außer wir können zwingende schutzwürdige Gründe nachweisen, die deine Interessen überwiegen, oder wir brauchen die Daten, um Rechtsansprüche geltend zu machen, auszuüben oder uns zu verteidigen.</p>
+<p><b>Werbung:</b> Wir nutzen deine Daten nicht für Werbung. Solltest du trotzdem einmal Werbung von uns bekommen, kannst du dem jederzeit ohne Begründung widersprechen, und wir nutzen deine Daten dafür nicht mehr.</p>
+<p>Ein formloser Widerspruch per E-Mail an <a href="mailto:kontakt@oddbeangames.de">kontakt@oddbeangames.de</a> genügt.</p>
+</div>
+</div></div>
+<script>
+(function(){
+  /* EINSTELLUNGEN: nach dem Anlegen der Steam-Seite hier die echte Adresse eintragen */
+  var STEAM_URL='https://store.steampowered.com/';
+  var MAIL='presse@oddbeangames.de';
+  [].forEach.call(document.querySelectorAll('.js-steam'),function(a){a.href=STEAM_URL;});
+  if(MAIL){var m=document.getElementById('mail');m.href='mailto:'+MAIL;m.textContent=MAIL;}
+
+  /* Seiten: Start, Impressum, Datenschutz */
+  /* Seiten: Auf oddbeangames.de hat jede Seite ihre eigene Adresse (z. B. /impressum/), das steht in data-page.
+     Alte Links mit #impressum werden dorthin weitergeleitet. In der Vorschau ohne eigene Adressen gilt weiter #impressum. */
+  var PAGE=document.documentElement.getAttribute('data-page'), ROUTES=null;
+  try{ ROUTES=JSON.parse(document.documentElement.getAttribute('data-routes')||'null'); }catch(e){}
+  function route(){
+    var h=PAGE!=null?PAGE:location.hash.replace('#','');
+    if(ROUTES&&PAGE===''&&ROUTES[location.hash.replace('#','')]){ location.replace(ROUTES[location.hash.replace('#','')]); return; }
+    var legal=(h==='impressum'||h==='datenschutz'||h==='kontakt');
+    var back=route.was&&!legal; route.was=legal;
+    document.getElementById('seite').hidden=legal;
+    document.getElementById('impressum').hidden=h!=='impressum';
+    document.getElementById('datenschutz').hidden=h!=='datenschutz';
+    document.getElementById('kontakt').hidden=h!=='kontakt';
+    if(h==='kontakt'&&typeof kOpen==='function')kOpen();
+    if(legal)window.scrollTo(0,0);
+    if(back&&window.__oilReset) setTimeout(window.__oilReset,0);
+  }
+  window.addEventListener('hashchange',route); route();
+
+  /* Sprache */
+  var EN={eyebrow:'Demo at Steam Next Fest · Feb 22 – Mar 1, 2027',tag:'A bay full of oil. One kayak. One sponge. You have to start somewhere.',wish:'Wishlist on Steam',more:'What is it?',c1:'PC on Steam',c2:'Solo or co-op up to 4',c3:'12 languages',c4:'Steam Deck planned',clean:'clean',hint:'Wipe the oil.',
+    'h-pitch':'Come home. The bay needs you.',pitch:'An oil tycoon left your home covered in black. Grandma Greta has reopened the old coast guard station, the whole town chipped in, and you get a kayak and a sponge. Clean the bay field by field, grow your little rescue mission into a real coast guard, and find out who keeps sending you messages in bottles.',cap:'Gameplay screenshots and trailer coming in December.',
+    'h-feat':'How it plays',f1h:'Clean at your own pace',f1:'Wipe, scoop, skim. Every clean field pays out, every new tool cleans a wider strip. From a sponge to a coast guard boat.',f2h:'Nature comes back',f2:'A day after you clean, the fish return. Photograph 36 species for your logbook, from herring to orca.',f3h:'Barrels, storms and a busy harbor',f3:'Bring full barrels home before they leak and ride out storms. Along the way you meet Grandma Greta, grumpy Captain Hinnerk and the other people of the bay.',f4h:'Who writes the bottles?',f4:'Letters signed “L.” keep washing up. Collect them in your logbook, find the five leaks and the evidence against the oil tycoon.',f5h:'Clean together',f5:'Solo or with up to three friends in online co-op. Everyone drives their own boat, the host decides whether you share money and gear.',
+    'h-facts':'At a glance',k1:'Genre',v1:'Cozy cleaning and building sim',k2:'Platform',v2:'PC (Windows) on Steam, Steam Deck planned',k3:'Players',v3:'1 to 4, online co-op',k4:'Playtime',v4:'About 25 to 30 hours to the finale',k5:'Languages',v5:'English, German, French, Spanish, Italian, Polish, Portuguese (BR), Russian, Turkish, Japanese, Korean, Chinese',k6:'Release',v6:'Full release, no Early Access. Date to be announced.',k7:'Demo',v7:'Steam Next Fest, February 22 to March 1, 2027',k8:'Studio',v8:'Odd Bean Games, Germany',
+    'h-road':'What’s next',r1w:'December 2026',r1:'Steam page with screenshots and trailer. From then on you can wishlist the game.',r2w:'February 2027',r2:'Free demo at Steam Next Fest, February 22 to March 1.',r3w:'After that',r3:'The finished game. If it’s on your wishlist, Steam lets you know the moment it’s out.',
+    'h-faq':'Questions',q1:'Is there a demo?',a1:'Yes. At Steam Next Fest, February 22 to March 1, 2027, you can play the beginning for free.',q2:'Can I play solo?',a2:'Yes, the whole game. Co-op with up to three friends is an option, not a must.',q3:'Does it run on Steam Deck?',a3:'That’s the goal. The game will be fully playable with a controller, and we’ll have Valve review it.',q4:'Is it coming to consoles?',a4:'It launches on PC via Steam first. More when the time comes.',q5:'Who makes the game?',a5:'Odd Bean Games, a small studio from Germany.',
+    'h-final':'Put it on your wishlist',final:'For a small studio, every wishlist counts. Steam shows the game to more people, and you get a message as soon as the demo and the game are out.',wish2:'Wishlist now',press:'Press and creators:',dsl:'Privacy',iml:'Legal notice',kl:'Contact',kl2:'Contact form',follow:'Follow us',
+    'k-back':'← Back to the start page','k-h':'Contact','k-intro':'Questions about the game, a bug, an idea or a creator request? Write to us. We usually reply within a few days.','k-name':'Name','k-mail':'Email for our reply','k-tag':'Gamertag','k-opt':'(optional)','k-taghint':'Steam, Discord or any other name you play under.','k-topic':'What is it about?','k-t0':'Please choose','k-t1':'Question about the game','k-t2':'Bug in the game','k-t3':'Idea or feedback','k-t4':'Press or creator','k-t5':'Collaboration','k-t6':'Something else','k-text':'Your message','k-limit':'Up to 300 words, up to 3 links.','k-privacy':'When you send this, your details go to our form service Forminit, which forwards them to us. More in the','k-privlink':'privacy policy','k-send':'Send message',
+    t1:'First field clean! +100 shells',t2:'The fish are coming back.',t3:'The bay shines. Now the real one?',t4:'Spotless! 100 %'};
+  var DE={}; [].forEach.call(document.querySelectorAll('[data-i]'),function(el){DE[el.dataset.i]=el.textContent;});
+  DE.t1='Erstes Feld sauber! +100 Muscheln'; DE.t2='Die Fische kommen zurück.'; DE.t3='Die Bucht glänzt. Jetzt die echte?'; DE.t4='Blitzblank! 100 %';
+  /* Sprache: Deutsch unter oddbeangames.de/, Englisch unter oddbeangames.de/en/ (eigene Seiten, damit Google beide findet).
+     Nichts wird im Browser gespeichert. Passt die Browsersprache nicht zur Seite, erscheint nur ein kleiner Hinweis-Link. */
+  var lang=(document.documentElement.lang||'de').toLowerCase().indexOf('en')===0?'en':'de';
+  function setLang(l){
+    lang=l; var d=l==='en'?EN:DE;
+    [].forEach.call(document.querySelectorAll('[data-i]'),function(el){ if(d[el.dataset.i]!=null) el.textContent=d[el.dataset.i]; });
+    if(typeof onLang==='function')onLang();
+  }
+  setLang(lang);
+  (function(){ var bl=(navigator.language||'de').toLowerCase().indexOf('de')===0?'de':'en', h=document.getElementById('langhint'); if(h&&bl!==lang) h.hidden=false; })();
+
+  /* Kontaktformular
+     EINSTELLUNG: Formular-ID von forminit.com eintragen (steht in der Adresse forminit.com/f/XXXX). Leer = Formular zeigt nur die Mail-Adresse. */
+  var FORM_ID='4h9vto1g2xo';
+  var K_WORDS=300, K_LINKS=3, K_WAIT=10*60, K_MAXVISIT=3, K_MINTIME=4;
+  var KT={de:{need:'Bitte fülle alle Felder mit * aus.',mail:'Bitte prüf deine E-Mail-Adresse.',long:'Deine Nachricht hat mehr als 300 Wörter. Bitte kürze sie etwas.',links:'Bitte höchstens 3 Links pro Nachricht.',short:'Deine Nachricht ist sehr kurz. Schreib uns noch ein paar Worte mehr.',fast:'Das ging schnell. Warte bitte ein paar Sekunden und drück dann noch mal.',sending:'Wird gesendet …',ok:'Danke! Deine Nachricht ist angekommen. Wir melden uns per E-Mail.',fail:'Das hat leider nicht geklappt. Versuch es später noch mal oder schreib an kontakt@oddbeangames.de.',busy:'Gerade kommen zu viele Nachrichten an. Versuch es in ein paar Minuten noch mal.',off:'Das Formular wird gerade eingerichtet. Schreib uns bis dahin an kontakt@oddbeangames.de.',wait:'Nächste Nachricht in {0} möglich.',max:'Für diesen Besuch ist Schluss. Lade die Seite später neu, wenn du noch etwas schicken willst.'},
+            en:{need:'Please fill in all fields marked *.',mail:'Please check your email address.',long:'Your message is longer than 300 words. Please shorten it a little.',links:'Please use no more than 3 links per message.',short:'Your message is very short. Tell us a little more.',fast:'That was quick. Please wait a few seconds and press again.',sending:'Sending …',ok:'Thanks! Your message has arrived. We’ll reply by email.',fail:'Sorry, that didn’t work. Please try again later or write to kontakt@oddbeangames.de.',busy:'Too many messages right now. Please try again in a few minutes.',off:'The form is being set up. Until then, write to kontakt@oddbeangames.de.',wait:'Next message possible in {0}.',max:'That’s it for this visit. Reload the page later if you want to send more.'}};
+  function kt(k){return (KT[lang]||KT.de)[k];}
+  var kf=document.getElementById('kform'), kText=document.getElementById('k-text'), kNum=document.getElementById('k-num'), kCount=document.getElementById('k-count'), kBtn=document.getElementById('k-btn'), kMsg=document.getElementById('k-msg'), kWait=document.getElementById('k-wait');
+  var kOpened=0, kUntil=0, kSent=0, kTimer=null;
+  function kOpen(){ if(!kOpened) kOpened=Date.now(); }
+  function words(t){t=t.trim();return t?t.split(/\s+/).length:0;}
+  function links(t){return (t.match(/(https?:\/\/|www\.)/gi)||[]).length;}
+  function kUpd(){var n=words(kText.value);kNum.textContent=n+' / '+K_WORDS;kCount.classList.toggle('over',n>K_WORDS||links(kText.value)>K_LINKS);}
+  function kSay(t,ok){kMsg.textContent=t;kMsg.className='kmsg '+(ok?'ok':'err');kMsg.hidden=false;}
+  function kTick(){
+    var left=Math.ceil((kUntil-Date.now())/1000);
+    if(kSent>=K_MAXVISIT){kBtn.disabled=true;kWait.textContent=kt('max');kWait.hidden=false;return;}
+    if(left>0){kBtn.disabled=true;var m=Math.floor(left/60),s=left%60;kWait.textContent=kt('wait').replace('{0}',m+':'+(s<10?'0':'')+s);kWait.hidden=false;kTimer=setTimeout(kTick,1000);}
+    else{kBtn.disabled=false;kWait.hidden=true;}
+  }
+  function onLang(){ if(kNum)kUpd(); if(kTimer){clearTimeout(kTimer);kTick();} }
+  kText.addEventListener('input',kUpd); kUpd();
+  ['k-name','k-mail','k-tag','k-topic'].forEach(function(id){document.getElementById(id).addEventListener('focus',kOpen);}); kText.addEventListener('focus',kOpen);
+  kf.addEventListener('submit',function(ev){
+    ev.preventDefault();
+    if(kBtn.disabled)return;
+    var name=document.getElementById('k-name').value.trim(), mail=document.getElementById('k-mail').value.trim(), topic=document.getElementById('k-topic').value, text=kText.value.trim();
+    if(document.getElementById('k-gotcha').value){kSay(kt('ok'),true);kf.reset();kUpd();return;}
+    if(!name||!mail||!topic||!text)return kSay(kt('need'));
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(mail))return kSay(kt('mail'));
+    if(words(text)>K_WORDS)return kSay(kt('long'));
+    if(links(text)>K_LINKS)return kSay(kt('links'));
+    if(text.length<15)return kSay(kt('short'));
+    if(!kOpened||(Date.now()-kOpened)/1000<K_MINTIME)return kSay(kt('fast'));
+    if(!FORM_ID)return kSay(kt('off'));
+    var fd=new FormData(kf); fd.append('fi-text-sprache',lang);
+    kBtn.disabled=true; kSay(kt('sending'),true);
+    fetch('https://forminit.com/f/'+encodeURIComponent(FORM_ID),{method:'POST',headers:{Accept:'application/json'},body:fd})
+      .then(function(r){
+        if(r.ok){kSent++;kUntil=Date.now()+K_WAIT*1000;kf.reset();kUpd();kSay(kt('ok'),true);kTick();}
+        else{kBtn.disabled=false;kSay(kt(r.status===429?'busy':'fail'));}
+      })
+      .catch(function(){kBtn.disabled=false;kSay(kt('fail'));});
+  });
+
+  /* Öl wegwischen */
+  var cv=document.getElementById('oil'), ctx=cv.getContext('2d'), img=new Image(), ready=false;
+  var GX=40, GY=18, grid=new Uint8Array(GX*GY), done=0, shown={};
+  img.src=document.querySelector('meta[name="ctb-hero"]')?document.querySelector('meta[name="ctb-hero"]').content:'/img/hero-2400.webp';
+  /* Größe ändern (z. B. wenn beim Scrollen die Adressleiste am Handy verschwindet): das Gewischte bleibt erhalten.
+     Zurückgesetzt wird nur beim Neuladen oder wenn man von einer Unterseite zurückkommt. */
+  var painted=false, KP=[0.578125,0.345968,0.141667,0.334677];
+  function size(reset){
+    /* Die Öl-Ebene ist die teuerste Ebene (groß und mit Löchern): auf Touch-Geräten mit geringerer Auflösung */
+    var OILCAP=(window.matchMedia&&window.matchMedia('(pointer:coarse)').matches)?1:1.5;
+    var r=cv.getBoundingClientRect(), dpr=Math.min(OILCAP,window.devicePixelRatio||1), nw=Math.round(r.width*dpr), nh=Math.round(r.height*dpr);
+    if(r.width<2||r.height<2) return;
+    if(!reset&&painted&&cv.width===nw&&cv.height===nh) return;
+    var old=null;
+    if(!reset&&painted){ old=document.createElement('canvas'); old.width=cv.width; old.height=cv.height; old.getContext('2d').drawImage(cv,0,0); }
+    cv.width=nw; cv.height=nh; ctx.setTransform(dpr,0,0,dpr,0,0);
+    if(old){ drawOil(r.width,r.height); ctx.setTransform(1,0,0,1,0,0); ctx.globalCompositeOperation='destination-in'; ctx.drawImage(old,0,0,nw,nh); ctx.globalCompositeOperation='source-over'; ctx.setTransform(dpr,0,0,dpr,0,0); }
+    else paint(r.width,r.height);
+  }
+  /* Ab 98 % wie im Spiel: kurzes Sternenfunkeln, Rest-Öl verschwindet, Anzeige springt auf 100 % */
+  var finished=false;
+  function finish(){
+    finished=true; done=GX*GY; grid.fill(1);
+    cv.style.transition='opacity .7s ease-out'; cv.style.opacity='0';
+    setTimeout(function(){ ctx.save(); ctx.setTransform(1,0,0,1,0,0); ctx.clearRect(0,0,cv.width,cv.height); ctx.restore(); cv.style.transition=''; cv.style.opacity=''; },750);
+    if(window.__sparkle) window.__sparkle();
+    update();
+  }
+  window.__oilReset=function(){ shown={}; finished=false; cv.style.transition=''; cv.style.opacity=''; size(true); };
+  function paint(w,h){
+    if(!ready)return;
+    drawOil(w,h); painted=true;
+    grid.fill(0); done=0; update();
+  }
+  /* Bildausschnitt: am PC wie gehabt. Auf schmalen Hochkant-Bildschirmen etwas größer und nach oben/rechts verschoben,
+     damit das Kajak unter dem Titel liegt und das Paddel nicht hinter den Buchstaben steckt. */
+  function heroFit(w,h){
+    var s=Math.max(w/img.width,h/img.height), iw=img.width*s, ih=img.height*s, ox, oy;
+    ox=(w-iw)*0.62; oy=(h-ih)/2;
+    return {iw:iw,ih:ih,ox:ox,oy:oy};
+  }
+  function drawOil(w,h){
+    ctx.globalCompositeOperation='source-over';
+    var s=Math.max(w/img.width,h/img.height), iw=img.width*s, ih=img.height*s;
+    var F=heroFit(w,h); iw=F.iw; ih=F.ih;
+    ctx.drawImage(img,F.ox,F.oy,iw,ih);
+    if(window.__kimg&&__kimg.complete&&__kimg.naturalWidth){ var kx=F.ox+__kpos[0]*iw, ky=F.oy+__kpos[1]*ih; ctx.globalCompositeOperation='destination-out'; ctx.drawImage(__kimg,kx,ky,__kpos[2]*iw,__kpos[3]*ih); ctx.globalCompositeOperation='source-over'; }
+  }
+  img.onload=function(){ready=true;size(true);};
+  window.addEventListener('resize',function(){clearTimeout(size.t);size.t=setTimeout(size,150);});
+  var last=null;
+  function stamp(x,y){
+    var r=cv.getBoundingClientRect(), R=Math.max(34,r.width/26);
+    ctx.globalCompositeOperation='destination-out';
+    var g=ctx.createRadialGradient(x,y,R*0.35,x,y,R); g.addColorStop(0,'rgba(0,0,0,1)'); g.addColorStop(1,'rgba(0,0,0,0)');
+    ctx.fillStyle=g; ctx.beginPath(); ctx.arc(x,y,R,0,Math.PI*2); ctx.fill();
+    var cw=r.width/GX, ch=r.height/GY;
+    for(var gy=Math.max(0,Math.floor((y-R*.6)/ch));gy<=Math.min(GY-1,Math.floor((y+R*.6)/ch));gy++)
+      for(var gx=Math.max(0,Math.floor((x-R*.6)/cw));gx<=Math.min(GX-1,Math.floor((x+R*.6)/cw));gx++){var i=gy*GX+gx; if(!grid[i]){grid[i]=1;done++;}}
+  }
+  function wipe(e){
+    if(!ready)return;
+    var r=cv.getBoundingClientRect(), x=e.clientX-r.left, y=e.clientY-r.top;
+    if(last){var dx=x-last.x, dy=y-last.y, n=Math.min(12,Math.ceil(Math.hypot(dx,dy)/12)); for(var k=1;k<=n;k++)stamp(last.x+dx*k/n,last.y+dy*k/n);} else stamp(x,y);
+    last={x:x,y:y}; update();
+  }
+  function update(){
+    var p=Math.round(done/(GX*GY)*100);
+    if(p>=98&&!finished){ finish(); return; }
+    if(finished) p=100;
+    document.getElementById('pct').textContent=p;
+    var t=document.getElementById('toast'), d=lang==='en'?EN:DE;
+    [[8,'t1'],[45,'t2'],[85,'t3'],[100,'t4']].forEach(function(m){ if(p>=m[0]&&!shown[m[1]]){ shown[m[1]]=1; t.textContent=d[m[1]]; t.hidden=false; clearTimeout(update.t); update.t=setTimeout(function(){t.hidden=true;},2600); } });
+  }
+  /* Wasser unter dem Öl, Kajak und Wellen darüber */
+  var wc=document.getElementById('water'), wx=wc.getContext('2d'), fc=document.getElementById('fx'), fx=fc.getContext('2d');
+  var KPOS=[0.578125,0.345968,0.141667,0.334677], kimg=new Image(); window.__kimg=kimg; window.__kpos=KPOS; kimg.onload=function(){ if(ready&&!done) size(true); }; kimg.src='/img/kajak.webp';
+  var still=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches, ripples=[], tile=null, pat1=null, pat2=null, vis=true;
+  function makeTile(){
+    var N=256, c=document.createElement('canvas'); c.width=c.height=N; var g=c.getContext('2d'), im=g.createImageData(N,N), pts=[];
+    for(var i=0;i<14;i++)pts.push([Math.random()*N,Math.random()*N]);
+    for(var y=0;y<N;y++)for(var x=0;x<N;x++){
+      var f1=1e9,f2=1e9;
+      for(var k=0;k<pts.length;k++){var dx=Math.abs(x-pts[k][0]),dy=Math.abs(y-pts[k][1]); if(dx>N/2)dx=N-dx; if(dy>N/2)dy=N-dy; var d=Math.sqrt(dx*dx+dy*dy); if(d<f1){f2=f1;f1=d;}else if(d<f2)f2=d;}
+      var v=Math.max(0,1-(f2-f1)/15); v=v*v*v; var o=(y*N+x)*4; im.data[o]=200;im.data[o+1]=235;im.data[o+2]=255;im.data[o+3]=Math.round(v*255);
+    }
+    g.putImageData(im,0,0); return c;
+  }
+  /* Qualität: Touch-Geräte (Handy, Tablet) zeichnen mit geringerer Auflösung. Ist ein Gerät trotzdem zu langsam,
+     schaltet die Seite selbst eine Stufe herunter (weniger Fische, weniger Bilder pro Sekunde, gröbere Auflösung). */
+  var COARSE=window.matchMedia&&window.matchMedia('(pointer:coarse)').matches;
+  var Q={cap:COARSE?1.25:2, gap:COARSE?40:32, fish:1, scales:!COARSE, level:0};
+  var WS=COARSE?0.4:0.6, WK=WS/0.6, fxStatic=COARSE, fxDrawn=false, wTick=0;
+  function sizeFx(){
+    var r=wc.getBoundingClientRect(), dpr=Math.min(Q.cap,window.devicePixelRatio||1);
+    wc.width=Math.max(1,Math.round(r.width*WS)); wc.height=Math.max(1,Math.round(r.height*WS)); fxDrawn=false;
+    fc.width=Math.round(r.width*dpr); fc.height=Math.round(r.height*dpr); fx.setTransform(dpr,0,0,dpr,0,0);
+    if(!tile){tile=makeTile(); pat1=wx.createPattern(tile,'repeat'); pat2=wx.createPattern(tile,'repeat');}
+  }
+  function drawWater(t){
+    var w=wc.width,h=wc.height, g=wx.createLinearGradient(0,0,w*0.3,h);
+    g.addColorStop(0,'#3aa0e4'); g.addColorStop(.55,'#1f74bd'); g.addColorStop(1,'#134e86');
+    wx.globalCompositeOperation='source-over'; wx.globalAlpha=1; wx.fillStyle=g; wx.fillRect(0,0,w,h);
+    wx.globalCompositeOperation='lighter';
+    var m=new DOMMatrix(); pat1.setTransform(m.translate(t*9*WK,t*5*WK).scale(1.5*WK)); wx.globalAlpha=.3; wx.fillStyle=pat1; wx.fillRect(0,0,w,h);
+    var m2=new DOMMatrix(); pat2.setTransform(m2.translate(-t*7*WK,t*8*WK).rotate(25).scale(2.2*WK)); wx.globalAlpha=.15; wx.fillStyle=pat2; wx.fillRect(0,0,w,h);
+    wx.globalAlpha=1; wx.globalCompositeOperation='source-over';
+  }
+  function kayakRect(){
+    var r=cv.getBoundingClientRect(), F=heroFit(r.width,r.height), iw=F.iw, ih=F.ih, ox=F.ox, oy=F.oy;
+    return {x:ox+KPOS[0]*iw,y:oy+KPOS[1]*ih,w:KPOS[2]*iw,h:KPOS[3]*ih};
+  }
+  var stars=[];
+  window.__sparkle=function(){
+    var r=fc.getBoundingClientRect(), now=performance.now()/1000, n=r.width<700?18:30, k=ready&&kimg.complete&&kimg.naturalWidth?kayakRect():null;
+    for(var i=0;i<n;i++) stars.push({x:Math.random()*r.width,y:r.height*(.08+Math.random()*.84),t0:now+Math.random()*.9,d:.55+Math.random()*.45,s:(r.width<700?14:22)*(.6+Math.random()*.9),rot:Math.random()*.8,c:Math.random()<.35?'255,214,90':'255,255,255'});
+    if(k) for(i=0;i<9;i++) stars.push({x:k.x+Math.random()*k.w,y:k.y+Math.random()*k.h,t0:now+.15+Math.random()*.7,d:.6,s:24+Math.random()*14,rot:Math.random(),c:'255,236,150'});
+  };
+  function star(g,x,y,s,a,rot,c){
+    g.save(); g.translate(x,y); g.globalAlpha=a; var gl=g.createRadialGradient(0,0,0,0,0,s*1.4); gl.addColorStop(0,'rgba('+c+',.55)'); gl.addColorStop(1,'rgba('+c+',0)'); g.fillStyle=gl; g.beginPath(); g.arc(0,0,s*1.4,0,7); g.fill(); g.rotate(rot); g.shadowColor='rgba('+c+',.9)'; g.shadowBlur=s*1.2;
+    g.fillStyle='rgb('+c+')'; g.beginPath();
+    for(var i=0;i<8;i++){ var ang=i*Math.PI/4, rr=i%2?s*.22:s; g.lineTo(Math.cos(ang)*rr,Math.sin(ang)*rr); }
+    g.closePath(); g.fill(); g.shadowBlur=0; g.fillStyle='#fff'; g.beginPath(); g.arc(0,0,s*.16,0,7); g.fill(); g.restore();
+  }
+  function drawStars(t){
+    for(var i=stars.length-1;i>=0;i--){ var st=stars[i], a=(t-st.t0)/st.d; if(a<0)continue; if(a>1){stars.splice(i,1);continue;}
+      var e=Math.sin(Math.PI*a), tw=.75+.25*Math.sin(a*25); star(fx,st.x,st.y,st.s*(.35+e*.85),e*tw,st.rot+a*.9,st.c); }
+  }
+  function drawFx(t){
+    /* Auf Touch-Geräten schaukelt das Kajak nicht: Die Ebene wird nur neu gezeichnet, wenn Wellen oder Sterne zu sehen sind. */
+    if(fxStatic&&fxDrawn&&!ripples.length&&!stars.length) return;
+    var r=fc.getBoundingClientRect(); fx.clearRect(0,0,r.width,r.height);
+    for(var i=ripples.length-1;i>=0;i--){
+      var rp=ripples[i], a=(t-rp.t)/1.6; if(a>1){ripples.splice(i,1);continue;}
+      for(var k=0;k<3;k++){var aa=a-k*0.12; if(aa<=0)continue; fx.beginPath(); fx.arc(rp.x,rp.y,8+aa*90,0,Math.PI*2); fx.strokeStyle='rgba(235,248,255,'+(0.55*(1-aa))+')'; fx.lineWidth=2.2*(1-aa)+0.6; fx.stroke();}
+    }
+    if(ready&&kimg.complete&&kimg.naturalWidth){
+      var k2=kayakRect(), cx=k2.x+k2.w/2, cy=k2.y+k2.h/2, bob=(still||fxStatic)?0:Math.sin(t*1.3); fxDrawn=true;
+      fx.save(); fx.translate(cx,cy+bob*2.2); fx.rotate(bob*0.012); fx.drawImage(kimg,-k2.w/2,-k2.h/2,k2.w,k2.h); fx.restore();
+    }
+    if(stars.length) drawStars(t);
+  }
+
+  /* Fische unter dem Öl: Draufsicht (wir schauen von oben ins Wasser), Kopf in Schwimmrichtung,
+     vier Arten, eigenes Tempo, Wege kreuz und quer, Heringe im Schwarm, flüchten bei Klicks */
+  var fcv=document.getElementById('fishc'), fg=fcv.getContext('2d'), fishes=[], fW=0, fH=0, fDpr=1, fpat=null, fLast=0, fNext=0;
+  var SPEC={
+    makrele:{L:[105,135],w:.18,sp:[45,65],back:'#123f47',mid:'#2b7774',edge:'#bfe0da',fin:'#a9d3cc',pat:'stripes',fork:.6},
+    rotbarsch:{L:[85,105],w:.27,sp:[30,44],back:'#8f2c19',mid:'#d25a33',edge:'#f8b98e',fin:'#f39a72',pat:'scales',fork:.12},
+    dorsch:{L:[150,190],w:.22,sp:[22,32],back:'#403f24',mid:'#77703f',edge:'#cfc293',fin:'#bfb388',pat:'spots',fork:0},
+    hering:{L:[52,64],w:.19,sp:[55,75],back:'#1f4064',mid:'#4a7aa3',edge:'#e1edf4',fin:'#c6dbea',pat:'shine',fork:.55}
+  };
+  var WATER=[31,116,189];
+  function rnd(a,b){return a+Math.random()*(b-a);}
+  function mix(hex,d){var n=parseInt(hex.slice(1),16),r=n>>16,g=n>>8&255,b=n&255,k=d*.3;return 'rgb('+Math.round(r+(WATER[0]-r)*k)+','+Math.round(g+(WATER[1]-g)*k)+','+Math.round(b+(WATER[2]-b)*k)+')';}
+  function edgePt(side,m){ if(side===0)return [-m,rnd(.12,.92)*fH]; if(side===1)return [fW+m,rnd(.12,.92)*fH]; if(side===2)return [rnd(.08,.92)*fW,-m]; return [rnd(.08,.92)*fW,fH+m]; }
+  function fishRoute(){ var a=Math.random()<.7?Math.floor(Math.random()*2):2+Math.floor(Math.random()*2), b; do{b=Math.floor(Math.random()*4);}while(b===a||(a>1&&b>1&&Math.random()<.5)); var m=fW<700?50:120; return [edgePt(a,m),edgePt(b,m+40)]; }
+  function makeFish(kind,p,q,lead,off,d){
+    var s=SPEC[kind], sc=fW<700?.62:1, spd=fW<700?.85:1; d=d==null?Math.random():d;
+    var f={s:s,L:rnd(s.L[0],s.L[1])*sc*(1-.3*d),x:p[0],y:p[1],tx:q[0],ty:q[1],th:Math.atan2(q[1]-p[1],q[0]-p[0]),vb:rnd(s.sp[0],s.sp[1])*spd,v:0,ph:rnd(0,7),wp:rnd(0,7),wf:rnd(.2,.5),wa:rnd(.2,.5),d:d,boost:0,fa:0,lead:lead||null,off:off||null,age:0,seed:Math.random()*1000};
+    f.v=f.vb; f.c={back:mix(s.back,d),mid:mix(s.mid,d),edge:mix(s.edge,d),fin:mix(s.fin,d)}; return f;
+  }
+  function spawn(pre){
+    var rt=fishRoute(), r=Math.random(), t0=pre?rnd(.15,.75):0;
+    function place(f){ if(pre){f.x=rt[0][0]+(rt[1][0]-rt[0][0])*t0+(f.x-rt[0][0]); f.y=rt[0][1]+(rt[1][1]-rt[0][1])*t0+(f.y-rt[0][1]);} return f; }
+    var schools=0; for(var q=0;q<fishes.length;q++) if(fishes[q].s===SPEC.hering&&!fishes[q].lead) schools++;
+    if(r<.3&&schools<2){ 
+      var lead=place(makeFish('hering',rt[0],rt[1])); fishes.push(lead); var n=5+Math.floor(Math.random()*5);
+      for(var i=0;i<n;i++){ var o=[rnd(-140,-20),rnd(-80,80)], f=makeFish('hering',[rt[0][0]+o[0],rt[0][1]+o[1]],rt[1],lead,o,Math.min(1,Math.max(0,lead.d+rnd(-.12,.12)))); fishes.push(place(f)); }
+    } else { r=Math.random(); fishes.push(place(makeFish(r<.42?'makrele':r<.75?'rotbarsch':'dorsch',rt[0],rt[1]))); }
+  }
+  function stepFish(f,dt,t){
+    var gx=f.tx, gy=f.ty, want;
+    if(f.lead&&fishes.indexOf(f.lead)<0) f.lead=null;
+    if(f.lead){ var c=Math.cos(f.lead.th), s=Math.sin(f.lead.th); gx=f.lead.x+f.off[0]*c-f.off[1]*s; gy=f.lead.y+f.off[0]*s+f.off[1]*c; }
+    want=Math.atan2(gy-f.y,gx-f.x)+(f.lead?0:Math.sin(t*f.wf+f.wp)*f.wa);
+    if(f.boost>0) want=f.fa;
+    var da=Math.atan2(Math.sin(want-f.th),Math.cos(want-f.th)), tr=(f.boost>0?4.5:1.3)*dt;
+    f.th+=Math.max(-tr,Math.min(tr,da));
+    var tv=f.vb*(1+.3*Math.sin(t*.6+f.wp*3));
+    if(f.lead){ var dist=Math.hypot(gx-f.x,gy-f.y); tv=f.lead.v*(.8+Math.min(1.2,dist/50)*.6); }
+    if(!f.lead&&f.boost<=0&&Math.random()<dt*.05){ f.boost=.5; f.fa=f.th+rnd(-.6,.6); }
+    if(f.boost>0){ tv=f.vb*3.4; f.boost-=dt; }
+    f.v+=(tv-f.v)*Math.min(1,dt*(f.boost>0?6:2));
+    f.x+=Math.cos(f.th)*f.v*dt; f.y+=Math.sin(f.th)*f.v*dt;
+    f.ph+=dt*(2.5+f.v/f.L*7); f.age+=dt;
+  }
+  function bodyPath(g,L,P,Lf,Rt,W){
+    g.beginPath(); g.moveTo(Rt[0][0],Rt[0][1]);
+    g.quadraticCurveTo(P[0][0]+W*.32,P[0][1],Lf[0][0],Lf[0][1]);
+    for(var i=1;i<Lf.length;i++){ var mx=(Lf[i-1][0]+Lf[i][0])/2, my=(Lf[i-1][1]+Lf[i][1])/2; g.quadraticCurveTo(Lf[i-1][0],Lf[i-1][1],mx,my); }
+    g.lineTo(Lf[Lf.length-1][0],Lf[Lf.length-1][1]); g.lineTo(Rt[Rt.length-1][0],Rt[Rt.length-1][1]);
+    for(i=Rt.length-2;i>=0;i--){ var nx=(Rt[i+1][0]+Rt[i][0])/2, ny=(Rt[i+1][1]+Rt[i][1])/2; g.quadraticCurveTo(Rt[i+1][0],Rt[i+1][1],nx,ny); }
+    g.closePath();
+  }
+  function drawFish(g,f){
+    var s=f.s, L=f.L, W=L*s.w, n=16, P=[], N=[], wd=[], Lf=[], Rt=[], i, u;
+    var amp=W*.5*(.55+Math.min(1.5,f.v/f.vb)*.45);
+    for(i=0;i<=n;i++){ u=i/n; P.push([L*(.5-u), amp*Math.pow(u,1.8)*Math.sin(f.ph-u*3.6)]); }
+    for(i=0;i<=n;i++){ var a=P[Math.max(0,i-1)], b=P[Math.min(n,i+1)], tx=a[0]-b[0], ty=a[1]-b[1], l=Math.hypot(tx,ty)||1; N.push([-ty/l,tx/l]);
+      u=i/n; var w=W*.5*Math.max(.07,Math.sin(Math.PI*Math.pow(.05+.95*u,.62))*(1-.55*u)); wd.push(w);
+      Lf.push([P[i][0]+N[i][0]*w,P[i][1]+N[i][1]*w]); Rt.push([P[i][0]-N[i][0]*w,P[i][1]-N[i][1]*w]); }
+    g.save(); g.translate(f.x,f.y); g.rotate(f.th); g.globalAlpha=1-f.d*.22;
+    // Schwanzflosse
+    var e=P[n], e2=P[n-2], ta=Math.atan2(e[1]-e2[1],e[0]-e2[0])+Math.cos(f.ph-3.6)*.25, TL=L*.24, TS=W*1.15;
+    g.save(); g.translate(e[0],e[1]); g.rotate(ta-Math.PI);
+    g.beginPath(); g.moveTo(0,-W*.05); g.quadraticCurveTo(-TL*.45,-TS*.18,-TL,-TS*.5); g.quadraticCurveTo(-TL*(1-s.fork*.5),-TS*.12,-TL*(1-s.fork*.75),0); g.quadraticCurveTo(-TL*(1-s.fork*.5),TS*.12,-TL,TS*.5); g.quadraticCurveTo(-TL*.45,TS*.18,0,W*.05); g.closePath();
+    g.fillStyle=f.c.fin; g.globalAlpha*=.8; g.fill(); g.strokeStyle='rgba(255,255,255,.25)'; g.lineWidth=.6; for(var k=-2;k<=2;k++){g.beginPath();g.moveTo(-1,0);g.lineTo(-TL*.92,k*TS*.2);g.stroke();}
+    g.restore();
+    // Brustflossen
+    var pi=Math.round(n*.24), flap=Math.sin(f.ph*.6)*.25;
+    for(var sd=-1;sd<=1;sd+=2){ g.save(); g.translate(P[pi][0]+N[pi][0]*wd[pi]*sd*.9,P[pi][1]+N[pi][1]*wd[pi]*sd*.9); g.rotate(Math.PI+sd*(-.75-flap));
+      g.beginPath(); g.ellipse(W*.28,0,W*.32,W*.12,0,0,Math.PI*2); g.fillStyle=f.c.fin; g.globalAlpha*=.7; g.fill(); g.restore(); }
+    // Körper mit Schatten auf dem Grund
+    bodyPath(g,L,P,Lf,Rt,W);
+    var gr=g.createLinearGradient(0,-W*.5,0,W*.5); gr.addColorStop(0,f.c.edge); gr.addColorStop(.3,f.c.mid); gr.addColorStop(.5,f.c.back); gr.addColorStop(.7,f.c.mid); gr.addColorStop(1,f.c.edge);
+    var sx=9-5*f.d, sy=13-7*f.d, cs=Math.cos(-f.th), sn=Math.sin(-f.th);
+    g.save(); g.translate(sx*cs-sy*sn, sx*sn+sy*cs); bodyPath(g,L,P,Lf,Rt,W); g.fillStyle='rgba(4,24,48,'+(.26-.12*f.d)+')'; g.fill(); g.restore();
+    bodyPath(g,L,P,Lf,Rt,W); g.fillStyle=gr; g.fill();
+    g.save(); bodyPath(g,L,P,Lf,Rt,W); g.clip();
+    // Schuppen
+    g.strokeStyle='rgba(255,255,255,.13)'; g.lineWidth=.7;
+    if(Q.scales) for(i=3;i<n-1;i+=(fW<700?2:1)){ for(var v=-.75;v<=.76;v+=.375){ var x=P[i][0]+N[i][0]*wd[i]*v, y=P[i][1]+N[i][1]*wd[i]*v; g.beginPath(); g.arc(x,y,W*.075,-1.2,1.2); g.stroke(); } }
+    var rs=f.seed;
+    function sr(){ rs=(rs*9301+49297)%233280; return rs/233280; }
+    if(s.pat==='stripes'){ g.strokeStyle=mix('#08222a',f.d); g.globalAlpha*=.85; g.lineWidth=W*.075; g.lineCap='round';
+      for(i=4;i<=n-3;i+=1){ g.beginPath(); for(v=-.85;v<=.86;v+=.17){ var j=i+((Math.round(v/.17))%2?.35:-.35); var x2=P[i][0]+N[i][0]*wd[i]*v+(j-i)*L/n, y2=P[i][1]+N[i][1]*wd[i]*v; if(v<-.84)g.moveTo(x2,y2); else g.lineTo(x2,y2);} g.stroke(); }
+      g.globalAlpha/=.85; }
+    if(s.pat==='spots'){ g.fillStyle=mix('#2b2915',f.d); for(i=0;i<34;i++){ var su=.1+sr()*.8, sv=sr()*1.7-.85, si=Math.round(su*n); g.beginPath(); g.arc(P[si][0]+N[si][0]*wd[si]*sv,P[si][1]+N[si][1]*wd[si]*sv,W*(.04+sr()*.05),0,7); g.fill(); } }
+    if(s.pat==='shine'){ var sh=.25+.25*Math.sin(f.ph*.5+f.seed); g.strokeStyle='rgba(240,250,255,'+sh+')'; g.lineWidth=W*.12; g.beginPath(); for(i=2;i<=n-3;i++){ var hx=P[i][0]+N[i][0]*wd[i]*.55, hy=P[i][1]+N[i][1]*wd[i]*.55; if(i===2)g.moveTo(hx,hy); else g.lineTo(hx,hy);} g.stroke(); }
+    if(s.pat==='scales'){ g.fillStyle='rgba(255,220,180,.18)'; for(i=3;i<n-2;i+=2){ g.beginPath(); g.arc(P[i][0],P[i][1],W*.12,0,7); g.fill(); } }
+    // Licht von oben links
+    var lg=g.createRadialGradient(L*.15,-W*.25,0,L*.15,-W*.25,L*.45); lg.addColorStop(0,'rgba(255,255,255,.28)'); lg.addColorStop(1,'rgba(255,255,255,0)'); g.fillStyle=lg; g.fillRect(-L,-L,2*L,2*L);
+    g.restore();
+    // Rückenflosse als dunkler Grat
+    g.strokeStyle=f.c.back; g.lineWidth=Math.max(1,W*.07); g.lineCap='round'; g.beginPath(); for(i=Math.round(n*.3);i<=Math.round(n*.62);i++){ if(i===Math.round(n*.3))g.moveTo(P[i][0],P[i][1]); else g.lineTo(P[i][0],P[i][1]); } g.stroke();
+    // Augen
+    var ei=Math.round(n*.09);
+    for(sd=-1;sd<=1;sd+=2){ var ex=P[ei][0]+N[ei][0]*wd[ei]*sd*.72, ey=P[ei][1]+N[ei][1]*wd[ei]*sd*.72; g.fillStyle='#0b1620'; g.beginPath(); g.arc(ex,ey,Math.max(1.2,W*.1),0,7); g.fill(); g.fillStyle='rgba(255,255,255,.85)'; g.beginPath(); g.arc(ex+W*.03,ey-W*.03,Math.max(.5,W*.035),0,7); g.fill(); }
+    g.restore();
+  }
+  function sizeFish(){
+    var r=wc.getBoundingClientRect(); fDpr=Math.min(Q.cap,window.devicePixelRatio||1); fW=r.width; fH=r.height;
+    fcv.width=Math.round(fW*fDpr); fcv.height=Math.round(fH*fDpr); fg.setTransform(fDpr,0,0,fDpr,0,0);
+    if(tile&&!fpat) fpat=fg.createPattern(tile,'repeat');
+    if(!fishes.length){ var want=fW<700?4:6; for(var i=0;i<want;i++) spawn(true); }
+  }
+  function drawFishes(t,dt){
+    var want=Math.round((fW<700?10:20)*Q.fish), i;
+    if(!still){
+      for(i=fishes.length-1;i>=0;i--){ var f=fishes[i]; stepFish(f,dt,t); if(f.age>3&&(f.x<-220||f.x>fW+220||f.y<-220||f.y>fH+220)||f.age>120) fishes.splice(i,1); }
+      if(fishes.length<want&&t>fNext){ spawn(false); fNext=t+rnd(1,3.5); }
+    }
+    fg.clearRect(0,0,fW,fH);
+    fishes.sort(function(a,b){return b.d-a.d;});
+    for(i=0;i<fishes.length;i++) drawFish(fg,fishes[i]);
+    if(fpat){ fg.globalCompositeOperation='source-atop'; fpat.setTransform(new DOMMatrix().scale(1/WS).translate(t*9*WK,t*5*WK).scale(1.5*WK)); fg.globalAlpha=.14; fg.fillStyle=fpat; fg.fillRect(0,0,fW,fH); fg.globalAlpha=1; fg.globalCompositeOperation='source-over'; }
+  }
+  function scare(x,y){ for(var i=0;i<fishes.length;i++){ var f=fishes[i], d=Math.hypot(f.x-x,f.y-y); if(d<190){ f.boost=.7+Math.random()*.4; f.fa=Math.atan2(f.y-y,f.x-x)+rnd(-.3,.3); } } }
+  /* Leistung: Während gescrollt wird, pausiert die Animation (sonst ruckelt das Scrollen am Handy).
+     Höchstens 30 Bilder pro Sekunde. Wasser und Fische liegen unter dem Öl und werden erst gezeichnet, wenn etwas weggewischt ist. */
+  var scrolling=false, scrollT=0, lastDraw=0, waterShown=false;
+  window.addEventListener('scroll',function(){ scrolling=true; clearTimeout(scrollT); scrollT=setTimeout(function(){scrolling=false;},200); },{passive:true});
+  var prevMs=0, avgGap=16;
+  function loop(ms){
+    requestAnimationFrame(loop);
+    var gapNow=ms-prevMs; prevMs=ms; if(vis&&!scrolling&&gapNow<500) avgGap=avgGap*0.95+gapNow*0.05;
+    if(!vis||!tile||scrolling||ms-lastDraw<Q.gap) return;
+    var t=ms/1000, dt=Math.min(.05,Math.max(0,t-fLast)); fLast=t; lastDraw=ms;
+    var open=done>0||finished;
+    if(open){ if((!still&&(!COARSE||(wTick++&1)===0))||!waterShown)drawWater(t); drawFishes(t,dt); waterShown=true; }
+    drawFx(t);
+    if(open) tune();
+  }
+  var avgCost=0, tuneN=0;
+  /* Misst, wie flüssig der Browser wirklich ist (Abstand zwischen zwei Bildern). Unter ca. 25 Bildern pro Sekunde wird eine Stufe heruntergeschaltet. */
+  function tune(){
+    if(++tuneN<45||Q.level>=3) return;
+    if(avgGap>40){ Q.level++; tuneN=0;
+      if(Q.level===1){ Q.fish=.6; Q.scales=false; Q.gap=Math.max(Q.gap,40); }
+      if(Q.level===2){ Q.cap=1; Q.gap=50; sizeFx(); sizeFish(); }
+      if(Q.level===3){ Q.fish=.35; Q.gap=66; }
+      for(var i=fishes.length-1;i>=0&&fishes.length>Math.round(20*Q.fish);i--) if(!fishes[i].lead) fishes.splice(i,1);
+    }
+  }
+  sizeFx(); sizeFish(); drawWater(0);
+  window.addEventListener('resize',function(){clearTimeout(sizeFx.t);sizeFx.t=setTimeout(function(){sizeFx();sizeFish();drawWater(0);},150);});
+  if('IntersectionObserver' in window){ new IntersectionObserver(function(es){vis=es[0].isIntersecting;}).observe(cv); }
+  requestAnimationFrame(loop);
+  function ripple(e){ var r=cv.getBoundingClientRect(); ripples.push({x:e.clientX-r.left,y:e.clientY-r.top,t:performance.now()/1000}); if(ripples.length>12)ripples.shift(); scare(e.clientX-r.left,e.clientY-r.top); }
+
+  cv.addEventListener('pointermove',function(e){ if(e.pointerType==='mouse'||e.buttons) wipe(e); });
+  cv.addEventListener('pointerdown',function(e){ last=null; wipe(e); ripple(e); });
+  cv.addEventListener('pointerleave',function(){ last=null; });
+  cv.addEventListener('pointerup',function(){ last=null; });
+})();
+</script>
+</body>
+</html>
