@@ -8,3 +8,11 @@ Impressum und Datenschutz sind ausgefüllt (Stand 15.11.2026).
 Hochladen: Dein Strato-Paket (Mail Starter) hat keinen Webspace. Die Seite kommt deshalb
 auf GitHub Pages (Anleitung im Planungsdokument, Tab "Homepage"). Die Seite lädt nichts von fremden Servern,
 keine Cookies, kein Tracking. Schrift: Barlow Condensed (SIL Open Font License, liegt in fonts/).
+
+KONTAKTFORMULAR EINRICHTEN (einmalig)
+1. Auf forminit.com ein kostenloses Konto mit kontakt@oddbeangames.de anlegen.
+2. Ein Formular anlegen (Modus „Public“). Die Formular-ID steht in der Adresse forminit.com/f/XXXX.
+3. In index.html bei  var FORM_ID='';  die ID zwischen die Hochkommas schreiben (oder die ID an Claude geben).
+4. Bei Forminit die E-Mail-Benachrichtigung an kontakt@oddbeangames.de einschalten.
+5. Falls angeboten: unter „Authorized Domains“ oddbeangames.de eintragen.
+6. Nachrichten bei Forminit nach spätestens 6 Monaten löschen (so steht es im Datenschutz).

@@ -111,6 +111,27 @@ footer a{color:var(--muted)}
 .legal p,.legal li{color:var(--cream);font-size:16px;margin:0 0 10px}
 .legal .todo{background:rgba(255,107,26,.18);border-radius:4px;padding:0 4px;color:#ffc7a8}
 .back{display:inline-block;margin-bottom:20px}
+/* Kontaktformular */
+.kform{display:grid;gap:18px;margin-top:26px;background:var(--navy2);border:1px solid var(--line);border-radius:16px;padding:24px}
+.krow{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.kf{display:flex;flex-direction:column;gap:6px;min-width:0}
+.kf label{font-weight:600;font-size:15px}
+.kf label i{font-style:normal;font-weight:400;color:var(--muted)}
+.kf input,.kf select,.kf textarea{font:inherit;font-size:16px;color:var(--cream);background:var(--navy);border:1.5px solid var(--line);border-radius:10px;padding:11px 12px;width:100%}
+.kf textarea{min-height:190px;resize:vertical;line-height:1.5}
+.kf input:focus,.kf select:focus,.kf textarea:focus{outline:none;border-color:var(--sea-l);box-shadow:0 0 0 3px rgba(124,196,242,.25)}
+.kf small{font-size:13px;color:var(--muted)}
+.kcount{display:flex;justify-content:space-between;gap:12px;font-size:13px;color:var(--muted)}
+.kcount.over{color:#ffb88f;font-weight:600}
+.ktrap{position:absolute!important;left:-9999px!important;width:1px;height:1px;overflow:hidden}
+.ksend{display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px}
+.ksend button{border:0;cursor:pointer}
+.ksend button[disabled]{opacity:.5;cursor:not-allowed;transform:none}
+.knote{font-size:14px;color:var(--muted);margin:0}
+.kmsg{border-radius:10px;padding:12px 14px;font-size:15px;margin:0}
+.kmsg.ok{background:rgba(46,139,214,.18);border:1px solid var(--sea)}
+.kmsg.err{background:rgba(255,107,26,.14);border:1px solid rgba(255,107,26,.6)}
+@media (max-width:640px){.krow{grid-template-columns:1fr}.kform{padding:18px}}
 @media (max-width:900px){.feats{grid-template-columns:1fr}.feat,.feat:nth-child(n+4){grid-column:auto}}
 @media (max-width:760px){.toast{right:auto;left:20px;bottom:110px;font-size:20px}.eyebrow{font-size:15px}.pitch{grid-template-columns:1fr}.road li{grid-template-columns:1fr;gap:2px}.hero{min-height:88vh}.wipe{left:20px;right:auto;align-items:flex-start;text-align:left;bottom:14px}.hero-in{padding-bottom:96px}}
 </style>
@@ -241,13 +262,14 @@ footer a{color:var(--muted)}
     <h2 data-i="h-final">Setz es auf deine Wunschliste</h2>
     <p data-i="final">Für ein kleines Studio zählt jede Wunschliste. Steam zeigt das Spiel dann mehr Leuten, und du bekommst eine Nachricht, sobald die Demo und das Spiel da sind.</p>
     <a class="btn btn-main js-steam" href="https://store.steampowered.com/" rel="noopener"><span data-i="wish2">Jetzt auf die Wunschliste</span></a>
-    <p style="font-size:14px"><span data-i="press">Presse und Creator:</span> <a href="mailto:presse@oddbeangames.de" id="mail">presse@oddbeangames.de</a></p>
+    <p style="font-size:14px"><span data-i="press">Presse und Creator:</span> <a href="mailto:presse@oddbeangames.de" id="mail">presse@oddbeangames.de</a> · <a href="#kontakt" data-i="kl2">Kontaktformular</a></p>
   </div></section>
 
   <footer><div class="wrap">
     <img class="studio" src="img/oddbean.webp" alt="Odd Bean Games" width="260" height="65" loading="lazy">
     <nav aria-label="Rechtliches und Links">
       <a class="js-steam" href="https://store.steampowered.com/" rel="noopener">Steam</a>
+      <a href="#kontakt" data-i="kl">Kontakt</a>
       <a href="#impressum">Impressum</a>
       <a href="#datenschutz" data-i="dsl">Datenschutz</a>
     </nav>
@@ -261,11 +283,43 @@ footer a{color:var(--muted)}
   <h2>Angaben gemäß § 5 DDG</h2>
   <p>Kevin Luchmann<br>Odd Bean Games<br>Geitherstraße 14<br>67435 Neustadt an der Weinstraße<br>Deutschland</p>
   <h2>Kontakt</h2>
-  <p>E-Mail: <a href="mailto:kontakt@oddbeangames.de">kontakt@oddbeangames.de</a><br>Presse: <a href="mailto:presse@oddbeangames.de">presse@oddbeangames.de</a></p>
+  <p>E-Mail: <a href="mailto:kontakt@oddbeangames.de">kontakt@oddbeangames.de</a><br>Presse: <a href="mailto:presse@oddbeangames.de">presse@oddbeangames.de</a><br>Kontaktformular: <a href="#kontakt">oddbeangames.de/#kontakt</a></p>
   <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
   <p>Kevin Luchmann, Geitherstraße 14, 67435 Neustadt an der Weinstraße</p>
   <h2>Verbraucherstreitbeilegung</h2>
   <p>Wir sind nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+</div></div>
+
+<div id="kontakt" class="legal" hidden><div class="wrap">
+  <a class="back" href="#" data-i="k-back">← Zurück zur Startseite</a>
+  <h1 data-i="k-h">Kontakt</h1>
+  <p data-i="k-intro">Fragen zum Spiel, ein Fehler, eine Idee oder eine Anfrage als Creator? Schreib uns. Wir antworten meistens innerhalb von ein paar Tagen.</p>
+  <form class="kform" id="kform" novalidate>
+    <div class="krow">
+      <div class="kf"><label for="k-name"><span data-i="k-name">Name</span> *</label><input id="k-name" name="fi-sender-fullName" autocomplete="name" maxlength="60" required></div>
+      <div class="kf"><label for="k-mail"><span data-i="k-mail">E-Mail für die Antwort</span> *</label><input id="k-mail" name="fi-sender-email" type="email" autocomplete="email" maxlength="120" required></div>
+    </div>
+    <div class="krow">
+      <div class="kf"><label for="k-tag"><span data-i="k-tag">Gamertag</span> <i data-i="k-opt">(freiwillig)</i></label><input id="k-tag" name="fi-text-gamertag" maxlength="40" autocomplete="off"><small data-i="k-taghint">Steam, Discord oder ein anderer Name, unter dem du spielst.</small></div>
+      <div class="kf"><label for="k-topic"><span data-i="k-topic">Worum geht es?</span> *</label>
+        <select id="k-topic" name="fi-text-thema" required>
+          <option value="" data-i="k-t0">Bitte wählen</option>
+          <option value="Frage zum Spiel" data-i="k-t1">Frage zum Spiel</option>
+          <option value="Fehler im Spiel" data-i="k-t2">Fehler im Spiel</option>
+          <option value="Idee oder Rückmeldung" data-i="k-t3">Idee oder Rückmeldung</option>
+          <option value="Presse oder Creator" data-i="k-t4">Presse oder Creator</option>
+          <option value="Zusammenarbeit" data-i="k-t5">Zusammenarbeit</option>
+          <option value="Etwas anderes" data-i="k-t6">Etwas anderes</option>
+        </select></div>
+    </div>
+    <div class="kf"><label for="k-text"><span data-i="k-text">Deine Nachricht</span> *</label><textarea id="k-text" name="fi-text-nachricht" maxlength="2500" required></textarea>
+      <div class="kcount" id="k-count"><span data-i="k-limit">Höchstens 300 Wörter, höchstens 3 Links.</span><span id="k-num">0 / 300</span></div></div>
+    <div class="ktrap" aria-hidden="true"><label for="k-gotcha">Nicht ausfüllen</label><input id="k-gotcha" name="_gotcha" tabindex="-1" autocomplete="off"></div>
+    <p class="knote"><span data-i="k-privacy">Mit dem Absenden gehen deine Angaben an unseren Formular-Dienst Forminit, der sie an uns weiterleitet. Mehr dazu im</span> <a href="#datenschutz" data-i="k-privlink">Datenschutz</a>.</p>
+    <div class="ksend"><button type="submit" class="btn btn-main" id="k-btn"><span data-i="k-send">Nachricht senden</span></button><span class="knote" id="k-wait" hidden></span></div>
+    <p class="kmsg" id="k-msg" role="status" aria-live="polite" hidden></p>
+  </form>
+  <noscript><p class="knote" style="margin-top:14px">Das Formular braucht JavaScript. Schreib uns sonst an kontakt@oddbeangames.de.</p></noscript>
 </div></div>
 
 <div id="datenschutz" class="legal" hidden><div class="wrap">
@@ -275,11 +329,14 @@ footer a{color:var(--muted)}
   <h2>1. Wer ist verantwortlich?</h2>
   <p>Kevin Luchmann, Odd Bean Games, Geitherstraße 14, 67435 Neustadt an der Weinstraße, Deutschland, E-Mail: <a href="mailto:kontakt@oddbeangames.de">kontakt@oddbeangames.de</a></p>
   <h2>2. Das Wichtigste in Kürze</h2>
-  <p>Diese Seite setzt keine Cookies, nutzt keine Analyse- oder Werbedienste und lädt keine Inhalte von anderen Anbietern. Schriften und Bilder liegen auf unserem eigenen Server. Links zu Steam und anderen Seiten sind einfache Links: Erst wenn du sie anklickst, verlässt du unsere Seite.</p>
+  <p>Diese Seite setzt keine Cookies, nutzt keine Analyse- oder Werbedienste und lädt keine Inhalte von anderen Anbietern. Schriften und Bilder liegen auf unserem eigenen Server. Links zu Steam und anderen Seiten sind einfache Links: Erst wenn du sie anklickst, verlässt du unsere Seite. Das Kontaktformular sendet erst etwas, wenn du auf „Nachricht senden“ drückst.</p>
+  <p>Wenn du oben die Sprache umstellst, merkt sich dein Browser deine Wahl (Eintrag „ctb-lang“ im lokalen Speicher deines Browsers). Das ist nötig, damit die Seite in der gewählten Sprache bleibt (§ 25 Abs. 2 Nr. 2 TDDDG). Der Eintrag wird nicht an uns gesendet, und du kannst ihn in deinem Browser jederzeit löschen.</p>
   <h2>3. Hosting und Server-Protokolle</h2>
   <p>Die Seite liegt bei GitHub Pages, einem Dienst der GitHub, Inc. (USA). Beim Aufruf verarbeitet GitHub technisch Daten wie deine IP-Adresse, Datum und Uhrzeit, aufgerufene Seite und Browser, um die Seite auszuliefern und vor Angriffen zu schützen (Art. 6 Abs. 1 lit. f DSGVO). Wir selbst bekommen diese Daten nicht. Für die Übermittlung in die USA beruft sich GitHub in seiner Datenschutzerklärung auf das EU-US Data Privacy Framework. Mehr dazu in der Datenschutzerklärung von GitHub. Die Adressen oddbeangames.de und oddbeangames.com sind bei der STRATO GmbH (Berlin) registriert, oddbeangames.com leitet nur weiter.</p>
-  <h2>4. Kontakt per E-Mail</h2>
-  <p>Wenn du uns schreibst, verwenden wir deine Adresse und deine Nachricht nur, um zu antworten (Art. 6 Abs. 1 lit. b oder f DSGVO). Wir löschen sie, wenn die Sache erledigt ist und keine Aufbewahrungspflicht besteht.</p>
+  <h2>4. Kontaktformular und E-Mail</h2>
+  <p>Wenn du das Kontaktformular nutzt, erhalten wir deinen Namen, deine E-Mail-Adresse, das Thema, deine Nachricht und, falls du ihn angibst, deinen Gamertag. Wir nutzen diese Angaben nur, um deine Anfrage zu bearbeiten und dir zu antworten (Art. 6 Abs. 1 lit. b DSGVO, wenn es um einen Vertrag oder eine Anfrage dazu geht, sonst Art. 6 Abs. 1 lit. f DSGVO, unser Interesse, Anfragen zu beantworten).</p>
+  <p>Das Formular läuft über Forminit, einen Dienst der UXPLUS LTD, London, Großbritannien. Wenn du auf „Nachricht senden“ drückst, gehen deine Angaben und technisch deine IP-Adresse an Forminit. Forminit speichert die Nachricht auf Servern von Amazon Web Services in Irland, prüft sie auf Spam und schickt sie uns per E-Mail. Mit Forminit besteht ein Vertrag zur Auftragsverarbeitung. Für Großbritannien hat die EU-Kommission ein angemessenes Datenschutzniveau festgestellt (Angemessenheitsbeschluss).</p>
+  <p>Wenn du uns direkt per E-Mail schreibst, läuft nichts über Forminit. In beiden Fällen löschen wir deine Nachricht, wenn deine Anfrage erledigt ist, spätestens nach 6 Monaten, außer wir müssen sie aus gesetzlichen Gründen länger aufbewahren.</p>
   <h2>5. Im Spiel: „Fehler melden“ und „Rückmeldung“</h2>
   <p>Im Spiel kannst du uns Fehler und deine Meinung schicken. Gesendet wird nur, wenn du selbst auf „Senden“ drückst (Art. 6 Abs. 1 lit. a DSGVO). Wir erhalten deinen Text, die Kategorie und technische Spielinfos (Spielversion, Sprache, Gebiet im Spiel, Spielzeit, Betriebssystem, Grafikkarte, Auflösung, Maus oder Controller). Wir erhalten keinen Namen, keine Steam-ID, keine Spielstände und keine Dateien. Wenn du freiwillig eine E-Mail-Adresse angibst, nutzen wir sie nur für eine Antwort.</p>
   <p>Die Meldung läuft über einen Dienst von Cloudflare, Inc. (USA), der sie weiterleitet, und wird in einem privaten Speicher bei GitHub, Inc. (USA) abgelegt. Beide Anbieter verarbeiten dabei technisch auch deine IP-Adresse, wir speichern sie nicht. Für die Übermittlung in die USA berufen sich beide Anbieter in ihren Datenschutzerklärungen auf das EU-US Data Privacy Framework. Wir löschen die Meldungen spätestens nach 12 Monaten.</p>
@@ -300,10 +357,12 @@ footer a{color:var(--muted)}
   /* Seiten: Start, Impressum, Datenschutz */
   function route(){
     var h=location.hash.replace('#','');
-    var legal=(h==='impressum'||h==='datenschutz');
+    var legal=(h==='impressum'||h==='datenschutz'||h==='kontakt');
     document.getElementById('seite').hidden=legal;
     document.getElementById('impressum').hidden=h!=='impressum';
     document.getElementById('datenschutz').hidden=h!=='datenschutz';
+    document.getElementById('kontakt').hidden=h!=='kontakt';
+    if(h==='kontakt'&&typeof kOpen==='function')kOpen();
     if(legal)window.scrollTo(0,0);
   }
   window.addEventListener('hashchange',route); route();
@@ -315,7 +374,8 @@ footer a{color:var(--muted)}
     'h-facts':'At a glance',k1:'Genre',v1:'Cozy cleaning and building sim',k2:'Platform',v2:'PC (Windows) on Steam, Steam Deck planned',k3:'Players',v3:'1 to 4, online co-op',k4:'Playtime',v4:'About 25 to 30 hours to the finale',k5:'Languages',v5:'English, German, French, Spanish, Italian, Polish, Portuguese (BR), Russian, Turkish, Japanese, Korean, Chinese',k6:'Release',v6:'Full release, no Early Access. Date to be announced.',k7:'Demo',v7:'Steam Next Fest, February 22 to March 1, 2027',k8:'Studio',v8:'Odd Bean Games, Germany',
     'h-road':'What’s next',r1w:'December 2026',r1:'Steam page with screenshots and trailer. From then on you can wishlist the game.',r2w:'February 2027',r2:'Free demo at Steam Next Fest, February 22 to March 1.',r3w:'After that',r3:'The finished game. If it’s on your wishlist, Steam lets you know the moment it’s out.',
     'h-faq':'Questions',q1:'Is there a demo?',a1:'Yes. At Steam Next Fest, February 22 to March 1, 2027, you can play the beginning for free.',q2:'Can I play solo?',a2:'Yes, the whole game. Co-op with up to three friends is an option, not a must.',q3:'Does it run on Steam Deck?',a3:'That’s the goal. The game will be fully playable with a controller, and we’ll have Valve review it.',q4:'Is it coming to consoles?',a4:'It launches on PC via Steam first. More when the time comes.',q5:'Who makes the game?',a5:'Odd Bean Games, a small studio from Germany.',
-    'h-final':'Put it on your wishlist',final:'For a small studio, every wishlist counts. Steam shows the game to more people, and you get a message as soon as the demo and the game are out.',wish2:'Wishlist now',press:'Press and creators:',dsl:'Privacy',
+    'h-final':'Put it on your wishlist',final:'For a small studio, every wishlist counts. Steam shows the game to more people, and you get a message as soon as the demo and the game are out.',wish2:'Wishlist now',press:'Press and creators:',dsl:'Privacy',kl:'Contact',kl2:'Contact form',
+    'k-back':'← Back to the start page','k-h':'Contact','k-intro':'Questions about the game, a bug, an idea or a creator request? Write to us. We usually reply within a few days.','k-name':'Name','k-mail':'Email for our reply','k-tag':'Gamertag','k-opt':'(optional)','k-taghint':'Steam, Discord or any other name you play under.','k-topic':'What is it about?','k-t0':'Please choose','k-t1':'Question about the game','k-t2':'Bug in the game','k-t3':'Idea or feedback','k-t4':'Press or creator','k-t5':'Collaboration','k-t6':'Something else','k-text':'Your message','k-limit':'Up to 300 words, up to 3 links.','k-privacy':'When you send this, your details go to our form service Forminit, which forwards them to us. More in the','k-privlink':'privacy policy','k-send':'Send message',
     t1:'First field clean! +100 shells',t2:'The fish are coming back.',t3:'The bay shines. Now the real one?'};
   var DE={}; [].forEach.call(document.querySelectorAll('[data-i]'),function(el){DE[el.dataset.i]=el.textContent;});
   DE.t1='Erstes Feld sauber! +100 Muscheln'; DE.t2='Die Fische kommen zurück.'; DE.t3='Die Bucht glänzt. Jetzt die echte?';
@@ -326,12 +386,58 @@ footer a{color:var(--muted)}
     document.documentElement.lang=l;
     document.getElementById('l-de').setAttribute('aria-pressed',l==='de');
     document.getElementById('l-en').setAttribute('aria-pressed',l==='en');
-    try{localStorage.setItem('ctb-lang',l);}catch(e){}
+    if(typeof onLang==='function')onLang();
   }
-  document.getElementById('l-de').onclick=function(){setLang('de');};
-  document.getElementById('l-en').onclick=function(){setLang('en');};
+  function pick(l){setLang(l);try{localStorage.setItem('ctb-lang',l);}catch(e){}}
+  document.getElementById('l-de').onclick=function(){pick('de');};
+  document.getElementById('l-en').onclick=function(){pick('en');};
   var saved=null; try{saved=localStorage.getItem('ctb-lang');}catch(e){}
   setLang(saved||((navigator.language||'de').toLowerCase().indexOf('de')===0?'de':'en'));
+
+  /* Kontaktformular
+     EINSTELLUNG: Formular-ID von forminit.com eintragen (steht in der Adresse forminit.com/f/XXXX). Leer = Formular zeigt nur die Mail-Adresse. */
+  var FORM_ID='';
+  var K_WORDS=300, K_LINKS=3, K_WAIT=10*60, K_MAXVISIT=3, K_MINTIME=4;
+  var KT={de:{need:'Bitte fülle alle Felder mit * aus.',mail:'Bitte prüf deine E-Mail-Adresse.',long:'Deine Nachricht hat mehr als 300 Wörter. Bitte kürze sie etwas.',links:'Bitte höchstens 3 Links pro Nachricht.',short:'Deine Nachricht ist sehr kurz. Schreib uns noch ein paar Worte mehr.',fast:'Das ging schnell. Warte bitte ein paar Sekunden und drück dann noch mal.',sending:'Wird gesendet …',ok:'Danke! Deine Nachricht ist angekommen. Wir melden uns per E-Mail.',fail:'Das hat leider nicht geklappt. Versuch es später noch mal oder schreib an kontakt@oddbeangames.de.',busy:'Gerade kommen zu viele Nachrichten an. Versuch es in ein paar Minuten noch mal.',off:'Das Formular wird gerade eingerichtet. Schreib uns bis dahin an kontakt@oddbeangames.de.',wait:'Nächste Nachricht in {0} möglich.',max:'Für diesen Besuch ist Schluss. Lade die Seite später neu, wenn du noch etwas schicken willst.'},
+            en:{need:'Please fill in all fields marked *.',mail:'Please check your email address.',long:'Your message is longer than 300 words. Please shorten it a little.',links:'Please use no more than 3 links per message.',short:'Your message is very short. Tell us a little more.',fast:'That was quick. Please wait a few seconds and press again.',sending:'Sending …',ok:'Thanks! Your message has arrived. We’ll reply by email.',fail:'Sorry, that didn’t work. Please try again later or write to kontakt@oddbeangames.de.',busy:'Too many messages right now. Please try again in a few minutes.',off:'The form is being set up. Until then, write to kontakt@oddbeangames.de.',wait:'Next message possible in {0}.',max:'That’s it for this visit. Reload the page later if you want to send more.'}};
+  function kt(k){return (KT[lang]||KT.de)[k];}
+  var kf=document.getElementById('kform'), kText=document.getElementById('k-text'), kNum=document.getElementById('k-num'), kCount=document.getElementById('k-count'), kBtn=document.getElementById('k-btn'), kMsg=document.getElementById('k-msg'), kWait=document.getElementById('k-wait');
+  var kOpened=0, kUntil=0, kSent=0, kTimer=null;
+  function kOpen(){ if(!kOpened) kOpened=Date.now(); }
+  function words(t){t=t.trim();return t?t.split(/\s+/).length:0;}
+  function links(t){return (t.match(/(https?:\/\/|www\.)/gi)||[]).length;}
+  function kUpd(){var n=words(kText.value);kNum.textContent=n+' / '+K_WORDS;kCount.classList.toggle('over',n>K_WORDS||links(kText.value)>K_LINKS);}
+  function kSay(t,ok){kMsg.textContent=t;kMsg.className='kmsg '+(ok?'ok':'err');kMsg.hidden=false;}
+  function kTick(){
+    var left=Math.ceil((kUntil-Date.now())/1000);
+    if(kSent>=K_MAXVISIT){kBtn.disabled=true;kWait.textContent=kt('max');kWait.hidden=false;return;}
+    if(left>0){kBtn.disabled=true;var m=Math.floor(left/60),s=left%60;kWait.textContent=kt('wait').replace('{0}',m+':'+(s<10?'0':'')+s);kWait.hidden=false;kTimer=setTimeout(kTick,1000);}
+    else{kBtn.disabled=false;kWait.hidden=true;}
+  }
+  function onLang(){ if(kNum)kUpd(); if(kTimer){clearTimeout(kTimer);kTick();} }
+  kText.addEventListener('input',kUpd); kUpd();
+  ['k-name','k-mail','k-tag','k-topic'].forEach(function(id){document.getElementById(id).addEventListener('focus',kOpen);}); kText.addEventListener('focus',kOpen);
+  kf.addEventListener('submit',function(ev){
+    ev.preventDefault();
+    if(kBtn.disabled)return;
+    var name=document.getElementById('k-name').value.trim(), mail=document.getElementById('k-mail').value.trim(), topic=document.getElementById('k-topic').value, text=kText.value.trim();
+    if(document.getElementById('k-gotcha').value){kSay(kt('ok'),true);kf.reset();kUpd();return;}
+    if(!name||!mail||!topic||!text)return kSay(kt('need'));
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(mail))return kSay(kt('mail'));
+    if(words(text)>K_WORDS)return kSay(kt('long'));
+    if(links(text)>K_LINKS)return kSay(kt('links'));
+    if(text.length<15)return kSay(kt('short'));
+    if(!kOpened||(Date.now()-kOpened)/1000<K_MINTIME)return kSay(kt('fast'));
+    if(!FORM_ID)return kSay(kt('off'));
+    var fd=new FormData(kf); fd.append('fi-text-sprache',lang);
+    kBtn.disabled=true; kSay(kt('sending'),true);
+    fetch('https://forminit.com/f/'+encodeURIComponent(FORM_ID),{method:'POST',headers:{Accept:'application/json'},body:fd})
+      .then(function(r){
+        if(r.ok){kSent++;kUntil=Date.now()+K_WAIT*1000;kf.reset();kUpd();kSay(kt('ok'),true);kTick();}
+        else{kBtn.disabled=false;kSay(kt(r.status===429?'busy':'fail'));}
+      })
+      .catch(function(){kBtn.disabled=false;kSay(kt('fail'));});
+  });
 
   /* Öl wegwischen */
   var cv=document.getElementById('oil'), ctx=cv.getContext('2d'), img=new Image(), ready=false;
