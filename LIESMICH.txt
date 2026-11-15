@@ -1,0 +1,11 @@
+Clean the Bay – Homepage (Stand 15.11.2026)
+
+Vor dem Hochladen in index.html ändern (oben im <script>-Teil):
+  STEAM_URL = Adresse deiner Steam-Seite (sobald sie angelegt ist)
+  (MAIL ist schon presse@oddbeangames.de, Impressum nutzt kontakt@oddbeangames.de)
+Außerdem alle orange markierten [Platzhalter] in Impressum und Datenschutz ausfüllen
+(im Abschnitt <div id="impressum"> und <div id="datenschutz">).
+
+Hochladen: Dein Strato-Paket (Mail Starter) hat keinen Webspace. Die Seite kommt deshalb
+auf GitHub Pages (Anleitung im Planungsdokument, Tab "Homepage"). Die Seite lädt nichts von fremden Servern,
+keine Cookies, kein Tracking. Schrift: Barlow Condensed (SIL Open Font License, liegt in fonts/).

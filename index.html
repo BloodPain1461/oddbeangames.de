@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="img/favicon.png">
+<title>Clean the Bay</title>
+<meta name="description" content="Clean the Bay – putz eine verölte Bucht mit Kajak und Schwamm wieder sauber. Allein oder im Koop. Demo beim Steam Next Fest im Februar 2027.">
+<meta property="og:title" content="Clean the Bay">
+<meta property="og:description" content="Eine Bucht voller Öl. Ein Kajak. Ein Schwamm. Jetzt auf die Steam-Wunschliste.">
+<meta property="og:image" content="https://oddbeangames.de/img/share.jpg">
+<meta property="og:url" content="https://oddbeangames.de/">
+<link rel="canonical" href="https://oddbeangames.de/">
+<style>
+/* Layout: Hero zum Wegwischen oben, darunter einspaltige Abschnitte mit Karten, Fakten, FAQ, Fuß mit Impressum. Bewusst nur dunkel (Öl und Nacht). */
+@font-face{font-family:"Barlow Condensed";font-weight:600;font-display:swap;src:url("fonts/barlow-condensed-latin-600-normal.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Barlow Condensed";font-weight:600;font-display:swap;src:url("fonts/barlow-condensed-latin-ext-600-normal.woff2") format("woff2");unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Barlow Condensed";font-weight:800;font-display:swap;src:url("fonts/barlow-condensed-latin-800-normal.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Barlow Condensed";font-weight:800;font-display:swap;src:url("fonts/barlow-condensed-latin-ext-800-normal.woff2") format("woff2");unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+:root{
+  --oil:#07090c; --navy:#0f1c2b; --navy2:#16283c; --line:#28405a;
+  --cream:#f4efe6; --muted:#b4c0cc; --orange:#ff6b1a; --orange-d:#c94c0c; --sea:#2e8bd6; --sea-l:#7cc4f2;
+  --f-head:"Barlow Condensed","Arial Narrow",Impact,sans-serif;
+  --f-body:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--navy);color:var(--cream);font-family:var(--f-body);font-size:17px;line-height:1.55}
+a{color:var(--sea-l)}
+a:hover{color:var(--cream)}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+h2{font-family:var(--f-head);font-weight:800;font-size:clamp(34px,5vw,52px);line-height:1;letter-spacing:.5px;text-transform:uppercase;margin:0 0 18px;text-wrap:balance}
+h3{font-family:var(--f-head);font-weight:800;font-size:26px;line-height:1.05;letter-spacing:.3px;margin:0 0 8px;text-transform:uppercase}
+p{margin:0}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--f-head);font-weight:800;text-transform:uppercase;letter-spacing:.6px;font-size:22px;text-decoration:none;border-radius:12px;padding:15px 24px;line-height:1}
+.btn-main{background:var(--orange);color:#1b0b02;box-shadow:0 6px 0 var(--orange-d)}
+.btn-main:hover{color:#1b0b02;transform:translateY(-1px);box-shadow:0 7px 0 var(--orange-d)}
+.btn-main:active{transform:translateY(4px);box-shadow:0 2px 0 var(--orange-d)}
+.btn-ghost{color:var(--cream);border:2px solid rgba(244,239,230,.4);padding:13px 20px}
+.btn-ghost:hover{border-color:var(--cream)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--sea-l);outline-offset:3px}
+.top{position:absolute;z-index:5;left:0;right:0;top:0;padding-top:max(14px,env(safe-area-inset-top,0px))}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.studio{height:26px;width:auto;opacity:.9}
+.lang{display:flex;gap:4px;background:rgba(7,9,12,.55);border-radius:999px;padding:4px}
+.lang button{font:inherit;font-size:13px;font-weight:600;color:var(--muted);background:none;border:0;border-radius:999px;padding:5px 10px;cursor:pointer}
+.lang button[aria-pressed=true]{background:var(--cream);color:var(--navy)}
+/* Hero */
+.hero{position:relative;min-height:min(92vh,820px);display:flex;align-items:flex-end;overflow:hidden;background:var(--oil)}
+.clean{position:absolute;inset:0;background:#1d6fb5}
+#water,#fx{position:absolute;inset:0;width:100%;height:100%;display:block}
+#fx{pointer-events:none}
+.fish{position:absolute;width:46px;height:24px;opacity:.85}
+@media (prefers-reduced-motion:no-preference){.fish{animation:swim 14s linear infinite}.fish:nth-child(2){animation-duration:19s;animation-delay:-6s}.fish:nth-child(3){animation-duration:23s;animation-delay:-12s}}
+@keyframes swim{from{transform:translateX(-10vw)}to{transform:translateX(110vw)}}
+#oil{position:absolute;inset:0;width:100%;height:100%;touch-action:pan-y;cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='34' viewBox='0 0 44 34'%3E%3Crect x='3' y='5' width='38' height='24' rx='6' fill='%23ffd23f' stroke='%23b8870b' stroke-width='3'/%3E%3Ccircle cx='14' cy='14' r='2.5' fill='%23e0a91a'/%3E%3Ccircle cx='27' cy='20' r='3' fill='%23e0a91a'/%3E%3Ccircle cx='32' cy='12' r='2' fill='%23e0a91a'/%3E%3C/svg%3E") 22 17,crosshair}
+.shade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(7,9,12,.88) 0%,rgba(7,9,12,.6) 38%,rgba(7,9,12,0) 70%),linear-gradient(0deg,rgba(15,28,43,1) 0%,rgba(15,28,43,0) 30%)}
+.hero-in{position:relative;z-index:2;width:100%;padding-top:96px;padding-bottom:56px;pointer-events:none}
+.hero-in a,.hero-in button{pointer-events:auto}
+.eyebrow{display:inline-block;font-family:var(--f-head);font-weight:600;font-size:19px;letter-spacing:1px;text-transform:uppercase;background:rgba(255,107,26,.16);border:1px solid rgba(255,107,26,.6);color:#ffb88f;border-radius:999px;padding:4px 14px}
+.logo{display:block;width:min(420px,78vw);height:auto;margin:18px 0 14px}
+.tag{font-size:clamp(19px,2.4vw,24px);max-width:30ch;color:var(--cream);text-wrap:balance}
+.cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:26px;align-items:center}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.chip{font-size:14px;color:var(--cream);background:rgba(15,28,43,.75);border:1px solid var(--line);border-radius:999px;padding:4px 12px}
+.wipe{position:absolute;z-index:3;right:max(20px,env(safe-area-inset-right,0px));bottom:22px;display:flex;flex-direction:column;align-items:flex-end;gap:6px;pointer-events:none;text-align:right}
+.wipe b{font-family:var(--f-head);font-weight:800;font-size:28px;letter-spacing:.5px}
+.wipe>span{font-size:14px;color:var(--muted)}
+.toast{position:absolute;z-index:4;right:max(20px,env(safe-area-inset-right,0px));bottom:92px;background:var(--cream);color:var(--navy);font-family:var(--f-head);font-weight:800;font-size:24px;text-transform:uppercase;padding:10px 18px;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.4);pointer-events:none;text-align:center;max-width:90vw}
+@media (prefers-reduced-motion:no-preference){.toast{animation:pop .35s ease-out}}
+@keyframes pop{from{transform:translateY(10px) scale(.9);opacity:0}to{transform:none;opacity:1}}
+/* Abschnitte */
+section.block{padding:72px 0}
+.pitch{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:40px;align-items:center}
+.pitch p{font-size:19px;color:var(--cream);max-width:62ch}
+.pitch img{width:100%;height:auto;border-radius:14px;border:1px solid var(--line);display:block}
+.cap{font-size:13px;color:var(--muted);margin-top:8px}
+.feats{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:18px}
+.feat{grid-column:span 2}
+.feat:nth-child(n+4){grid-column:span 3}
+.feat{background:var(--navy2);border:1px solid var(--line);border-radius:16px;padding:22px 22px 24px;display:flex;flex-direction:column;gap:6px}
+.feat svg{width:52px;height:52px;margin-bottom:6px}
+.feat p{color:var(--muted);font-size:16px}
+.band{background:var(--oil);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:2px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.fact{background:var(--navy);padding:16px 18px}
+.fact dt{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted)}
+.fact dd{margin:4px 0 0;font-size:17px}
+.road{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.road li{display:grid;grid-template-columns:150px minmax(0,1fr);gap:16px;align-items:baseline;border-left:3px solid var(--line);padding-left:16px}
+.road li.now{border-left-color:var(--orange)}
+.road .when{font-family:var(--f-head);font-weight:800;font-size:22px;text-transform:uppercase;color:var(--sea-l)}
+.road li.now .when{color:var(--orange)}
+.faq{display:grid;gap:10px}
+.faq details{background:var(--navy2);border:1px solid var(--line);border-radius:12px;padding:14px 18px}
+.faq summary{cursor:pointer;font-weight:600;font-size:18px}
+.faq details p{color:var(--muted);margin-top:8px}
+.final{text-align:center;display:flex;flex-direction:column;align-items:center;gap:18px}
+.final p{color:var(--muted);max-width:52ch}
+footer{border-top:1px solid var(--line);padding:34px 0 calc(34px + env(safe-area-inset-bottom,0px));color:var(--muted);font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:16px 28px;align-items:center;justify-content:space-between}
+footer nav{display:flex;flex-wrap:wrap;gap:8px 18px}
+footer a{color:var(--muted)}
+/* Rechtliches */
+.legal{padding:110px 0 60px}
+.legal .wrap{max-width:820px}
+.legal h1{font-family:var(--f-head);font-weight:800;font-size:48px;text-transform:uppercase;margin:0 0 18px}
+.legal h2{font-size:28px;margin:30px 0 8px}
+.legal p,.legal li{color:var(--cream);font-size:16px;margin:0 0 10px}
+.legal .todo{background:rgba(255,107,26,.18);border-radius:4px;padding:0 4px;color:#ffc7a8}
+.back{display:inline-block;margin-bottom:20px}
+@media (max-width:900px){.feats{grid-template-columns:1fr}.feat,.feat:nth-child(n+4){grid-column:auto}}
+@media (max-width:760px){.toast{right:auto;left:20px;bottom:110px;font-size:20px}.eyebrow{font-size:15px}.pitch{grid-template-columns:1fr}.road li{grid-template-columns:1fr;gap:2px}.hero{min-height:88vh}.wipe{left:20px;right:auto;align-items:flex-start;text-align:left;bottom:14px}.hero-in{padding-bottom:96px}}
+</style>
+</head>
+<body>
+
+<main id="seite">
+  <header class="top"><div class="wrap">
+    <img class="studio" src="img/oddbean.webp" alt="Odd Bean Games" width="260" height="65">
+    <div class="lang" role="group" aria-label="Sprache / Language">
+      <button type="button" id="l-de" aria-pressed="true">DE</button>
+      <button type="button" id="l-en" aria-pressed="false">EN</button>
+    </div>
+  </div></header>
+
+  <section class="hero" aria-labelledby="titel">
+    <div class="clean" aria-hidden="true">
+      <canvas id="water"></canvas>
+      <svg class="fish" style="top:58%" viewBox="0 0 46 24"><path d="M2 12 C10 2 26 2 34 12 C26 22 10 22 2 12Z" fill="#ffd166"/><path d="M34 12 L45 4 L42 12 L45 20Z" fill="#ffd166"/><circle cx="10" cy="10" r="1.8" fill="#123f6e"/></svg>
+      <svg class="fish" style="top:34%;width:34px" viewBox="0 0 46 24"><path d="M2 12 C10 2 26 2 34 12 C26 22 10 22 2 12Z" fill="#f4efe6"/><path d="M34 12 L45 4 L42 12 L45 20Z" fill="#f4efe6"/><circle cx="10" cy="10" r="1.8" fill="#123f6e"/></svg>
+      <svg class="fish" style="top:76%;width:58px" viewBox="0 0 46 24"><path d="M2 12 C10 2 26 2 34 12 C26 22 10 22 2 12Z" fill="#ff8f5a"/><path d="M34 12 L45 4 L42 12 L45 20Z" fill="#ff8f5a"/><circle cx="10" cy="10" r="1.8" fill="#123f6e"/></svg>
+    </div>
+    <canvas id="oil" aria-label="Ölteppich zum Wegwischen" role="img"></canvas>
+    <canvas id="fx" aria-hidden="true"></canvas>
+    <div class="shade" aria-hidden="true"></div>
+    <div class="toast" id="toast" hidden></div>
+    <div class="hero-in"><div class="wrap">
+      <span class="eyebrow" data-i="eyebrow">Demo beim Steam Next Fest · 22. Feb. – 1. März 2027</span>
+      <h1 id="titel" style="margin:0"><img class="logo" src="img/logo.webp" alt="Clean the Bay" width="900" height="420"></h1>
+      <p class="tag" data-i="tag">Eine Bucht voller Öl. Ein Kajak. Ein Schwamm. Irgendwo muss man ja anfangen.</p>
+      <div class="cta">
+        <a class="btn btn-main js-steam" href="https://store.steampowered.com/" rel="noopener">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6c-2.5 4.5-9.5 9-9.5 9z"/></svg>
+          <span data-i="wish">Auf die Steam-Wunschliste</span>
+        </a>
+        <a class="btn btn-ghost" href="#worum" data-i="more">Worum geht's?</a>
+      </div>
+      <div class="chips">
+        <span class="chip" data-i="c1">PC über Steam</span>
+        <span class="chip" data-i="c2">Allein oder Koop bis 4</span>
+        <span class="chip" data-i="c3">12 Sprachen</span>
+        <span class="chip" data-i="c4">Steam Deck geplant</span>
+      </div>
+    </div></div>
+    <div class="wipe" aria-live="polite">
+      <b><span id="pct">0</span> % <span data-i="clean">sauber</span></b>
+      <span data-i="hint">Wisch mal übers Öl.</span>
+    </div>
+  </section>
+
+  <section class="block" id="worum"><div class="wrap pitch">
+    <div>
+      <h2 data-i="h-pitch">Komm nach Hause. Die Bucht braucht dich.</h2>
+      <p data-i="pitch">Ein Ölmagnat hat deine Heimat schwarz zurückgelassen. Oma Greta hat die alte Küstenwache wieder aufgeschlossen, das ganze Dorf hat zusammengelegt, und du bekommst ein Kajak und einen Schwamm. Putz die Bucht Feld für Feld sauber, bau deine kleine Rettungsaktion zu einer echten Küstenwache aus und finde heraus, wer dir ständig Flaschenpost schickt.</p>
+    </div>
+    <figure style="margin:0">
+      <img src="img/share.jpg" alt="Ein Kajak mit Schwamm zieht eine saubere blaue Spur durch die schwarze Ölbucht" width="1232" height="706" loading="lazy">
+      <figcaption class="cap" data-i="cap">Spielbilder und Trailer folgen im Dezember.</figcaption>
+    </figure>
+  </div></section>
+
+  <section class="block" style="padding-top:0"><div class="wrap">
+    <h2 data-i="h-feat">So spielt es sich</h2>
+    <div class="feats">
+      <article class="feat">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#0b2239" stroke="#f4efe6" stroke-width="2.5"/><rect x="16" y="24" width="32" height="18" rx="5" fill="#ffd23f" stroke="#b8870b" stroke-width="2"/><path d="M10 48 q8 -5 16 0 t16 0 t16 0" fill="none" stroke="#7cc4f2" stroke-width="3" stroke-linecap="round"/></svg>
+        <h3 data-i="f1h">Putzen in deinem Tempo</h3>
+        <p data-i="f1">Wischen, schöpfen, skimmen. Jedes saubere Feld bringt Geld, jedes neue Werkzeug eine breitere Bahn. Vom Schwamm bis zum Küstenwachboot.</p>
+      </article>
+      <article class="feat">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#0b2239" stroke="#f4efe6" stroke-width="2.5"/><path d="M14 34 C22 22 38 22 46 34 C38 46 22 46 14 34Z" fill="#ffd166"/><path d="M46 34 L56 26 L53 34 L56 42Z" fill="#ffd166"/><circle cx="21" cy="32" r="2.2" fill="#0b2239"/></svg>
+        <h3 data-i="f2h">Die Natur kommt zurück</h3>
+        <p data-i="f2">Einen Tag nach dem Putzen sind die Fische da. Fotografiere 36 Arten für dein Lexikon, vom Hering bis zum Orca.</p>
+      </article>
+      <article class="feat">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#0b2239" stroke="#f4efe6" stroke-width="2.5"/><rect x="22" y="18" width="20" height="28" rx="4" fill="#c8a13a" stroke="#f4efe6" stroke-width="2"/><path d="M22 26 h20 M22 38 h20" stroke="#0b2239" stroke-width="2.5"/><path d="M44 16 l-4 8 h5 l-4 8" fill="none" stroke="#ff6b1a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h3 data-i="f3h">Fässer, Stürme und ein Hafen voller Leben</h3>
+        <p data-i="f3">Bring volle Fässer heim, bevor sie auslaufen, und übersteh Stürme. Unterwegs lernst du Oma Greta, Käpt'n Hinnerk und die anderen Leute der Bucht kennen.</p>
+      </article>
+      <article class="feat">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#0b2239" stroke="#f4efe6" stroke-width="2.5"/><path d="M27 14 h10 v6 l4 6 v20 a3 3 0 0 1 -3 3 h-12 a3 3 0 0 1 -3 -3 v-20 l4 -6z" fill="none" stroke="#7cc4f2" stroke-width="2.5"/><rect x="27" y="30" width="10" height="12" rx="1" fill="#f4efe6"/><text x="32" y="40" text-anchor="middle" font-family="Georgia,serif" font-size="9" fill="#0b2239">L.</text></svg>
+        <h3 data-i="f4h">Wer schreibt die Flaschenpost?</h3>
+        <p data-i="f4">Briefe von „L.“ treiben an. Sammle sie in deinem Logbuch, finde die fünf Lecks und die Beweise gegen den Ölmagnaten.</p>
+      </article>
+      <article class="feat">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#0b2239" stroke="#f4efe6" stroke-width="2.5"/><path d="M12 36 h16 l-3 6 h-10z M36 36 h16 l-3 6 h-10z" fill="#ff6b1a"/><path d="M14 24 h12 l-2 6 h-8z M38 24 h12 l-2 6 h-8z" fill="#f4efe6"/></svg>
+        <h3 data-i="f5h">Zusammen putzen</h3>
+        <p data-i="f5">Allein oder mit bis zu drei Freunden im Online-Koop. Jeder fährt sein eigenes Boot, der Host entscheidet, ob ihr Geld und Ausrüstung teilt.</p>
+      </article>
+    </div>
+  </div></section>
+
+  <section class="block band"><div class="wrap">
+    <h2 data-i="h-facts">Auf einen Blick</h2>
+    <dl class="facts">
+      <div class="fact"><dt data-i="k1">Genre</dt><dd data-i="v1">Gemütliche Putz- und Aufbau-Simulation</dd></div>
+      <div class="fact"><dt data-i="k2">Plattform</dt><dd data-i="v2">PC (Windows) über Steam, Steam Deck geplant</dd></div>
+      <div class="fact"><dt data-i="k3">Spieler</dt><dd data-i="v3">1 bis 4, Online-Koop</dd></div>
+      <div class="fact"><dt data-i="k4">Spielzeit</dt><dd data-i="v4">Rund 25 bis 30 Stunden bis zum Finale</dd></div>
+      <div class="fact"><dt data-i="k5">Sprachen</dt><dd data-i="v5">Deutsch, Englisch, Französisch, Spanisch, Italienisch, Polnisch, Portugiesisch (BR), Russisch, Türkisch, Japanisch, Koreanisch, Chinesisch</dd></div>
+      <div class="fact"><dt data-i="k6">Veröffentlichung</dt><dd data-i="v6">Vollversion, kein Early Access. Datum folgt.</dd></div>
+      <div class="fact"><dt data-i="k7">Demo</dt><dd data-i="v7">Steam Next Fest, 22. Februar bis 1. März 2027</dd></div>
+      <div class="fact"><dt data-i="k8">Studio</dt><dd data-i="v8">Odd Bean Games, Deutschland</dd></div>
+    </dl>
+  </div></section>
+
+  <section class="block"><div class="wrap">
+    <h2 data-i="h-road">Wie es weitergeht</h2>
+    <ol class="road">
+      <li class="now"><span class="when" data-i="r1w">Dezember 2026</span><span data-i="r1">Steam-Seite mit Spielbildern und Trailer. Ab dann kannst du das Spiel auf die Wunschliste setzen.</span></li>
+      <li><span class="when" data-i="r2w">Februar 2027</span><span data-i="r2">Kostenlose Demo beim Steam Next Fest vom 22. Februar bis 1. März.</span></li>
+      <li><span class="when" data-i="r3w">Danach</span><span data-i="r3">Das fertige Spiel. Wer es auf der Wunschliste hat, bekommt von Steam eine Nachricht, sobald es erscheint.</span></li>
+    </ol>
+  </div></section>
+
+  <section class="block" style="padding-top:0"><div class="wrap">
+    <h2 data-i="h-faq">Fragen</h2>
+    <div class="faq">
+      <details><summary data-i="q1">Gibt es eine Demo?</summary><p data-i="a1">Ja. Beim Steam Next Fest vom 22. Februar bis 1. März 2027 kannst du den Anfang kostenlos spielen.</p></details>
+      <details><summary data-i="q2">Kann ich allein spielen?</summary><p data-i="a2">Ja, das ganze Spiel. Koop mit bis zu drei Freunden ist eine Möglichkeit, keine Pflicht.</p></details>
+      <details><summary data-i="q3">Läuft es auf dem Steam Deck?</summary><p data-i="a3">Das ist das Ziel. Das Spiel wird komplett mit Controller spielbar, wir lassen es von Valve prüfen.</p></details>
+      <details><summary data-i="q4">Kommt es auf Konsolen?</summary><p data-i="a4">Zuerst erscheint es für PC über Steam. Mehr dazu, wenn es so weit ist.</p></details>
+      <details><summary data-i="q5">Wer macht das Spiel?</summary><p data-i="a5">Odd Bean Games, ein kleines Studio aus Deutschland.</p></details>
+    </div>
+  </div></section>
+
+  <section class="block band"><div class="wrap final">
+    <h2 data-i="h-final">Setz es auf deine Wunschliste</h2>
+    <p data-i="final">Für ein kleines Studio zählt jede Wunschliste. Steam zeigt das Spiel dann mehr Leuten, und du bekommst eine Nachricht, sobald die Demo und das Spiel da sind.</p>
+    <a class="btn btn-main js-steam" href="https://store.steampowered.com/" rel="noopener"><span data-i="wish2">Jetzt auf die Wunschliste</span></a>
+    <p style="font-size:14px"><span data-i="press">Presse und Creator:</span> <a href="mailto:presse@oddbeangames.de" id="mail">presse@oddbeangames.de</a></p>
+  </div></section>
+
+  <footer><div class="wrap">
+    <img class="studio" src="img/oddbean.webp" alt="Odd Bean Games" width="260" height="65" loading="lazy">
+    <nav aria-label="Rechtliches und Links">
+      <a class="js-steam" href="https://store.steampowered.com/" rel="noopener">Steam</a>
+      <a href="#impressum">Impressum</a>
+      <a href="#datenschutz" data-i="dsl">Datenschutz</a>
+    </nav>
+    <span>© 2026 Odd Bean Games</span>
+  </div></footer>
+</main>
+
+<div id="impressum" class="legal" hidden><div class="wrap">
+  <a class="back" href="#">← Zurück zur Startseite</a>
+  <h1>Impressum</h1>
+  <h2>Angaben gemäß § 5 DDG</h2>
+  <p><span class="todo">[Vorname Nachname]</span><br>Odd Bean Games<br><span class="todo">[Straße Hausnummer]</span><br><span class="todo">[PLZ Ort]</span><br>Deutschland</p>
+  <h2>Kontakt</h2>
+  <p>E-Mail: <a href="mailto:kontakt@oddbeangames.de">kontakt@oddbeangames.de</a><br>Telefon: <span class="todo">[Telefonnummer oder zweiter schneller Kontaktweg]</span></p>
+  <h2>Umsatzsteuer</h2>
+  <p><span class="todo">[Nur falls vorhanden: Umsatzsteuer-Identifikationsnummer nach § 27a UStG: DE…]</span></p>
+  <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
+  <p><span class="todo">[Vorname Nachname, Anschrift wie oben]</span></p>
+  <h2>Verbraucherstreitbeilegung</h2>
+  <p>Wir sind nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+</div></div>
+
+<div id="datenschutz" class="legal" hidden><div class="wrap">
+  <a class="back" href="#">← Zurück zur Startseite</a>
+  <h1>Datenschutz</h1>
+  <p>Stand: <span class="todo">[Datum]</span></p>
+  <h2>1. Wer ist verantwortlich?</h2>
+  <p><span class="todo">[Vorname Nachname]</span>, Odd Bean Games, <span class="todo">[Anschrift wie im Impressum]</span>, E-Mail: <a href="mailto:kontakt@oddbeangames.de">kontakt@oddbeangames.de</a></p>
+  <h2>2. Das Wichtigste in Kürze</h2>
+  <p>Diese Seite setzt keine Cookies, nutzt keine Analyse- oder Werbedienste und lädt keine Inhalte von anderen Anbietern. Schriften und Bilder liegen auf unserem eigenen Server. Links zu Steam und anderen Seiten sind einfache Links: Erst wenn du sie anklickst, verlässt du unsere Seite.</p>
+  <h2>3. Hosting und Server-Protokolle</h2>
+  <p>Die Seite liegt bei GitHub Pages, einem Dienst der GitHub, Inc. (USA). Beim Aufruf verarbeitet GitHub technisch Daten wie deine IP-Adresse, Datum und Uhrzeit, aufgerufene Seite und Browser, um die Seite auszuliefern und vor Angriffen zu schützen (Art. 6 Abs. 1 lit. f DSGVO). Wir selbst bekommen diese Daten nicht. Für die Übermittlung in die USA stützt sich GitHub auf <span class="todo">[EU-US Data Privacy Framework, vor dem Hochladen prüfen]</span>. Mehr dazu in der Datenschutzerklärung von GitHub. Die Adressen oddbeangames.de und oddbeangames.com sind bei der STRATO GmbH (Berlin) registriert, oddbeangames.com leitet nur weiter.</p>
+  <h2>4. Kontakt per E-Mail</h2>
+  <p>Wenn du uns schreibst, verwenden wir deine Adresse und deine Nachricht nur, um zu antworten (Art. 6 Abs. 1 lit. b oder f DSGVO). Wir löschen sie, wenn die Sache erledigt ist und keine Aufbewahrungspflicht besteht.</p>
+  <h2>5. Im Spiel: „Fehler melden“ und „Rückmeldung“</h2>
+  <p>Im Spiel kannst du uns Fehler und deine Meinung schicken. Gesendet wird nur, wenn du selbst auf „Senden“ drückst (Art. 6 Abs. 1 lit. a DSGVO). Wir erhalten deinen Text, die Kategorie und technische Spielinfos (Spielversion, Sprache, Gebiet im Spiel, Spielzeit, Betriebssystem, Grafikkarte, Auflösung, Maus oder Controller). Wir erhalten keinen Namen, keine Steam-ID, keine Spielstände und keine Dateien. Wenn du freiwillig eine E-Mail-Adresse angibst, nutzen wir sie nur für eine Antwort.</p>
+  <p>Die Meldung läuft über einen Dienst von Cloudflare, Inc. (USA), der sie weiterleitet, und wird in einem privaten Speicher bei GitHub, Inc. (USA) abgelegt. Beide Anbieter verarbeiten dabei technisch auch deine IP-Adresse, wir speichern sie nicht. Für Übermittlungen in die USA stützen wir uns auf <span class="todo">[EU-US Data Privacy Framework bzw. Standardvertragsklauseln, je nach Anbieter prüfen]</span>. Wir löschen die Meldungen nach <span class="todo">[z. B. 12 Monaten]</span>.</p>
+  <h2>6. Steam</h2>
+  <p>Das Spiel wird über Steam von Valve Corporation (USA) verkauft und gestartet. Was Steam dabei verarbeitet, regelt die Datenschutzerklärung von Valve.</p>
+  <h2>7. Deine Rechte</h2>
+  <p>Du hast das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch sowie das Recht, eine Einwilligung jederzeit zu widerrufen. Schreib uns dafür eine E-Mail. Du kannst dich außerdem bei einer Datenschutz-Aufsichtsbehörde beschweren, zum Beispiel bei der in deinem Bundesland: <span class="todo">[zuständige Landesbehörde für Kevins Wohnort]</span>.</p>
+</div></div>
+
+<script>
+(function(){
+  /* EINSTELLUNGEN: nach dem Anlegen der Steam-Seite hier die echte Adresse eintragen */
+  var STEAM_URL='https://store.steampowered.com/';
+  var MAIL='presse@oddbeangames.de';
+  [].forEach.call(document.querySelectorAll('.js-steam'),function(a){a.href=STEAM_URL;});
+  if(MAIL){var m=document.getElementById('mail');m.href='mailto:'+MAIL;m.textContent=MAIL;}
+
+  /* Seiten: Start, Impressum, Datenschutz */
+  function route(){
+    var h=location.hash.replace('#','');
+    var legal=(h==='impressum'||h==='datenschutz');
+    document.getElementById('seite').hidden=legal;
+    document.getElementById('impressum').hidden=h!=='impressum';
+    document.getElementById('datenschutz').hidden=h!=='datenschutz';
+    if(legal)window.scrollTo(0,0);
+  }
+  window.addEventListener('hashchange',route); route();
+
+  /* Sprache */
+  var EN={eyebrow:'Demo at Steam Next Fest · Feb 22 – Mar 1, 2027',tag:'A bay full of oil. One kayak. One sponge. You have to start somewhere.',wish:'Wishlist on Steam',more:'What is it?',c1:'PC on Steam',c2:'Solo or co-op up to 4',c3:'12 languages',c4:'Steam Deck planned',clean:'clean',hint:'Wipe the oil.',
+    'h-pitch':'Come home. The bay needs you.',pitch:'An oil tycoon left your home covered in black. Grandma Greta has reopened the old coast guard station, the whole town chipped in, and you get a kayak and a sponge. Clean the bay field by field, grow your little rescue mission into a real coast guard, and find out who keeps sending you messages in bottles.',cap:'Gameplay screenshots and trailer coming in December.',
+    'h-feat':'How it plays',f1h:'Clean at your own pace',f1:'Wipe, scoop, skim. Every clean field pays out, every new tool cleans a wider strip. From a sponge to a coast guard boat.',f2h:'Nature comes back',f2:'A day after you clean, the fish return. Photograph 36 species for your logbook, from herring to orca.',f3h:'Barrels, storms and a busy harbor',f3:'Bring full barrels home before they leak and ride out storms. Along the way you meet Grandma Greta, grumpy Captain Hinnerk and the other people of the bay.',f4h:'Who writes the bottles?',f4:'Letters signed “L.” keep washing up. Collect them in your logbook, find the five leaks and the evidence against the oil tycoon.',f5h:'Clean together',f5:'Solo or with up to three friends in online co-op. Everyone drives their own boat, the host decides whether you share money and gear.',
+    'h-facts':'At a glance',k1:'Genre',v1:'Cozy cleaning and building sim',k2:'Platform',v2:'PC (Windows) on Steam, Steam Deck planned',k3:'Players',v3:'1 to 4, online co-op',k4:'Playtime',v4:'About 25 to 30 hours to the finale',k5:'Languages',v5:'English, German, French, Spanish, Italian, Polish, Portuguese (BR), Russian, Turkish, Japanese, Korean, Chinese',k6:'Release',v6:'Full release, no Early Access. Date to be announced.',k7:'Demo',v7:'Steam Next Fest, February 22 to March 1, 2027',k8:'Studio',v8:'Odd Bean Games, Germany',
+    'h-road':'What’s next',r1w:'December 2026',r1:'Steam page with screenshots and trailer. From then on you can wishlist the game.',r2w:'February 2027',r2:'Free demo at Steam Next Fest, February 22 to March 1.',r3w:'After that',r3:'The finished game. If it’s on your wishlist, Steam lets you know the moment it’s out.',
+    'h-faq':'Questions',q1:'Is there a demo?',a1:'Yes. At Steam Next Fest, February 22 to March 1, 2027, you can play the beginning for free.',q2:'Can I play solo?',a2:'Yes, the whole game. Co-op with up to three friends is an option, not a must.',q3:'Does it run on Steam Deck?',a3:'That’s the goal. The game will be fully playable with a controller, and we’ll have Valve review it.',q4:'Is it coming to consoles?',a4:'It launches on PC via Steam first. More when the time comes.',q5:'Who makes the game?',a5:'Odd Bean Games, a small studio from Germany.',
+    'h-final':'Put it on your wishlist',final:'For a small studio, every wishlist counts. Steam shows the game to more people, and you get a message as soon as the demo and the game are out.',wish2:'Wishlist now',press:'Press and creators:',dsl:'Privacy',
+    t1:'First field clean! +100 shells',t2:'The fish are coming back.',t3:'The bay shines. Now the real one?'};
+  var DE={}; [].forEach.call(document.querySelectorAll('[data-i]'),function(el){DE[el.dataset.i]=el.textContent;});
+  DE.t1='Erstes Feld sauber! +100 Muscheln'; DE.t2='Die Fische kommen zurück.'; DE.t3='Die Bucht glänzt. Jetzt die echte?';
+  var lang='de';
+  function setLang(l){
+    lang=l; var d=l==='en'?EN:DE;
+    [].forEach.call(document.querySelectorAll('[data-i]'),function(el){ if(d[el.dataset.i]!=null) el.textContent=d[el.dataset.i]; });
+    document.documentElement.lang=l;
+    document.getElementById('l-de').setAttribute('aria-pressed',l==='de');
+    document.getElementById('l-en').setAttribute('aria-pressed',l==='en');
+    try{localStorage.setItem('ctb-lang',l);}catch(e){}
+  }
+  document.getElementById('l-de').onclick=function(){setLang('de');};
+  document.getElementById('l-en').onclick=function(){setLang('en');};
+  var saved=null; try{saved=localStorage.getItem('ctb-lang');}catch(e){}
+  setLang(saved||((navigator.language||'de').toLowerCase().indexOf('de')===0?'de':'en'));
+
+  /* Öl wegwischen */
+  var cv=document.getElementById('oil'), ctx=cv.getContext('2d'), img=new Image(), ready=false;
+  var GX=40, GY=18, grid=new Uint8Array(GX*GY), done=0, shown={};
+  img.src=document.querySelector('meta[name="ctb-hero"]')?document.querySelector('meta[name="ctb-hero"]').content:'img/hero-2400.webp';
+  function size(){
+    var r=cv.getBoundingClientRect(), dpr=Math.min(2,window.devicePixelRatio||1);
+    cv.width=Math.round(r.width*dpr); cv.height=Math.round(r.height*dpr);
+    ctx.setTransform(dpr,0,0,dpr,0,0); paint(r.width,r.height);
+  }
+  function paint(w,h){
+    if(!ready)return;
+    ctx.globalCompositeOperation='source-over';
+    var s=Math.max(w/img.width,h/img.height), iw=img.width*s, ih=img.height*s;
+    ctx.drawImage(img,(w-iw)*0.62,(h-ih)/2,iw,ih);
+    if(window.__kimg&&__kimg.complete&&__kimg.naturalWidth){ var kx=(w-iw)*0.62+__kpos[0]*iw, ky=(h-ih)/2+__kpos[1]*ih; ctx.globalCompositeOperation='destination-out'; ctx.drawImage(__kimg,kx,ky,__kpos[2]*iw,__kpos[3]*ih); ctx.globalCompositeOperation='source-over'; }
+    grid.fill(0); done=0; update();
+  }
+  img.onload=function(){ready=true;size();};
+  window.addEventListener('resize',function(){clearTimeout(size.t);size.t=setTimeout(size,150);});
+  var last=null;
+  function stamp(x,y){
+    var r=cv.getBoundingClientRect(), R=Math.max(34,r.width/26);
+    ctx.globalCompositeOperation='destination-out';
+    var g=ctx.createRadialGradient(x,y,R*0.35,x,y,R); g.addColorStop(0,'rgba(0,0,0,1)'); g.addColorStop(1,'rgba(0,0,0,0)');
+    ctx.fillStyle=g; ctx.beginPath(); ctx.arc(x,y,R,0,Math.PI*2); ctx.fill();
+    var cw=r.width/GX, ch=r.height/GY;
+    for(var gy=Math.max(0,Math.floor((y-R*.6)/ch));gy<=Math.min(GY-1,Math.floor((y+R*.6)/ch));gy++)
+      for(var gx=Math.max(0,Math.floor((x-R*.6)/cw));gx<=Math.min(GX-1,Math.floor((x+R*.6)/cw));gx++){var i=gy*GX+gx; if(!grid[i]){grid[i]=1;done++;}}
+  }
+  function wipe(e){
+    if(!ready)return;
+    var r=cv.getBoundingClientRect(), x=e.clientX-r.left, y=e.clientY-r.top;
+    if(last){var dx=x-last.x, dy=y-last.y, n=Math.min(12,Math.ceil(Math.hypot(dx,dy)/12)); for(var k=1;k<=n;k++)stamp(last.x+dx*k/n,last.y+dy*k/n);} else stamp(x,y);
+    last={x:x,y:y}; update();
+  }
+  function update(){
+    var p=Math.round(done/(GX*GY)*100); document.getElementById('pct').textContent=p;
+    var t=document.getElementById('toast'), d=lang==='en'?EN:DE;
+    [[8,'t1'],[45,'t2'],[85,'t3']].forEach(function(m){ if(p>=m[0]&&!shown[m[1]]){ shown[m[1]]=1; t.textContent=d[m[1]]; t.hidden=false; clearTimeout(update.t); update.t=setTimeout(function(){t.hidden=true;},2600); } });
+  }
+  /* Wasser unter dem Öl, Kajak und Wellen darüber */
+  var wc=document.getElementById('water'), wx=wc.getContext('2d'), fc=document.getElementById('fx'), fx=fc.getContext('2d');
+  var KPOS=[0.578125,0.345968,0.141667,0.334677], kimg=new Image(); window.__kimg=kimg; window.__kpos=KPOS; kimg.onload=function(){ if(ready) size(); }; kimg.src='img/kajak.webp';
+  var still=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches, ripples=[], tile=null, pat1=null, pat2=null, vis=true;
+  function makeTile(){
+    var N=256, c=document.createElement('canvas'); c.width=c.height=N; var g=c.getContext('2d'), im=g.createImageData(N,N), pts=[];
+    for(var i=0;i<14;i++)pts.push([Math.random()*N,Math.random()*N]);
+    for(var y=0;y<N;y++)for(var x=0;x<N;x++){
+      var f1=1e9,f2=1e9;
+      for(var k=0;k<pts.length;k++){var dx=Math.abs(x-pts[k][0]),dy=Math.abs(y-pts[k][1]); if(dx>N/2)dx=N-dx; if(dy>N/2)dy=N-dy; var d=Math.sqrt(dx*dx+dy*dy); if(d<f1){f2=f1;f1=d;}else if(d<f2)f2=d;}
+      var v=Math.max(0,1-(f2-f1)/15); v=v*v*v; var o=(y*N+x)*4; im.data[o]=200;im.data[o+1]=235;im.data[o+2]=255;im.data[o+3]=Math.round(v*255);
+    }
+    g.putImageData(im,0,0); return c;
+  }
+  function sizeFx(){
+    var r=wc.getBoundingClientRect(), dpr=Math.min(2,window.devicePixelRatio||1);
+    wc.width=Math.max(1,Math.round(r.width*0.6)); wc.height=Math.max(1,Math.round(r.height*0.6));
+    fc.width=Math.round(r.width*dpr); fc.height=Math.round(r.height*dpr); fx.setTransform(dpr,0,0,dpr,0,0);
+    if(!tile){tile=makeTile(); pat1=wx.createPattern(tile,'repeat'); pat2=wx.createPattern(tile,'repeat');}
+  }
+  function drawWater(t){
+    var w=wc.width,h=wc.height, g=wx.createLinearGradient(0,0,w*0.3,h);
+    g.addColorStop(0,'#3aa0e4'); g.addColorStop(.55,'#1f74bd'); g.addColorStop(1,'#134e86');
+    wx.globalCompositeOperation='source-over'; wx.globalAlpha=1; wx.fillStyle=g; wx.fillRect(0,0,w,h);
+    wx.globalCompositeOperation='lighter';
+    var m=new DOMMatrix(); pat1.setTransform(m.translate(t*9,t*5).scale(1.5)); wx.globalAlpha=.3; wx.fillStyle=pat1; wx.fillRect(0,0,w,h);
+    var m2=new DOMMatrix(); pat2.setTransform(m2.translate(-t*7,t*8).rotate(25).scale(2.2)); wx.globalAlpha=.15; wx.fillStyle=pat2; wx.fillRect(0,0,w,h);
+    wx.globalAlpha=1; wx.globalCompositeOperation='source-over';
+  }
+  function kayakRect(){
+    var r=cv.getBoundingClientRect(), s=Math.max(r.width/img.width,r.height/img.height), iw=img.width*s, ih=img.height*s, ox=(r.width-iw)*0.62, oy=(r.height-ih)/2;
+    return {x:ox+KPOS[0]*iw,y:oy+KPOS[1]*ih,w:KPOS[2]*iw,h:KPOS[3]*ih};
+  }
+  function drawFx(t){
+    var r=fc.getBoundingClientRect(); fx.clearRect(0,0,r.width,r.height);
+    for(var i=ripples.length-1;i>=0;i--){
+      var rp=ripples[i], a=(t-rp.t)/1.6; if(a>1){ripples.splice(i,1);continue;}
+      for(var k=0;k<3;k++){var aa=a-k*0.12; if(aa<=0)continue; fx.beginPath(); fx.arc(rp.x,rp.y,8+aa*90,0,Math.PI*2); fx.strokeStyle='rgba(235,248,255,'+(0.55*(1-aa))+')'; fx.lineWidth=2.2*(1-aa)+0.6; fx.stroke();}
+    }
+    if(ready&&kimg.complete&&kimg.naturalWidth){
+      var k2=kayakRect(), cx=k2.x+k2.w/2, cy=k2.y+k2.h/2, bob=still?0:Math.sin(t*1.3);
+      fx.save(); fx.translate(cx,cy+bob*2.2); fx.rotate(bob*0.012); fx.drawImage(kimg,-k2.w/2,-k2.h/2,k2.w,k2.h); fx.restore();
+    }
+  }
+  function loop(ms){ var t=ms/1000; if(vis&&tile){ if(!still)drawWater(t); drawFx(t); } requestAnimationFrame(loop); }
+  sizeFx(); drawWater(0);
+  window.addEventListener('resize',function(){clearTimeout(sizeFx.t);sizeFx.t=setTimeout(function(){sizeFx();drawWater(0);},150);});
+  if('IntersectionObserver' in window){ new IntersectionObserver(function(es){vis=es[0].isIntersecting;}).observe(cv); }
+  requestAnimationFrame(loop);
+  function ripple(e){ var r=cv.getBoundingClientRect(); ripples.push({x:e.clientX-r.left,y:e.clientY-r.top,t:performance.now()/1000}); if(ripples.length>12)ripples.shift(); }
+
+  cv.addEventListener('pointermove',function(e){ if(e.pointerType==='mouse'||e.buttons) wipe(e); });
+  cv.addEventListener('pointerdown',function(e){ last=null; wipe(e); ripple(e); });
+  cv.addEventListener('pointerleave',function(){ last=null; });
+  cv.addEventListener('pointerup',function(){ last=null; });
+})();
+</script>
+</body>
+</html>
