@@ -4,13 +4,24 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <link rel="icon" href="img/favicon.png">
-<title>Clean the Bay</title>
-<meta name="description" content="Clean the Bay – putz eine verölte Bucht mit Kajak und Schwamm wieder sauber. Allein oder im Koop. Demo beim Steam Next Fest im Februar 2027.">
+<title>Clean the Bay – gemütliches Putzspiel: befrei eine verölte Bucht | PC, Steam</title>
+<meta name="description" content="Clean the Bay ist ein gemütliches Putz- und Aufbauspiel für PC: Befrei eine verölte Bucht mit Kajak und Schwamm, allein oder im Koop bis 4. Kostenlose Demo beim Steam Next Fest im Februar 2027.">
 <meta property="og:title" content="Clean the Bay">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Clean the Bay">
+<meta property="og:locale" content="de_DE">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@oddbeangames">
 <meta property="og:description" content="Eine Bucht voller Öl. Ein Kajak. Ein Schwamm. Jetzt auf die Steam-Wunschliste.">
 <meta property="og:image" content="https://oddbeangames.de/img/share.jpg">
 <meta property="og:url" content="https://oddbeangames.de/">
 <link rel="canonical" href="https://oddbeangames.de/">
+<link rel="alternate" hreflang="de" href="https://oddbeangames.de/">
+<link rel="alternate" hreflang="en" href="https://oddbeangames.de/en/">
+<link rel="alternate" hreflang="x-default" href="https://oddbeangames.de/en/">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://oddbeangames.de/#studio", "name": "Odd Bean Games", "url": "https://oddbeangames.de/", "logo": "https://oddbeangames.de/img/oddbean.webp", "email": "kontakt@oddbeangames.de", "sameAs": ["https://www.tiktok.com/@clean.the.bay.odd", "https://www.instagram.com/oddbeangames/", "https://x.com/oddbeangames"], "address": {"@type": "PostalAddress", "addressLocality": "Neustadt an der Weinstraße", "addressCountry": "DE"}}, {"@type": "WebSite", "@id": "https://oddbeangames.de/#website", "url": "https://oddbeangames.de/", "name": "Clean the Bay", "publisher": {"@id": "https://oddbeangames.de/#studio"}, "inLanguage": ["de", "en"]}, {"@type": "VideoGame", "@id": "https://oddbeangames.de/#game", "name": "Clean the Bay", "url": "https://oddbeangames.de/", "alternateName": "Clean the Bay Spiel", "description": "Clean the Bay ist ein gemütliches Putz- und Aufbauspiel für PC: Befrei eine verölte Bucht mit Kajak und Schwamm, allein oder im Koop bis 4. Kostenlose Demo beim Steam Next Fest im Februar 2027.", "image": "https://oddbeangames.de/img/share.jpg", "genre": ["Simulation", "Gemütlich", "Aufbau"], "gamePlatform": ["PC", "Steam"], "operatingSystem": "Windows", "applicationCategory": "Game", "playMode": ["SinglePlayer", "CoOp"], "numberOfPlayers": {"@type": "QuantitativeValue", "minValue": 1, "maxValue": 4}, "inLanguage": ["de", "en", "fr", "es", "it", "pl", "pt-BR", "ru", "tr", "ja", "ko", "zh-Hans"], "author": {"@id": "https://oddbeangames.de/#studio"}, "publisher": {"@id": "https://oddbeangames.de/#studio"}, "sameAs": ["https://www.tiktok.com/@clean.the.bay.odd", "https://www.instagram.com/oddbeangames/", "https://x.com/oddbeangames"]}]}</script>
+
 <style>
 /* Layout: Hero zum Wegwischen oben, darunter einspaltige Abschnitte mit Karten, Fakten, FAQ, Fuß mit Impressum. Bewusst nur dunkel (Öl und Nacht). */
 @font-face{font-family:"Barlow Condensed";font-weight:600;font-display:swap;src:url("fonts/barlow-condensed-latin-600-normal.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
@@ -45,8 +56,11 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--sea-l);outline-offs
 .top .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px}
 .studio{height:26px;width:auto;opacity:.9}
 .lang{display:flex;gap:4px;background:rgba(7,9,12,.55);border-radius:999px;padding:4px}
-.lang button{font:inherit;font-size:13px;font-weight:600;color:var(--muted);background:none;border:0;border-radius:999px;padding:5px 10px;cursor:pointer}
-.lang button[aria-pressed=true]{background:var(--cream);color:var(--navy)}
+.lang a{font-size:13px;font-weight:600;color:var(--muted);text-decoration:none;border-radius:999px;padding:5px 10px}
+.lang a:hover{color:var(--cream)}
+.lang a[aria-current=page]{background:var(--cream);color:var(--navy)}
+.langhint{position:absolute;z-index:6;right:max(20px,env(safe-area-inset-right,0px));top:calc(max(14px,env(safe-area-inset-top,0px)) + 46px);font-size:13px;font-weight:600;color:var(--navy);background:var(--sea-l);text-decoration:none;border-radius:999px;padding:5px 12px}
+.langhint:hover{color:var(--navy);background:var(--cream)}
 /* Hero */
 .hero{position:relative;min-height:min(92vh,820px);min-height:min(92svh,820px);display:flex;align-items:flex-end;overflow:hidden;background:var(--oil)}
 .clean{position:absolute;inset:0;background:#1d6fb5}
@@ -150,10 +164,11 @@ footer .social svg{width:18px;height:18px}
   <header class="top"><div class="wrap">
     <img class="studio" src="img/oddbean.webp" alt="Odd Bean Games" width="260" height="65">
     <div class="lang" role="group" aria-label="Sprache / Language">
-      <button type="button" id="l-de" aria-pressed="true">DE</button>
-      <button type="button" id="l-en" aria-pressed="false">EN</button>
+      <a id="l-de" href="./" hreflang="de" lang="de" aria-current="page">DE</a>
+      <a id="l-en" href="en/" hreflang="en" lang="en">EN</a>
     </div>
   </div></header>
+  <a class="langhint" id="langhint" href="en/" hreflang="en" lang="en" hidden>English version →</a>
 
   <section class="hero" aria-labelledby="titel">
     <div class="clean" aria-hidden="true">
@@ -338,7 +353,6 @@ footer .social svg{width:18px;height:18px}
   <p>Kevin Luchmann, Odd Bean Games, Geitherstrasse 14, 67435 Neustadt an der Weinstraße, Deutschland, E-Mail: <a href="mailto:kontakt@oddbeangames.de">kontakt@oddbeangames.de</a></p>
   <h2>2. Das Wichtigste in Kürze</h2>
   <p>Diese Seite setzt keine Cookies, nutzt keine Analyse- oder Werbedienste und lädt keine Inhalte von anderen Anbietern. Schriften und Bilder liegen auf unserem eigenen Server. Links zu Steam und zu unseren Profilen bei TikTok, Instagram und X sind einfache Links mit eigenen Symbolen. Von diesen Anbietern wird beim Besuch unserer Seite nichts geladen. Erst wenn du einen Link anklickst, verlässt du unsere Seite, dann gilt die Datenschutzerklärung des jeweiligen Anbieters. Das Kontaktformular sendet erst etwas, wenn du auf „Nachricht senden“ drückst.</p>
-  <p>Wenn du oben die Sprache umstellst, merkt sich dein Browser deine Wahl (Eintrag „ctb-lang“ im lokalen Speicher deines Browsers). Das ist nötig, damit die Seite in der gewählten Sprache bleibt (§ 25 Abs. 2 Nr. 2 TDDDG). Der Eintrag wird nicht an uns gesendet, und du kannst ihn in deinem Browser jederzeit löschen.</p>
   <h2>3. Hosting und Server-Protokolle</h2>
   <p>Die Seite liegt bei GitHub Pages, einem Dienst der GitHub, Inc. (USA). Beim Aufruf verarbeitet GitHub technisch diese Daten: deine IP-Adresse, Datum und Uhrzeit, die aufgerufene Seite, die Seite, von der du kommst (Referrer), Browser und Browserversion sowie dein Betriebssystem. Das ist nötig, um die Seite auszuliefern, Fehler zu erkennen und sie vor Angriffen zu schützen (Art. 6 Abs. 1 lit. f DSGVO). Wir selbst bekommen diese Daten nicht und führen sie auch nicht mit anderen Daten zusammen. Für die Übermittlung in die USA beruft sich GitHub in seiner Datenschutzerklärung auf das EU-US Data Privacy Framework. Mehr dazu in der Datenschutzerklärung von GitHub. Die Adressen oddbeangames.de und oddbeangames.com sind bei der STRATO GmbH (Berlin) registriert, oddbeangames.com leitet nur weiter.</p>
   <h2>4. Verschlüsselte Verbindung</h2>
@@ -408,20 +422,16 @@ footer .social svg{width:18px;height:18px}
     t1:'First field clean! +100 shells',t2:'The fish are coming back.',t3:'The bay shines. Now the real one?',t4:'Spotless! 100 %'};
   var DE={}; [].forEach.call(document.querySelectorAll('[data-i]'),function(el){DE[el.dataset.i]=el.textContent;});
   DE.t1='Erstes Feld sauber! +100 Muscheln'; DE.t2='Die Fische kommen zurück.'; DE.t3='Die Bucht glänzt. Jetzt die echte?'; DE.t4='Blitzblank! 100 %';
-  var lang='de';
+  /* Sprache: Deutsch unter oddbeangames.de/, Englisch unter oddbeangames.de/en/ (eigene Seiten, damit Google beide findet).
+     Nichts wird im Browser gespeichert. Passt die Browsersprache nicht zur Seite, erscheint nur ein kleiner Hinweis-Link. */
+  var lang=(document.documentElement.lang||'de').toLowerCase().indexOf('en')===0?'en':'de';
   function setLang(l){
     lang=l; var d=l==='en'?EN:DE;
     [].forEach.call(document.querySelectorAll('[data-i]'),function(el){ if(d[el.dataset.i]!=null) el.textContent=d[el.dataset.i]; });
-    document.documentElement.lang=l;
-    document.getElementById('l-de').setAttribute('aria-pressed',l==='de');
-    document.getElementById('l-en').setAttribute('aria-pressed',l==='en');
     if(typeof onLang==='function')onLang();
   }
-  function pick(l){setLang(l);try{localStorage.setItem('ctb-lang',l);}catch(e){}}
-  document.getElementById('l-de').onclick=function(){pick('de');};
-  document.getElementById('l-en').onclick=function(){pick('en');};
-  var saved=null; try{saved=localStorage.getItem('ctb-lang');}catch(e){}
-  setLang(saved||((navigator.language||'de').toLowerCase().indexOf('de')===0?'de':'en'));
+  setLang(lang);
+  (function(){ var bl=(navigator.language||'de').toLowerCase().indexOf('de')===0?'de':'en', h=document.getElementById('langhint'); if(h&&bl!==lang) h.hidden=false; })();
 
   /* Kontaktformular
      EINSTELLUNG: Formular-ID von forminit.com eintragen (steht in der Adresse forminit.com/f/XXXX). Leer = Formular zeigt nur die Mail-Adresse. */
