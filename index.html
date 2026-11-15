@@ -373,9 +373,9 @@ footer a{color:var(--muted)}
     'h-faq':'Questions',q1:'Is there a demo?',a1:'Yes. At Steam Next Fest, February 22 to March 1, 2027, you can play the beginning for free.',q2:'Can I play solo?',a2:'Yes, the whole game. Co-op with up to three friends is an option, not a must.',q3:'Does it run on Steam Deck?',a3:'That’s the goal. The game will be fully playable with a controller, and we’ll have Valve review it.',q4:'Is it coming to consoles?',a4:'It launches on PC via Steam first. More when the time comes.',q5:'Who makes the game?',a5:'Odd Bean Games, a small studio from Germany.',
     'h-final':'Put it on your wishlist',final:'For a small studio, every wishlist counts. Steam shows the game to more people, and you get a message as soon as the demo and the game are out.',wish2:'Wishlist now',press:'Press and creators:',dsl:'Privacy',kl:'Contact',kl2:'Contact form',
     'k-back':'← Back to the start page','k-h':'Contact','k-intro':'Questions about the game, a bug, an idea or a creator request? Write to us. We usually reply within a few days.','k-name':'Name','k-mail':'Email for our reply','k-tag':'Gamertag','k-opt':'(optional)','k-taghint':'Steam, Discord or any other name you play under.','k-topic':'What is it about?','k-t0':'Please choose','k-t1':'Question about the game','k-t2':'Bug in the game','k-t3':'Idea or feedback','k-t4':'Press or creator','k-t5':'Collaboration','k-t6':'Something else','k-text':'Your message','k-limit':'Up to 300 words, up to 3 links.','k-privacy':'When you send this, your details go to our form service Forminit, which forwards them to us. More in the','k-privlink':'privacy policy','k-send':'Send message',
-    t1:'First field clean! +100 shells',t2:'The fish are coming back.',t3:'The bay shines. Now the real one?'};
+    t1:'First field clean! +100 shells',t2:'The fish are coming back.',t3:'The bay shines. Now the real one?',t4:'Spotless! 100 %'};
   var DE={}; [].forEach.call(document.querySelectorAll('[data-i]'),function(el){DE[el.dataset.i]=el.textContent;});
-  DE.t1='Erstes Feld sauber! +100 Muscheln'; DE.t2='Die Fische kommen zurück.'; DE.t3='Die Bucht glänzt. Jetzt die echte?';
+  DE.t1='Erstes Feld sauber! +100 Muscheln'; DE.t2='Die Fische kommen zurück.'; DE.t3='Die Bucht glänzt. Jetzt die echte?'; DE.t4='Blitzblank! 100 %';
   var lang='de';
   function setLang(l){
     lang=l; var d=l==='en'?EN:DE;
@@ -453,7 +453,16 @@ footer a{color:var(--muted)}
     if(old){ drawOil(r.width,r.height); ctx.setTransform(1,0,0,1,0,0); ctx.globalCompositeOperation='destination-in'; ctx.drawImage(old,0,0,nw,nh); ctx.globalCompositeOperation='source-over'; ctx.setTransform(dpr,0,0,dpr,0,0); }
     else paint(r.width,r.height);
   }
-  window.__oilReset=function(){ shown={}; size(true); };
+  /* Ab 98 % wie im Spiel: kurzes Sternenfunkeln, Rest-Öl verschwindet, Anzeige springt auf 100 % */
+  var finished=false;
+  function finish(){
+    finished=true; done=GX*GY; grid.fill(1);
+    cv.style.transition='opacity .7s ease-out'; cv.style.opacity='0';
+    setTimeout(function(){ ctx.save(); ctx.setTransform(1,0,0,1,0,0); ctx.clearRect(0,0,cv.width,cv.height); ctx.restore(); cv.style.transition=''; cv.style.opacity=''; },750);
+    if(window.__sparkle) window.__sparkle();
+    update();
+  }
+  window.__oilReset=function(){ shown={}; finished=false; cv.style.transition=''; cv.style.opacity=''; size(true); };
   function paint(w,h){
     if(!ready)return;
     drawOil(w,h); painted=true;
@@ -484,9 +493,12 @@ footer a{color:var(--muted)}
     last={x:x,y:y}; update();
   }
   function update(){
-    var p=Math.round(done/(GX*GY)*100); document.getElementById('pct').textContent=p;
+    var p=Math.round(done/(GX*GY)*100);
+    if(p>=98&&!finished){ finish(); return; }
+    if(finished) p=100;
+    document.getElementById('pct').textContent=p;
     var t=document.getElementById('toast'), d=lang==='en'?EN:DE;
-    [[8,'t1'],[45,'t2'],[85,'t3']].forEach(function(m){ if(p>=m[0]&&!shown[m[1]]){ shown[m[1]]=1; t.textContent=d[m[1]]; t.hidden=false; clearTimeout(update.t); update.t=setTimeout(function(){t.hidden=true;},2600); } });
+    [[8,'t1'],[45,'t2'],[85,'t3'],[100,'t4']].forEach(function(m){ if(p>=m[0]&&!shown[m[1]]){ shown[m[1]]=1; t.textContent=d[m[1]]; t.hidden=false; clearTimeout(update.t); update.t=setTimeout(function(){t.hidden=true;},2600); } });
   }
   /* Wasser unter dem Öl, Kajak und Wellen darüber */
   var wc=document.getElementById('water'), wx=wc.getContext('2d'), fc=document.getElementById('fx'), fx=fc.getContext('2d');
@@ -521,6 +533,22 @@ footer a{color:var(--muted)}
     var r=cv.getBoundingClientRect(), s=Math.max(r.width/img.width,r.height/img.height), iw=img.width*s, ih=img.height*s, ox=(r.width-iw)*0.62, oy=(r.height-ih)/2;
     return {x:ox+KPOS[0]*iw,y:oy+KPOS[1]*ih,w:KPOS[2]*iw,h:KPOS[3]*ih};
   }
+  var stars=[];
+  window.__sparkle=function(){
+    var r=fc.getBoundingClientRect(), now=performance.now()/1000, n=r.width<700?18:30, k=ready&&kimg.complete&&kimg.naturalWidth?kayakRect():null;
+    for(var i=0;i<n;i++) stars.push({x:Math.random()*r.width,y:r.height*(.08+Math.random()*.84),t0:now+Math.random()*.9,d:.55+Math.random()*.45,s:(r.width<700?14:22)*(.6+Math.random()*.9),rot:Math.random()*.8,c:Math.random()<.35?'255,214,90':'255,255,255'});
+    if(k) for(i=0;i<9;i++) stars.push({x:k.x+Math.random()*k.w,y:k.y+Math.random()*k.h,t0:now+.15+Math.random()*.7,d:.6,s:24+Math.random()*14,rot:Math.random(),c:'255,236,150'});
+  };
+  function star(g,x,y,s,a,rot,c){
+    g.save(); g.translate(x,y); g.globalAlpha=a; var gl=g.createRadialGradient(0,0,0,0,0,s*1.4); gl.addColorStop(0,'rgba('+c+',.55)'); gl.addColorStop(1,'rgba('+c+',0)'); g.fillStyle=gl; g.beginPath(); g.arc(0,0,s*1.4,0,7); g.fill(); g.rotate(rot); g.shadowColor='rgba('+c+',.9)'; g.shadowBlur=s*1.2;
+    g.fillStyle='rgb('+c+')'; g.beginPath();
+    for(var i=0;i<8;i++){ var ang=i*Math.PI/4, rr=i%2?s*.22:s; g.lineTo(Math.cos(ang)*rr,Math.sin(ang)*rr); }
+    g.closePath(); g.fill(); g.shadowBlur=0; g.fillStyle='#fff'; g.beginPath(); g.arc(0,0,s*.16,0,7); g.fill(); g.restore();
+  }
+  function drawStars(t){
+    for(var i=stars.length-1;i>=0;i--){ var st=stars[i], a=(t-st.t0)/st.d; if(a<0)continue; if(a>1){stars.splice(i,1);continue;}
+      var e=Math.sin(Math.PI*a), tw=.75+.25*Math.sin(a*25); star(fx,st.x,st.y,st.s*(.35+e*.85),e*tw,st.rot+a*.9,st.c); }
+  }
   function drawFx(t){
     var r=fc.getBoundingClientRect(); fx.clearRect(0,0,r.width,r.height);
     for(var i=ripples.length-1;i>=0;i--){
@@ -531,6 +559,7 @@ footer a{color:var(--muted)}
       var k2=kayakRect(), cx=k2.x+k2.w/2, cy=k2.y+k2.h/2, bob=still?0:Math.sin(t*1.3);
       fx.save(); fx.translate(cx,cy+bob*2.2); fx.rotate(bob*0.012); fx.drawImage(kimg,-k2.w/2,-k2.h/2,k2.w,k2.h); fx.restore();
     }
+    if(stars.length) drawStars(t);
   }
 
   /* Fische unter dem Öl: Draufsicht (wir schauen von oben ins Wasser), Kopf in Schwimmrichtung,
