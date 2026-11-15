@@ -131,6 +131,16 @@ footer a{color:var(--muted)}
 @media (max-width:640px){.krow{grid-template-columns:1fr}.kform{padding:18px}}
 @media (max-width:900px){.feats{grid-template-columns:1fr}.feat,.feat:nth-child(n+4){grid-column:auto}}
 @media (max-width:760px){.toast{right:auto;left:20px;bottom:110px;font-size:20px}.eyebrow{font-size:15px}.pitch{grid-template-columns:1fr}.road li{grid-template-columns:1fr;gap:2px}.hero{min-height:88vh;min-height:88svh}.wipe{left:20px;right:auto;align-items:flex-start;text-align:left;bottom:14px}.hero-in{padding-bottom:96px}}
+/* Handy und Tablet hochkant: oben das Wasserbild zum Wischen (Kajak frei, nichts davor), darunter Titel und Text */
+@media (max-width:760px),(max-width:1100px) and (orientation:portrait){
+  .hero{--scene:min(80vw,440px);display:block;min-height:0;background:var(--navy)}
+  .clean,#oil,#fx,.shade{top:0;bottom:auto;height:var(--scene)}
+  .shade{background:linear-gradient(0deg,rgba(15,28,43,1) 0%,rgba(15,28,43,0) 24%),linear-gradient(180deg,rgba(7,9,12,.6) 0%,rgba(7,9,12,0) 26%)}
+  .hero-in{padding-top:calc(var(--scene) + 14px);padding-bottom:40px}
+  .wipe{top:calc(var(--scene) - 64px);bottom:auto;left:auto;right:max(16px,env(safe-area-inset-right,0px));align-items:flex-end;text-align:right}
+  .wipe b{font-size:24px}
+  .toast{top:calc(var(--scene) * .38);bottom:auto;left:16px;right:16px;margin:0 auto;width:fit-content;font-size:19px}
+}
 </style>
 </head>
 <body>
@@ -442,7 +452,7 @@ footer a{color:var(--muted)}
   img.src=document.querySelector('meta[name="ctb-hero"]')?document.querySelector('meta[name="ctb-hero"]').content:'img/hero-2400.webp';
   /* Größe ändern (z. B. wenn beim Scrollen die Adressleiste am Handy verschwindet): das Gewischte bleibt erhalten.
      Zurückgesetzt wird nur beim Neuladen oder wenn man von einer Unterseite zurückkommt. */
-  var painted=false;
+  var painted=false, KP=[0.578125,0.345968,0.141667,0.334677];
   function size(reset){
     var r=cv.getBoundingClientRect(), dpr=Math.min(2,window.devicePixelRatio||1), nw=Math.round(r.width*dpr), nh=Math.round(r.height*dpr);
     if(r.width<2||r.height<2) return;
@@ -468,11 +478,21 @@ footer a{color:var(--muted)}
     drawOil(w,h); painted=true;
     grid.fill(0); done=0; update();
   }
+  /* Bildausschnitt: am PC wie gehabt. Auf schmalen Hochkant-Bildschirmen etwas größer und nach oben/rechts verschoben,
+     damit das Kajak unter dem Titel liegt und das Paddel nicht hinter den Buchstaben steckt. */
+  var MQ=window.matchMedia?window.matchMedia('(max-width:760px),(max-width:1100px) and (orientation:portrait)'):null;
+  function heroFit(w,h){
+    var s=Math.max(w/img.width,h/img.height), iw=img.width*s, ih=img.height*s, ox, oy;
+    if(MQ&&MQ.matches){ ox=w*.5-(KP[0]+KP[2]/2)*iw; oy=h*.52-(KP[1]+KP[3]/2)*ih; ox=Math.min(0,Math.max(w-iw,ox)); oy=Math.min(0,Math.max(h-ih,oy)); }
+    else { ox=(w-iw)*0.62; oy=(h-ih)/2; }
+    return {iw:iw,ih:ih,ox:ox,oy:oy};
+  }
   function drawOil(w,h){
     ctx.globalCompositeOperation='source-over';
     var s=Math.max(w/img.width,h/img.height), iw=img.width*s, ih=img.height*s;
-    ctx.drawImage(img,(w-iw)*0.62,(h-ih)/2,iw,ih);
-    if(window.__kimg&&__kimg.complete&&__kimg.naturalWidth){ var kx=(w-iw)*0.62+__kpos[0]*iw, ky=(h-ih)/2+__kpos[1]*ih; ctx.globalCompositeOperation='destination-out'; ctx.drawImage(__kimg,kx,ky,__kpos[2]*iw,__kpos[3]*ih); ctx.globalCompositeOperation='source-over'; }
+    var F=heroFit(w,h); iw=F.iw; ih=F.ih;
+    ctx.drawImage(img,F.ox,F.oy,iw,ih);
+    if(window.__kimg&&__kimg.complete&&__kimg.naturalWidth){ var kx=F.ox+__kpos[0]*iw, ky=F.oy+__kpos[1]*ih; ctx.globalCompositeOperation='destination-out'; ctx.drawImage(__kimg,kx,ky,__kpos[2]*iw,__kpos[3]*ih); ctx.globalCompositeOperation='source-over'; }
   }
   img.onload=function(){ready=true;size(true);};
   window.addEventListener('resize',function(){clearTimeout(size.t);size.t=setTimeout(size,150);});
@@ -530,7 +550,7 @@ footer a{color:var(--muted)}
     wx.globalAlpha=1; wx.globalCompositeOperation='source-over';
   }
   function kayakRect(){
-    var r=cv.getBoundingClientRect(), s=Math.max(r.width/img.width,r.height/img.height), iw=img.width*s, ih=img.height*s, ox=(r.width-iw)*0.62, oy=(r.height-ih)/2;
+    var r=cv.getBoundingClientRect(), F=heroFit(r.width,r.height), iw=F.iw, ih=F.ih, ox=F.ox, oy=F.oy;
     return {x:ox+KPOS[0]*iw,y:oy+KPOS[1]*ih,w:KPOS[2]*iw,h:KPOS[3]*ih};
   }
   var stars=[];
@@ -575,10 +595,10 @@ footer a{color:var(--muted)}
   function rnd(a,b){return a+Math.random()*(b-a);}
   function mix(hex,d){var n=parseInt(hex.slice(1),16),r=n>>16,g=n>>8&255,b=n&255,k=d*.3;return 'rgb('+Math.round(r+(WATER[0]-r)*k)+','+Math.round(g+(WATER[1]-g)*k)+','+Math.round(b+(WATER[2]-b)*k)+')';}
   function edgePt(side,m){ if(side===0)return [-m,rnd(.12,.92)*fH]; if(side===1)return [fW+m,rnd(.12,.92)*fH]; if(side===2)return [rnd(.08,.92)*fW,-m]; return [rnd(.08,.92)*fW,fH+m]; }
-  function fishRoute(){ var a=Math.random()<.7?Math.floor(Math.random()*2):2+Math.floor(Math.random()*2), b; do{b=Math.floor(Math.random()*4);}while(b===a||(a>1&&b>1&&Math.random()<.5)); return [edgePt(a,120),edgePt(b,160)]; }
+  function fishRoute(){ var a=Math.random()<.7?Math.floor(Math.random()*2):2+Math.floor(Math.random()*2), b; do{b=Math.floor(Math.random()*4);}while(b===a||(a>1&&b>1&&Math.random()<.5)); var m=fW<700?50:120; return [edgePt(a,m),edgePt(b,m+40)]; }
   function makeFish(kind,p,q,lead,off,d){
-    var s=SPEC[kind], sc=fW<700?.6:1; d=d==null?Math.random():d;
-    var f={s:s,L:rnd(s.L[0],s.L[1])*sc*(1-.3*d),x:p[0],y:p[1],tx:q[0],ty:q[1],th:Math.atan2(q[1]-p[1],q[0]-p[0]),vb:rnd(s.sp[0],s.sp[1])*sc,v:0,ph:rnd(0,7),wp:rnd(0,7),wf:rnd(.2,.5),wa:rnd(.2,.5),d:d,boost:0,fa:0,lead:lead||null,off:off||null,age:0,seed:Math.random()*1000};
+    var s=SPEC[kind], sc=fW<700?.62:1, spd=fW<700?.85:1; d=d==null?Math.random():d;
+    var f={s:s,L:rnd(s.L[0],s.L[1])*sc*(1-.3*d),x:p[0],y:p[1],tx:q[0],ty:q[1],th:Math.atan2(q[1]-p[1],q[0]-p[0]),vb:rnd(s.sp[0],s.sp[1])*spd,v:0,ph:rnd(0,7),wp:rnd(0,7),wf:rnd(.2,.5),wa:rnd(.2,.5),d:d,boost:0,fa:0,lead:lead||null,off:off||null,age:0,seed:Math.random()*1000};
     f.v=f.vb; f.c={back:mix(s.back,d),mid:mix(s.mid,d),edge:mix(s.edge,d),fin:mix(s.fin,d)}; return f;
   }
   function spawn(pre){
@@ -663,10 +683,10 @@ footer a{color:var(--muted)}
     var r=wc.getBoundingClientRect(); fDpr=Math.min(2,window.devicePixelRatio||1); fW=r.width; fH=r.height;
     fcv.width=Math.round(fW*fDpr); fcv.height=Math.round(fH*fDpr); fg.setTransform(fDpr,0,0,fDpr,0,0);
     if(tile&&!fpat) fpat=fg.createPattern(tile,'repeat');
-    if(!fishes.length){ var want=fW<700?3:6; for(var i=0;i<want;i++) spawn(true); }
+    if(!fishes.length){ var want=fW<700?4:6; for(var i=0;i<want;i++) spawn(true); }
   }
   function drawFishes(t,dt){
-    var want=fW<700?9:20, i;
+    var want=fW<700?10:20, i;
     if(!still){
       for(i=fishes.length-1;i>=0;i--){ var f=fishes[i]; stepFish(f,dt,t); if(f.age>3&&(f.x<-220||f.x>fW+220||f.y<-220||f.y>fH+220)||f.age>120) fishes.splice(i,1); }
       if(fishes.length<want&&t>fNext){ spawn(false); fNext=t+rnd(1,3.5); }
