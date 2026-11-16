@@ -1,0 +1,24 @@
+{
+  "specVersion": "1.0",
+  "entries": [
+    {
+      "identifier": "urn:air:oddbeangames.de:clean-the-bay:llms-txt",
+      "displayName": "Clean the Bay - overview for AI assistants",
+      "type": "text/markdown",
+      "url": "https://oddbeangames.de/llms.txt",
+      "description": "Fact sheet about Clean the Bay, a cozy oil cleanup game for PC (Steam) by Odd Bean Games: genre, platforms, players, languages, demo dates, press kit and contact.",
+      "tags": [
+        "video game",
+        "indie game",
+        "cozy game",
+        "PC",
+        "Steam"
+      ],
+      "representativeQueries": [
+        "What is the game Clean the Bay?",
+        "When is the Clean the Bay demo on Steam?",
+        "Where is the press kit for Clean the Bay by Odd Bean Games?"
+      ]
+    }
+  ]
+}
