@@ -135,6 +135,8 @@ footer .social svg{width:18px;height:18px}
 .legal .box{border:1px solid var(--line);border-left:4px solid var(--orange);border-radius:10px;padding:14px 16px 6px;margin:6px 0 12px;background:rgba(255,107,26,.06)}
 .legal .todo{background:rgba(255,107,26,.18);border-radius:4px;padding:0 4px;color:#ffc7a8}
 .back{display:inline-block;margin-bottom:20px}
+.legal-top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:20px}
+.legal-top .back{margin-bottom:0}
 /* Pressekit */
 .press .wrap{max-width:1040px}
 .press h3{font-size:20px;margin:22px 0 6px}
@@ -309,7 +311,7 @@ footer .social svg{width:18px;height:18px}
 </main>
 
 <div class="legal" hidden="" id="kontakt"><div class="wrap">
-<a class="back" data-i="k-back" href="#">← Back to the start page</a>
+<div class="legal-top"><a class="back" data-i="k-back" href="#">← Back to the start page</a><nav aria-label="Language" class="lang"><a class="sublang" href="/kontakt/" hreflang="de" lang="de">DE</a><a aria-current="page" class="sublang" href="/en/contact/" hreflang="en" lang="en">EN</a></nav></div>
 <h1 data-i="k-h">Contact</h1>
 <p data-i="k-intro">Questions about the game, a bug, an idea or a creator request? Write to us. We usually reply within a few days.</p>
 <p><span data-i="k-press">For press and creators: facts, texts, logos and images are in our</span> <a data-i="pkl3" href="/en/press/">press kit</a>.</p>
